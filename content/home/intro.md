@@ -17,8 +17,7 @@ author: admin
 #      path:  # enter filename of a video in /assets/media
 #  css_class: fullscreen
 ---
-Hello! I am Joe Liang, a data scientist and master student researcher
+Hello! I am Joe Liang, a dedicated data scientist, student researcher, and currently a master's student at the University of Toronto. 
 {style="font-size: 1.2rem; background: #FFB76B; -webkit-background-clip: text; -webkit-text-fill-color: transparent;"}
 
-Check out my [resumé](/about/) and portfolio below
-s
+Check out my [resumé](/about/) and [projects](/project/)

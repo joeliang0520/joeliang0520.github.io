@@ -25,7 +25,7 @@ experience:
   - title: Master of Applied Science
     company: University of Toronto
     company_url: 'https://www.mie.utoronto.ca/'
-    company_logo: org-x
+    company_logo: uoft
     location: Toronto, Canada
     date_start: '2023-09-01'
     date_end: '2025-08-31'
@@ -38,7 +38,7 @@ experience:
   - title: Bachalor of Mathematics
     company: University of Waterloo
     company_url: 'https://uwaterloo.ca/'
-    company_logo: org-x
+    company_logo: uw
     location: California
     date_start: '2016-01-01'
     date_end: '2020-12-31'

@@ -65,13 +65,22 @@ social:
 #email: ""
 ---
 
-Experienced data scientist with academic research and industry experience, proficient in multiple programming languages including Python, SQL queries, and R with popular machine learning libraries.
 
-Specialized in deep learning, natural language processing (NLP), information retrieval, temporal clustering, and recommender systems.
+Joe Liang is a data scientist, student researcher , and currently master student in the University of Toronto. 
 
-Solid foundation in statistical analysis, with experience in analyzing complex datasets across diverse domains, such as education, census, climate, unstructured text, and various other fields.
+**Skill:** Specializing in data analytics and machine learning, information retrieval, temporal clustering, and recommender systems.
+  With a solid foundation in statistical analysis and proficiency in Python, SQL, and key data analytics and machine learning libraries, 
+  I bring a wealth of experience from both academic research and industry. 
 
-Outstanding communication and presentation skills with proven interpersonal skills in previous jobs and academia.
+**Education:** Currently pursuing Master of Applied Science, with research focus on Temporal Clustering and its applications in sociology at University of Toronto D3M Lab supervised by Prof. Scott Sanner and Prof. 
+  Ethan Fosse. I graduated with distinction from the University of Waterloo with a Bachelor's in Mathematics.
+
+**Experience:**  My professional journey includes roles as a Data Analyst at School Education and an Associate 
+Software Engineer at Infosys Canada, where I streamlined workflows and developed tailored solutions. 
+I graduated with distinction from the University of Waterloo with a Bachelor's in Mathematics. 
+
+
+Let's connect and explore the possibilities together!
 
 
 {{< icon name="download" pack="fas" >}} {{< staticref "files/Jiazhou_Liang_Resume.pdf" "newtab" >}}Download{{< /staticref >}} my resumé as a PDF.

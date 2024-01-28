@@ -4,6 +4,7 @@ subtitle: A GPT-Based Unfair Term Of Service Detector
 summary: A GPT-Based Unfair Term Of Service Detector
 tags:
   - NLP
+  - Machine Learning
 date: "2023-09-01"
 profile: true
 layout: table-of-contents
