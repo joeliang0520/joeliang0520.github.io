@@ -28,17 +28,17 @@ content:
   filter_button:
     - name: All
       tag: '*'
-    - name: Machine Learning
-      tag: ML
-    - name: Computer Vision
-      tag: CV
-    - name: NLP
+    - name: Research
+      tag: research
+    - name: Project
+      tag: projects
+    - name: Other
       tag: NLP
 
 design:
   columns: '1'
   view: compact
-  flip_alt_rows: true
   background: {}
   spacing: {padding: [0, 0, 0, 0]}
 ---
+## Recent News

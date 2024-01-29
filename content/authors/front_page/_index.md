@@ -65,19 +65,9 @@ social:
 #email: ""
 ---
 
-Joe Liang is a data scientist, student researcher , and currently master student in the University of Toronto. 
+Welcome to the personal website of Joe Liang, a dedicated data scientist and student researcher currently pursuing a Master of Applied Science (MASc) degree at the University of Toronto under the guidance of Professors Scott Sanner and Ethan Fosse.
 
-**Skill:** Specializing in data analytics and machine learning, information retrieval, temporal clustering, and recommender systems.
-  With a solid foundation in statistical analysis and proficiency in Python, SQL, and key data analytics and machine learning libraries, 
-  Joe bring a wealth of experience from both academic research and industry. 
+Joe's expertise lies in the domains of data science and machine learning, where he possesses a robust understanding of statistical analysis and proficiency in various coding languages and data science packages including Pytorch, Scikit-Learn, PySpark, and SQL.
 
-**Education:** Currently pursuing Master of Applied Science, with research focus on Temporal Clustering and its applications in sociology at University of Toronto D3M Lab supervised by Prof. Scott Sanner and Prof. 
-  Ethan Fosse. Joe graduated with distinction from the University of Waterloo with a Bachelor's in Mathematics.
+Check out Joe's [resume](/about/) and previous [projects](/project/). Let's connect and explore the possibilities together!
 
-**Experience:**  My professional journey includes roles as a Data Analyst at School Education and an Associate 
-Software Engineer at Infosys Canada, where Joe streamlined workflows and developed tailored solutions. 
-
-Let's connect and explore the possibilities together!
-
-
-{{< icon name="download" pack="fas" >}} {{< staticref "files/Jiazhou_Liang_Resume.pdf" "newtab" >}}Download{{< /staticref >}} my resumé as a PDF.
