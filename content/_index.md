@@ -4,39 +4,35 @@ title: ''
 date: 2022-10-24
 type: landing
 sections:
-  - block: about.biography
+  - block: about.avatar
     id: about
     content:
       title: Welcome
       # Choose a user profile to display (a folder name within `content/authors/`)
       username: front_page
 
-  - block: collection
-    id: posts
-    filter_default: 0
-    filter_button:
-      - name: All
-        tag: '*'
-      - name: Research
-        tag: research
-      - name: Project
-        tag: projects
-      - name: Other
-        tag: NLP
+  - block: portfolio
+    id: postsd
     content:
       title: Recent News
-      subtitle: ''
-      text: ''
-      # Choose how many pages you would like to display (0 = all pages)
       count: 5
-      # Filter on criteria
       filters:
         folders:
           - project
-      # Page order: descending (desc) or ascending (asc) date.
       order: desc
+      default_button_index: 0
+      buttons:
+      - name: All
+        tag: '*'
+      - name: Project
+        tag: project
+      - name: Research
+        tag: research
+      - name: Other
+        tag: Demo
     design:
-      # Choose a layout view
       view: showcase
-      columns: '2'
+      flip_alt_rows: false
+      columns: '1'
+    
 ---
