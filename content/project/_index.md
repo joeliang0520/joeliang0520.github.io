@@ -1,5 +1,5 @@
 ---
-title: My page
+title: Projects
 type: landing
 
 sections:
@@ -34,4 +34,5 @@ sections:
       # Choose a listing view
       view: card
       columns: '2'
+
 ---
