@@ -11,11 +11,11 @@ sections:
       # Choose a user profile to display (a folder name within `content/authors/`)
       username: front_page
 
-  - block: portfolio
+  - block: collection
     id: postsd
     content:
       title: Recent News
-      count: 5
+      count: 3
       filters:
         folders:
           - project

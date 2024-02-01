@@ -3,15 +3,24 @@ title: Projects
 type: landing
 
 sections:
-  - block: collection
+  - block: Portfolio
     id: posts
     content:
       title: Project
       subtitle: ''
-      text: 'Please check out my current and previous projects'
       # Choose how many pages you would like to display (0 = all pages)
       count: 0
       # Filter on criteria
+      default_button_index: 0
+      buttons:
+      - name: All
+        tag: '*'
+      - name: Project
+        tag: project
+      - name: Research
+        tag: research
+      - name: Other
+        tag: Demo
       filters:
         # The folders to display content from
         folders:
@@ -32,7 +41,7 @@ sections:
       sort_ascending: false
     design:
       # Choose a listing view
-      view: compact
+      view: masonry
       columns: '2'
 
 ---
