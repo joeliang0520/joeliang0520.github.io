@@ -1,7 +1,7 @@
 
 ---
 title: 'ProtectYourVoice: AI-generated Voice Detector'
-summary: Applied a deep learning ResNet model with transfer learning tech- niques to classify spectrograms of human and AI-generated voices, achieving high test accuracy in the ASVspoof2019 competition
+summary: Applied a deep learning ResNet model with transfer learning techniques to detect a spectrogram is from human or AI-generated voices, achieving high test accuracy in the ASVspoof2019 competition
 tags:
   - project
 date: "2024-01-01"
@@ -12,7 +12,7 @@ show_date: false
 
 
 <iframe
-       src="index.html"
+       src="./index.html"
        width="90%"
        height="1000px"
        style="border:none;">
