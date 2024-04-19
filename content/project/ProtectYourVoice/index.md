@@ -12,7 +12,7 @@ show_date: false
 
 
 <iframe
-       src="content/project/ProtectYourVoice/index.html"
+       src="index.html"
        width="90%"
        height="1000px"
        style="border:none;">
