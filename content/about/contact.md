@@ -22,7 +22,7 @@ content:
   email: joeliang0520@gmail.com
   phone: 226-978-5379
   address:
-    street: Bahen Centre for Information Technology
+    street: Bahen Centre for Information Technology, 40 St George St
     city: Toronto
     region: 'ON'
     postcode: 'M5S 2E4'

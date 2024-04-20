@@ -51,7 +51,7 @@ experience:
     company_logo: uoft
     location: Toronto
     date_start: '2024-01-01'
-    date_end: ''
+    date_end: '2024-04-30'
     description: |2-
       Teaching Assistant of University of Toronto MIE223 - Data Science
 
