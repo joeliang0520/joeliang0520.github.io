@@ -1591,7 +1591,7 @@ The important lesson we have learned is that we should be daring when we are fac
 
 It is worth noting that our final model may be vulnerable to adversarial attacks. For instance, it is possible to train a "modifier" which will erase the extra frequencies present in the spectrogram of fake audios, as illustrated in section 'Unseen Samples', in order to confuse our model to misclassify fake audios as real.
 
-#References
+## References
 
 1. Jordan J. Bird, Ahmad Lotfi. REAL-TIME DETECTION OF AI-GENERATED SPEECH FOR
 DEEPFAKE VOICE CONVERSION,24 Aug 2023. https://arxiv.org/pdf/2308.12734.pdf
@@ -1601,11 +1601,3 @@ DEEPFAKE VOICE CONVERSION,24 Aug 2023. https://arxiv.org/pdf/2308.12734.pdf
 3. Rodríguez, Yohanna; Ballesteros L, Dora Maria; Renza, Diego  (2019), “Fake voice recordings (Imitation)”, Mendeley Data, V1, doi: 10.17632/ytkv9w92t6.1
 
 4. Nikolaj Buhl. F1 Score in Machine Learning. *Encord*, 18 July 2023. https://encord.com/blog/f1-score-in-machine-learning/
-
-```python
-!jupyter nbconvert --to html final_report.ipynb
-```
-
-    [NbConvertApp] Converting notebook final_report.ipynb to html
-    [NbConvertApp] Writing 1789163 bytes to final_report.html
-
