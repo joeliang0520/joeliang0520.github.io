@@ -1,9 +1,7 @@
 ---
-title: 'ProtectYourVoice: Detacting Model Generated Voice (DeepFake) using Deep Learning
-  Models'
+title: 'ProtectYourVoice: Detacting AI Generated Voice using Deep Learning'
 date: '2024-04-20'
 ---
-
 
 ## Introduction
 AI-generated (conversion) voices/speech have become increasingly popular, but they also present challenges in fraud prevention, such as impersonating someone to make fraudulent calls.
