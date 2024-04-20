@@ -2,7 +2,7 @@
 title: 'Multivariate Time Series Clustering With Transformer'
 date: '2024-04-20'
 
-summary: Purposed a novel framework for MTS Clus- tering using the learnable representations in latent spaces of Transformer Encoder to achieve superior and efficient clustering re- sults in real-world experiments.
+summary: Purposed a novel framework for Multivariate Time Series Clustering With Transformer using the learnable representations in latent spaces of Transformer Encoder to achieve superior and efficient clustering re- sults in real-world experiments.
 
 tags:
   - research
