@@ -40,10 +40,11 @@ experience:
     date_start: '2023-09-01'
     date_end: ''
     description: |2-
-      - Analyzed University of Toronto Biology course data for over 100 students using Python and Data Science packages.
-      - Aligned with the 'Scholarship of Teaching and Learning' (SoTL) to enhance educational outcomes.
-      - Created concise, visually informative reports highlighting student learning habits and grade-material utilization correlations.
-      - Contributed evidence-based insights for pedagogical improvements over a 10-week semester period.
+      - Led large-scale experiments initiatives on student performance
+        within university-level courses, enhancing educational outcomes
+        with the ‘Scholarship of Teaching and Learning’ objective.
+      - Conducted strategic intervention analysis with concise, visually
+        informative reports to highlight statistically significant correlations hidden within assignments, quizzes, and exam.
   - title: Teaching Assistant
     company: University of Toronto
     company_url: 'https://www.utoronto.ca/'
@@ -62,9 +63,11 @@ experience:
     date_start: '2022-06-28'
     date_end: '2023-09-01'
     description: |2-
-      - Developed backend service layers encompassing business and service layers, delivering tailored solutions for clients utilizing C# and the .NET framework.
-      - Designed scalable query applications incorporating data extraction from complex relational databases and utilizing Entity Framework.
-      - Maintained ongoing client communication, collecting feedback and addressing concerns across industries.
+      - Designed and implemented scalable query applications for data
+        extraction in Microsoft SQL Server and Entity Framework. Monitored database performance to keep workflows running smoothly.
+      - Completed business, service, and data access layers of the full
+      stack development cycle to create customized solutions for clients
+      using C # and with .Net Framework.
 
   - title: Data Analyst
     company: T School 田思谷学校

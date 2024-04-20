@@ -46,6 +46,9 @@ experience:
         * Dual Program in Data Science and Computational Math
         * Grade: Upper Year GPA 4.0/4.0 | Graduation with DistinctionGrade:
         * Activities and societies: Executive Member of the University of Waterloo Cooking Club, Member of Math Society
+        * Courses: Computational Inference; Databases
+                  Management; Statistical Learning; Applied
+                  Linear Models, Data Visualization
 
 design:
   columns: '1'

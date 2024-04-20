@@ -19,32 +19,24 @@ content:
       captcha: true
 
   # Contact details (edit or remove options as required)
-  email: test@example.org
-  phone: 888 888 88 88
+  email: joeliang0520@gmail.com
+  phone: 226-978-5379
   address:
-    street: 450 Serra Mall
-    city: Stanford
-    region: CA
-    postcode: '94305'
-    country: United States
-    country_code: US
-  coordinates:
-    latitude: '37.4275'
-    longitude: '-122.1697'
-  directions: Enter Building 1 and take the stairs to Office 200 on Floor 2
-  office_hours:
-    - 'Monday 10:00 to 13:00'
-    - 'Wednesday 09:00 to 10:00'
-  appointment_url: 'https://calendly.com'
+    street: Bahen Centre for Information Technology
+    city: Toronto
+    region: 'ON'
+    postcode: 'M5S 2E4'
+    country: Canada
+    country_code: CA
   contact_links:
-    - icon: twitter
+    - icon: instagram
       icon_pack: fab
-      name: DM Me
-      link: 'https://twitter.com/Twitter'
+      name: Follow Me
+      link: 'https://www.instagram.com/joeoj0520/'
     - icon: video
       icon_pack: fas
-      name: Zoom Me
-      link: 'https://zoom.com'
+      name: Youtube
+      link: 'https://www.youtube.com/channel/UCJgUmCNRYpaMxRJsOQCMRCQ'
 
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.
