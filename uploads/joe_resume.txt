@@ -1,0 +1,97 @@
+Joe (Jiazhou) Liang
++ Toronto, ON | # joe.liang@mail.utoronto.ca |  Google Scholar
+Summary of Qualifications
+• PhD student in Applied Machine Learning at the University of Toronto (D3M Lab), supervised by Prof. Scott
+Sanner, with a research focus on conversational recommendation systems, memory-augmented LLM agents, and
+egocentric information retrieval.
+• Strong publication record at top venues including ACL 2026 (3 papers), ICLR 2026, AAAI 2026, EMNLP 2025,
+UMAP 2026, and Sociological Methods & Research, spanning retrieval, NLP, optimization, and embodied AI.
+• Recipient of the Ontario Graduate Scholarship and multiple University of Toronto fellowships and conference
+awards; MIE Teaching Assistant Award 2024–2025.
+• Deep technical expertise in LLMs, knowledge graph-based memory systems, Transformer architectures,
+mixed-integer optimization (LP/MILP), and scalable ML pipelines (PyTorch, Python, PySpark).
+• Three years of experience as Head TA for Introduction to Data Science (MIE223) and TA for Decision Support System
+(MIE451) and Introduction to Machine Learning (MIE370), mentoring 100+ students per term.
+Education
+University of Toronto | Doctor of Philosophy in Computer Science Sep 2025 – Present
+• Research Topic: Novel Methods and Memory Access for Conversational Agents and Recommendation Systems
+• Supervisor: Prof. Scott Sanner, Data Driven & Decision Making (D3M) Lab
+• Awards: Ontario Graduate Scholarship; University of Toronto Departmental Fellowship; School of Graduate
+Studies Conference Award; Departmental Conference Award
+University of Toronto | Master of Applied Science in Information Engineering Sep 2023 – Aug 2025
+• Thesis: Novel Optimization Methods for Temporal and Predictive Clustering
+• Supervisor: Prof. Scott Sanner
+• Awards: MIE Fellowships; MIE Teaching Assistant Award
+University of Waterloo | Bachelor of Mathematics in Computational Mathematics Sep 2018 – Jun 2022
+• Awards: Dean’s Honor List; Graduated with Distinction
+Publications
+• Liang, J.*, Liu, Y.*, Guo, D.*, Jiang, Y., Sun, M., & Sanner, S. (2026). Evaluating Scene-based In-Situ Item
+Labeling for Immersive Conversational Recommendation. the 64th Annual Meeting of the Association for
+Computational Linguistics (ACL 2026).
+• Liu, Y.*, Wen, Q.*, Liang, J.*, Zhao, M.*, Cui, J., Korikov, A., . . . & Sanner, S. (2026). Multimodal Item Scoring
+for Natural Language Recommendation via Gaussian Process Regression with LLM Relevance Judgments. the 64th
+Annual Meeting of the Association for Computational Linguistics (ACL 2026).
+• Kim, J., Korikov, A., Liang, J., Cui, J., Liu, Y. S., Wen, Q., ... & Sanner, S. (2026). Bayesian Active Learning with
+Gaussian Processes Guided by LLM Relevance Scoring for Dense Passage Retrieval. the 64th Annual Meeting of the
+Association for Computational Linguistics (ACL 2026).
+Liu, Y. S.*, Wu, R.*, Gallagher, L.*, Liang, J.*, Toroghi, A., & Sanner, S. (2026). Semantic XPath: Structured
+Agentic Memory Access for Conversational AI. the 64th Annual Meeting of the Association for Computational
+Linguistics (ACL 2026 Demo).
+• Liu, X., Toroghi, A., Liang, J., Courtis, D., . . . & Sanner, S. (2026). Natural Language PDDL (NL-PDDL) for
+Open-world Goal-oriented Commonsense Regression Planning in Embodied AI. Proceedings of the 14th
+International Conference on Learning Representations (ICLR 2026).
+• Liang, J.*, Khurram, H.*, & Sanner, S. (2026). Near-optimal Linear Predictive Clustering in Non-separable Spaces
+via MIP and QPBO Reductions. Proceedings of the AAAI Conference on Artificial Intelligence, Vol. 40 (AAAI 2026).
+
+-- 1 of 2 --
+
+• Guo, D., Sun, M., Jiang, Y., Liang, J., & Sanner, S. (2026). VOGUE: A Multimodal Dataset for Conversational
+Recommendation in Fashion. Proceedings of the 34th ACM Conference on User Modeling, Adaptation and
+Personalization (UMAP 2026).
+• Liang, J., Tosanwumi, J., Fosse, E., Silver, D., & Sanner, S. (2026). Mapping Social Change: A Unified Framework
+for Temporal Clustering. Sociological Methods & Research.
+• Liu, Y., Wen, Q., Zhao, M., Liang, J., & Sanner, S. (2025). MA-DPR: Manifold-aware Distance Metrics for Dense
+Passage Retrieval. Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing (pp.
+31073–31091) (EMNLP 2025).
+• Liang, J.*, Tosanwumi, J.*, Silver, D., Fosse, E., & Sanner, S. (2024). tscluster: A Python Package for the Optimal
+Temporal Clustering Framework. Environment and Planning B: Urban Analytics and City Science, 52(4), 1014–1024.
+∗Equal contributions.
+Research Experience
+Graduate Research Assistant | Data Driven & Decision Making Lab, University of
+Toronto
+Sep 2023 – Present
+• Conducting research on structured memory systems, agentic information retrieval, and conversational
+recommendation for XR environments under supervision of Prof. Scott Sanner.
+• Co-authored 8 peer-reviewed publications at ACL, ICLR, AAAI, EMNLP, UMAP, and other venues; active
+contributor to multiple concurrent research projects spanning NLP, ML, and embodied AI.
+Part-Time Research Assistant | Department of Human Biology, University of
+Toronto
+Sep 2023 – Sep 2025
+• Analyzed 100,000+ encrypted student course records using Python (NumPy, Pandas, Scikit-Learn) to support
+large-scale educational research.
+• Produced executive-level visualizations (Seaborn, Plotly) communicating evidence-based findings to academic
+decision-makers.
+Teaching Experience
+Teaching Assistant / Head TA | University of Toronto, Toronto, ON Sep 2023 – Present
+• Recipient of the MIE Teaching Assistant Award 2024–2025 for outstanding contributions to graduate-level
+instruction.
+• Designed comprehensive tutorial materials and course projects for three advanced courses in information retrieval,
+recommendation systems, and machine learning.
+• Led weekly tutorial sessions for 100+ students; delivered practical Python demonstrations and provided
+individualized academic support.
+• Courses: MIE451 – Decision Support Systems | MIE370 – Introduction to Machine Learning | MIE223 –
+Introduction to Data Science (Head TA)
+Teaching Assistant | University of Waterloo, Waterloo, ON Sep 2021 – Dec 2021
+Academic Service
+• Journal Reviewer: ACM Transactions on Recommender Systems (TORS)
+Research Interests & Technical Skills
+Research Interests: Egocentric situated information retrieval; conversational recommendation systems;
+memory-augmented LLM agents; Extended Reality (XR) and embodied AI; knowledge graph-based memory;
+structured reasoning and planning.
+Programming & Tools: Python (PyTorch, NumPy, Pandas, Scikit-Learn, PySpark, SQL); Transformer and LLM
+architectures; LP/MILP optimization; NLP and dialogue modeling; Linux-based research workflows; Git.
+Transferable Skills: Academic communication; research mentorship; curriculum design; critical thinking;
+cross-disciplinary collaboration; conference presentation.
+
+-- 2 of 2 --
+

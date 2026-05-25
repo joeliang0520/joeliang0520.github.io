@@ -1,7 +1,9 @@
-# IDEs
+.DS_Store
+
+# Local editor/project files
 .idea/
 
-# Hugo
-resources/
+# Dependency/build outputs if the site is extended later
+node_modules/
+dist/
 public/
-assets/jsconfig.json

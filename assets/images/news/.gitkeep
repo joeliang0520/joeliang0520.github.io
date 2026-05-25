@@ -1,0 +1,11 @@
+# Drop hook images for the homepage news section here.
+#
+# Expected (anything ~800x600 / 4:3 works well):
+# - scene-labeling.jpg   →  ACL 2026 scene-based labeling
+# - nl-pddl.jpg          →  ICLR 2026 NL-PDDL
+# - linpc.jpg            →  AAAI 2026 LinPC
+# - phd-start.jpg        →  starting the PhD
+# - ma-dpr.jpg           →  EMNLP 2025 MA-DPR
+# - ta-award.jpg         →  MIE TA Award
+#
+# Missing files fall back to a striped placeholder automatically.
