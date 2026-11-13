@@ -110,7 +110,7 @@ def render_links(p):
                  f'aria-controls="abs-{pid}">Abstract</button>')
     links.append(f'<button type="button" class="toggle" aria-expanded="false" '
                  f'aria-controls="bib-{pid}">BibTeX</button>')
-    return " ".join(f"[{l}]" for l in links)
+    return " ".join(links)
 
 
 def render_figure(p):
@@ -141,6 +141,39 @@ def render_pub(p):
 </li>"""
 
 
+def render_card(p):
+    links = []
+    if p.get("pdf"):
+        links.append(f'<a href="{esc(p["pdf"])}">PDF</a>')
+    if p.get("arxiv"):
+        links.append(f'<a href="https://arxiv.org/abs/{esc(p["arxiv"])}">arXiv</a>')
+    if p.get("doi"):
+        links.append(f'<a href="https://doi.org/{esc(p["doi"])}">DOI</a>')
+    if p.get("code"):
+        links.append(f'<a href="{esc(p["code"])}">Code</a>')
+    if p.get("demo"):
+        links.append(f'<a href="{esc(p["demo"])}">Demo</a>')
+    links.append(f'<a href="publications.html#{esc(p["id"])}">Abstract</a>')
+    fig = ""
+    if p.get("fig"):
+        fig = (f'<button type="button" class="pub-thumb card-fig" data-full="{esc(p["fig"])}" '
+               f'aria-label="Enlarge figure: {esc(p["title"])}">'
+               f'<img src="{esc(p["fig"])}" alt="Figure from: {esc(p["title"])}" loading="lazy"></button>')
+    return f"""<article class="card pub-card pub">
+  {fig}
+  <div class="card-body">
+    <span class="badge">{esc(p['short'])}</span>
+    <h3 class="pub-title">{esc(p['title'])}</h3>
+    <p class="pub-authors">{render_authors(p['authors'])}</p>
+    <p class="card-links">{' '.join(links)}</p>
+  </div>
+</article>"""
+
+
+def render_cards(pubs):
+    return '<div class="card-grid">\n' + "\n".join(render_card(p) for p in pubs) + "\n</div>"
+
+
 def render_list(pubs):
     return '<ul class="pubs">\n' + "\n".join(render_pub(p) for p in pubs) + "\n</ul>"
 
@@ -157,7 +190,7 @@ def render_full(pubs):
         block = [f'<h2 id="{key}">{heading}</h2>']
         if key == "peer":
             for year in sorted({p["year"] for p in items}, reverse=True):
-                block.append(f'<div class="year-group">\n<h3 class="year">{year}</h3>')
+                block.append(f'<div class="year-group" id="y{year}">\n<h3 class="year">{year}</h3>')
                 block.append(render_list([p for p in items if p["year"] == year]) + "\n</div>")
         else:
             block.append(render_list(items))
@@ -180,7 +213,7 @@ def main():
         for k in ("pdf", "fig"):
             if p.get(k) and not (ROOT / p[k]).exists():
                 print(f"warning: missing file {p[k]}")
-    splice(ROOT / "index.html", "selected", render_list([p for p in pubs if p.get("selected")]))
+    splice(ROOT / "index.html", "selected", render_cards([p for p in pubs if p.get("selected")]))
     splice(ROOT / "publications.html", "publications", render_full(pubs))
     print(f"rendered {len(pubs)} publications")
 

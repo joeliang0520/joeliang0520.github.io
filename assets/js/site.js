@@ -27,7 +27,7 @@
 
     var more = e.target.closest('#news-toggle');
     if (more) {
-      var list = document.getElementById('news');
+      var list = document.getElementById('news-list');
       var expanded = more.getAttribute('aria-expanded') === 'true';
       list.classList.toggle('expanded', !expanded);
       more.setAttribute('aria-expanded', expanded ? 'false' : 'true');
@@ -81,6 +81,43 @@
       if (count) count.textContent = shown + (shown === 1 ? ' paper' : ' papers');
     });
   });
+
+  // Paper counts next to each filter button
+  Array.prototype.forEach.call(chips, function (chip) {
+    var t = chip.dataset.topic;
+    var n = Array.prototype.filter.call(document.querySelectorAll('.pub-section .pub'), function (p) {
+      return t === 'all' || (' ' + p.dataset.topics + ' ').indexOf(' ' + t + ' ') > -1;
+    }).length;
+    var span = document.createElement('span');
+    span.className = 'n';
+    span.textContent = n;
+    chip.appendChild(span);
+  });
+
+  // ---- Scroll-spy for the rail's "On this page" links ----
+  var tocLinks = document.querySelectorAll('.toc a[href^="#"]');
+  if (tocLinks.length && 'IntersectionObserver' in window) {
+    var sections = [];
+    Array.prototype.forEach.call(tocLinks, function (a) {
+      var el = document.getElementById(a.getAttribute('href').slice(1));
+      if (el) sections.push({ el: el, a: a });
+    });
+    var setActive = function () {
+      var y = window.innerHeight * 0.3, current = sections[0];
+      sections.forEach(function (s) {
+        if (s.el.getBoundingClientRect().top - y <= 0) current = s;
+      });
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+        current = sections[sections.length - 1];
+      }
+      sections.forEach(function (s) { s.a.classList.toggle('active', s === current); });
+    };
+    var ticking = false;
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(function () { setActive(); ticking = false; }); }
+    }, { passive: true });
+    setActive();
+  }
 
   // ---- Line-drawing icons: compute stroke lengths for the draw-in effect ----
   Array.prototype.forEach.call(document.querySelectorAll('svg.draw'), function (svg) {

@@ -4,73 +4,91 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Jiazhou (Joe) Liang</title>
-<meta name="description" content="Jiazhou (Joe) Liang, Ph.D. student in Computer Science at the University of Toronto. Research on memory and user modeling for egocentric, conversational AI assistants.">
+<meta name="description" content="Jiazhou (Joe) Liang, Ph.D. student in Computer Science at the University of Toronto. Research on spatial and conversational memory for egocentric AI assistants.">
 <meta name="author" content="Jiazhou Liang">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<nav class="site-nav">
-  <div class="container">
+<header class="site-nav">
+  <div class="nav-inner">
     <a class="site-name" href="index.html">Jiazhou (Joe) Liang</a>
-    <ul>
-      <li><a href="index.html" aria-current="page">Home</a></li>
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="cv.html">CV</a></li>
-    </ul>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="cv.html">CV</a></li>
+      </ul>
+    </nav>
   </div>
-</nav>
+</header>
 
-<main class="container">
+<div class="page">
 
-  <section class="profile">
+  <aside class="rail profile">
+    <img class="profile-photo" src="assets/images/profile.jpg" alt="Photo of Jiazhou Liang" width="457" height="480">
     <div class="profile-text">
-      <h1>Jiazhou (Joe) Liang</h1>
-      <p class="position">
-        Ph.D. Student in Computer Science<br>
-        University of Toronto<br>
-        Data Driven &amp; Decision Making (D3M) Lab
-      </p>
-      <p class="contact">
-        Email: joe.liang [at] mail.utoronto.ca
-      </p>
-      <div class="links">
-        <a href="uploads/Jiazhou_Liang_CV.pdf">CV</a><span class="sep">|</span>
-        <a href="https://scholar.google.ca/citations?user=AzhfC5EAAAAJ&amp;hl=en">Google Scholar</a><span class="sep">|</span>
-        <a href="https://github.com/joeliang0520">GitHub</a><span class="sep">|</span>
-        <a href="https://www.linkedin.com/in/jiazhou-joe-liang/">LinkedIn</a>
+      <h1 class="profile-name">Jiazhou (Joe) Liang</h1>
+      <p class="profile-role">Ph.D. Student in Computer Science<br>University of Toronto</p>
+      <ul class="facts">
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Toronto, Canada</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/></svg>D3M Lab, advised by <a href="https://d3m.mie.utoronto.ca/">Scott&nbsp;Sanner</a></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg>AI Research Intern, Thoughtworks AI Lab</li>
+      </ul>
+      <div class="social">
+        <a href="mailto:joe.liang@mail.utoronto.ca" aria-label="Email" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+        <a href="https://scholar.google.ca/citations?user=AzhfC5EAAAAJ&amp;hl=en" aria-label="Google Scholar" title="Google Scholar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0L0 9.5l4 2.92V18a8 8 0 0 0 16 0v-5.58l4-2.92L12 0zm0 14a4 4 0 0 1-3.94-3.32L12 7.83l3.94 2.85A4 4 0 0 1 12 14z"/></svg></a>
+        <a href="https://github.com/joeliang0520" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.01c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.25 3.34.95.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.47.11-3.06 0 0 .97-.31 3.17 1.18.92-.26 1.91-.39 2.9-.39s1.98.13 2.9.39c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.77.11 3.06.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.68.8.56C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg></a>
+        <a href="https://www.linkedin.com/in/jiazhou-joe-liang/" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a class="cv-btn" href="uploads/Jiazhou_Liang_CV.pdf">CV (PDF)</a>
       </div>
     </div>
-    <img class="profile-photo" src="assets/images/profile.jpg" alt="Photo of Jiazhou Liang" width="180" height="189">
-  </section>
+    <nav class="toc" aria-label="On this page">
+      <span class="toc-label">On this page</span>
+      <a href="#about">About</a>
+      <a href="#focus">Current focus</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Selected publications</a>
+      <a href="#news">News</a>
+    </nav>
+  </aside>
 
-  <section class="bio">
-    <p>
-      I am a Ph.D. student in Computer Science at the University of Toronto, advised by
-      <a href="https://d3m.mie.utoronto.ca/">Prof. Scott Sanner</a> in the Data Driven &amp;
-      Decision Making (D3M) Lab. I am also currently an AI Research Intern at the
-      Thoughtworks AI Lab, where I work on world models for AI assistants.
-    </p>
-    <p>
-      My research is on egocentric, user-aligned AI assistants: systems that see what the user
-      sees and talk with them over time, for example on AI glasses or XR headsets. I study what
-      such an assistant should remember, how it should use that memory, and how it can work out
-      what the user needs. My current focus is spatial memory: linking what the user says to
-      the physical objects the assistant has seen.
-    </p>
-    <p>
-      Before my Ph.D., I received an M.A.Sc. in Information Engineering from the University of
-      Toronto, with a thesis on optimization methods for temporal and predictive clustering, and
-      a B.Math. in Computational Mathematics from the University of Waterloo.
-    </p>
-  </section>
+  <main class="content">
 
-  <section class="focus" data-reveal aria-labelledby="focus-heading">
-    <h2 id="focus-heading">Current Focus: Spatial Memory for Egocentric Assistants</h2>
-    <div class="focus-demo">
+    <section id="about" class="block">
+      <a class="latest" href="https://arxiv.org/abs/2610.05526"><span class="latest-tag">New</span>Preprint: spatially grounded conversational memory for egocentric assistants<span aria-hidden="true">&rarr;</span></a>
+      <p class="lead">
+        I study memory for AI assistants that see what the user sees and talk with them over
+        time, for example on AI glasses or XR headsets.
+      </p>
+      <p>
+        I am a Ph.D. student in Computer Science at the University of Toronto, advised by
+        <a href="https://d3m.mie.utoronto.ca/">Prof. Scott Sanner</a> in the Data Driven &amp;
+        Decision Making (D3M) Lab, and currently an AI Research Intern at the Thoughtworks AI Lab,
+        where I work on world models for AI assistants. My research asks what an egocentric,
+        user-aligned assistant should remember, how it should use that memory, and how it can work
+        out what the user needs. My current focus is spatial memory: linking what the user says to
+        the physical objects the assistant has seen.
+      </p>
+      <p>
+        Before my Ph.D., I received an M.A.Sc. in Information Engineering from the University of
+        Toronto, with a thesis on optimization methods for temporal and predictive clustering, and
+        a B.Math. in Computational Mathematics from the University of Waterloo.
+      </p>
+      <ul class="chips" aria-label="Research interests">
+        <li>Spatial memory</li><li>Egocentric AI</li><li>Agent memory</li><li>Conversational recommendation</li><li>Retrieval</li>
+      </ul>
+    </section>
+
+    <section id="focus" class="block focus" data-reveal aria-labelledby="focus-heading">
+      <div class="block-head">
+        <span class="kicker">Current focus</span>
+        <h2 id="focus-heading">Spatial memory for egocentric assistants</h2>
+      </div>
+      <div class="focus-demo">
       <figure class="plan-wrap">
         <svg class="plan" id="plan" viewBox="0 0 460 300" role="img" aria-labelledby="plan-title plan-desc">
           <title id="plan-title">Schematic of spatially grounded conversational memory</title>
@@ -163,12 +181,15 @@
       [<a href="https://arxiv.org/abs/2610.05526">arXiv</a>]
       [<a href="https://github.com/joeliang0520/SAPCR-MEM">Code</a>]
     </p>
-  </section>
+    </section>
 
-  <section data-reveal aria-labelledby="themes-heading">
-    <h2 id="themes-heading">Research</h2>
-    <div class="themes">
-      <div class="theme">
+    <section id="research" class="block" data-reveal aria-labelledby="themes-heading">
+      <div class="block-head">
+        <span class="kicker">Research</span>
+        <h2 id="themes-heading">Themes</h2>
+      </div>
+      <div class="themes">
+      <div class="card theme">
         <svg class="icon draw" viewBox="0 0 64 64" aria-hidden="true">
           <rect x="9" y="14" width="19" height="13" rx="5"/>
           <rect x="36" y="14" width="19" height="13" rx="5"/>
@@ -184,7 +205,7 @@
           <p class="theme-papers"><a href="publications.html#liang2026spacmem">SpaC-MEM</a> · <a href="publications.html#liang2026evaluating">In-situ labeling (ACL 2026)</a></p>
         </div>
       </div>
-      <div class="theme">
+      <div class="card theme">
         <svg class="icon draw" viewBox="0 0 64 64" aria-hidden="true">
           <path d="M8 8 h24 a4 4 0 0 1 4 4 v9 a4 4 0 0 1 -4 4 h-15 l-6 5 v-5 h-3 a4 4 0 0 1 -4 -4 v-9 a4 4 0 0 1 4 -4z"/>
           <path d="M44 33 L35 47 M48 33 L57 47 M38 20 L44 26" />
@@ -198,7 +219,7 @@
           <p class="theme-papers"><a href="publications.html#liang2026goalmem">Goal-Mem</a> · <a href="publications.html#liu2026segtree">Segment Trees</a> · <a href="publications.html#liu2026semantic">Semantic XPath</a></p>
         </div>
       </div>
-      <div class="theme">
+      <div class="card theme">
         <svg class="icon draw" viewBox="0 0 64 64" aria-hidden="true">
           <path d="M6 16 V6 H16 M48 6 H58 V16 M58 48 V58 H48 M16 58 H6 V48"/>
           <rect x="17" y="30" width="16" height="18" rx="2"/>
@@ -211,7 +232,7 @@
           <p class="theme-papers"><a href="publications.html#liang2026evaluating">Scene labeling</a> · <a href="publications.html#liu2026multimodal">GP-LLM scoring</a> · <a href="publications.html#guo2026vogue">VOGUE</a> · <a href="publications.html#liu2025madpr">MA-DPR</a></p>
         </div>
       </div>
-      <div class="theme">
+      <div class="card theme">
         <svg class="icon draw" viewBox="0 0 64 64" aria-hidden="true">
           <path class="divider" d="M8 56 L56 8"/>
           <circle class="dot d1" cx="14" cy="22" r="3"/>
@@ -230,164 +251,104 @@
         </div>
       </div>
     </div>
-  </section>
+    </section>
 
-  <h2>News</h2>
-  <ul class="news" id="news">
-    <li><span class="date">Oct 2026</span><span>New preprint on spatially grounded conversational memory for egocentric assistants, with the Ego-SpaCR benchmark: <a href="https://arxiv.org/abs/2610.05526">arXiv:2610.05526</a>.</span></li>
-    <li><span class="date">Aug 2026</span><span>Joined the Thoughtworks AI Lab as an AI Research Intern.</span></li>
-    <li><span class="date">Jun 2026</span><span>New preprint on segment-tree memory for long-horizon agents: <a href="https://arxiv.org/abs/2606.04555">arXiv:2606.04555</a>.</span></li>
-    <li><span class="date">May 2026</span><span>New preprint on goal-oriented reasoning for RAG-based agent memory: <a href="https://arxiv.org/abs/2605.12213">arXiv:2605.12213</a>.</span></li>
-    <li><span class="date">May 2026</span><span>Four papers accepted to ACL 2026: three in Findings and one in System Demonstrations.</span></li>
-    <li class="more"><span class="date">Apr 2026</span><span>NL-PDDL appears at ICLR 2026.</span></li>
-    <li class="more"><span class="date">Jan 2026</span><span>Our paper on near-optimal linear predictive clustering appears at AAAI 2026.</span></li>
-    <li class="more"><span class="date">Nov 2025</span><span>MA-DPR appears at EMNLP 2025.</span></li>
-    <li class="more"><span class="date">Sep 2025</span><span>Started my Ph.D. at the University of Toronto; awarded the Ontario Graduate Scholarship.</span></li>
-  </ul>
-  <button type="button" class="more-toggle" id="news-toggle" aria-expanded="false" aria-controls="news">Show all news</button>
-
-  <h2>Selected Publications</h2>
-  <p class="note">* denotes equal contribution. See <a href="publications.html">Publications</a> for the full list, or <a href="https://scholar.google.ca/citations?user=AzhfC5EAAAAJ&amp;hl=en">Google Scholar</a>.</p>
+    <section id="publications" class="block" data-reveal aria-labelledby="pubs-heading">
+      <div class="block-head with-link">
+        <div>
+          <span class="kicker">Publications</span>
+          <h2 id="pubs-heading">Selected papers</h2>
+        </div>
+        <a class="more-link" href="publications.html">All publications <span aria-hidden="true">&rarr;</span></a>
+      </div>
+      <p class="note">* denotes equal contribution. Click a figure to enlarge it.</p>
 <!-- BEGIN:selected -->
-<ul class="pubs">
-<li class="pub" id="liang2026spacmem" data-topics="memory egocentric">
-  <div class="pub-side">
-    <button type="button" class="pub-thumb" data-full="assets/images/papers/2026-arxiv-spac-mem.webp" aria-label="Enlarge figure: Have I Scene This Before? Spatially Grounded Conversational Memory for Complex Queries in Egocentric Assistants">
-      <img src="assets/images/papers/2026-arxiv-spac-mem.webp" alt="Figure from: Have I Scene This Before? Spatially Grounded Conversational Memory for Complex Queries in Egocentric Assistants" loading="lazy">
-    </button>
-    <span class="pub-tag">arXiv 2026</span>
+<div class="card-grid">
+<article class="card pub-card pub">
+  <button type="button" class="pub-thumb card-fig" data-full="assets/images/papers/2026-arxiv-spac-mem.webp" aria-label="Enlarge figure: Have I Scene This Before? Spatially Grounded Conversational Memory for Complex Queries in Egocentric Assistants"><img src="assets/images/papers/2026-arxiv-spac-mem.webp" alt="Figure from: Have I Scene This Before? Spatially Grounded Conversational Memory for Complex Queries in Egocentric Assistants" loading="lazy"></button>
+  <div class="card-body">
+    <span class="badge">arXiv 2026</span>
+    <h3 class="pub-title">Have I Scene This Before? Spatially Grounded Conversational Memory for Complex Queries in Egocentric Assistants</h3>
+    <p class="pub-authors"><span class="me">Jiazhou Liang</span>, Liam Gallagher, Kiko Chen, David Guo, Armin Toroghi, Yifan Simon Liu, and Scott Sanner</p>
+    <p class="card-links"><a href="papers/2026-arxiv-spac-mem.pdf">PDF</a> <a href="https://arxiv.org/abs/2610.05526">arXiv</a> <a href="https://github.com/joeliang0520/SAPCR-MEM">Code</a> <a href="publications.html#liang2026spacmem">Abstract</a></p>
   </div>
-  <div class="pub-body">
-    <div class="pub-title">Have I Scene This Before? Spatially Grounded Conversational Memory for Complex Queries in Egocentric Assistants</div>
-    <div class="pub-authors"><span class="me">Jiazhou Liang</span>, Liam Gallagher, Kiko Chen, David Guo, Armin Toroghi, Yifan Simon Liu, and Scott Sanner</div>
-    <div class="pub-venue"><em>arXiv preprint arXiv:2610.05526</em>, 2026.</div>
-    <div class="pub-links">[<a href="papers/2026-arxiv-spac-mem.pdf">PDF</a>] [<a href="https://arxiv.org/abs/2610.05526">arXiv</a>] [<a href="https://github.com/joeliang0520/SAPCR-MEM">Code</a>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="abs-liang2026spacmem">Abstract</button>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="bib-liang2026spacmem">BibTeX</button>]</div>
-    <div class="pub-panel abstract" id="abs-liang2026spacmem" hidden><p>Egocentric assistants must connect what users say with what they see across long interaction histories. We formalize this challenge as Spatially grounded Conversational Reasoning (SpaCR): cross-scene, recall-oriented, and counterfactual spatial queries that combine user-stated facts with geometric evidence. Direct vision-language models incur high inference costs and context limits as histories grow, while keyframe selection and retrieval can omit objects or evidence needed for complete recall. We propose Spatially grounded Conversational Memory (SpaC-MEM), an object-centric working memory that uses 3D reconstruction and segmentation to ground conversational information in persistent physical objects. It compresses multimodal histories while preserving spatial evidence and allowing object-specific facts to be updated through dialogue. We also introduce Ego-SpaCR, a benchmark comprising 620 ScanNet video sessions augmented with 95 task-oriented conversations and 3,100 evaluation queries. SpaC-MEM achieves the highest overall answer accuracy among the evaluated methods and improves object recall while requiring substantially fewer reference input tokens than native-video baselines. Removing 3D spatial information substantially degrades performance, highlighting the importance of preserving spatial and conversational evidence together.</p></div>
-    <div class="pub-panel bibtex" id="bib-liang2026spacmem" hidden><button type="button" class="copy">Copy</button><pre>@article{liang2026spacmem,
-  title   = {Have I Scene This Before? Spatially Grounded Conversational Memory for Complex Queries in Egocentric Assistants},
-  author  = {Liang, Jiazhou and Gallagher, Liam and Chen, Kiko and Guo, David and Toroghi, Armin and Liu, Yifan Simon and Sanner, Scott},
-  journal = {arXiv preprint arXiv:2610.05526},
-  year    = {2026}
-}</pre></div>
+</article>
+<article class="card pub-card pub">
+  <button type="button" class="pub-thumb card-fig" data-full="assets/images/papers/2026-arxiv-goal-mem.webp" aria-label="Enlarge figure: Goal-Oriented Reasoning for RAG-based Memory in Conversational Agentic LLM Systems"><img src="assets/images/papers/2026-arxiv-goal-mem.webp" alt="Figure from: Goal-Oriented Reasoning for RAG-based Memory in Conversational Agentic LLM Systems" loading="lazy"></button>
+  <div class="card-body">
+    <span class="badge">arXiv 2026</span>
+    <h3 class="pub-title">Goal-Oriented Reasoning for RAG-based Memory in Conversational Agentic LLM Systems</h3>
+    <p class="pub-authors"><span class="me">Jiazhou Liang</span>, Armin Toroghi, Yifan Simon Liu, Faeze Moradi Kalarde, Liam Gallagher, and Scott Sanner</p>
+    <p class="card-links"><a href="papers/2026-arxiv-goal-mem.pdf">PDF</a> <a href="https://arxiv.org/abs/2605.12213">arXiv</a> <a href="publications.html#liang2026goalmem">Abstract</a></p>
   </div>
-</li>
-<li class="pub" id="liang2026goalmem" data-topics="memory">
-  <div class="pub-side">
-    <button type="button" class="pub-thumb" data-full="assets/images/papers/2026-arxiv-goal-mem.webp" aria-label="Enlarge figure: Goal-Oriented Reasoning for RAG-based Memory in Conversational Agentic LLM Systems">
-      <img src="assets/images/papers/2026-arxiv-goal-mem.webp" alt="Figure from: Goal-Oriented Reasoning for RAG-based Memory in Conversational Agentic LLM Systems" loading="lazy">
-    </button>
-    <span class="pub-tag">arXiv 2026</span>
+</article>
+<article class="card pub-card pub">
+  <button type="button" class="pub-thumb card-fig" data-full="assets/images/papers/2026-acl-scene-labeling.webp" aria-label="Enlarge figure: Evaluating Scene-based In-Situ Item Labeling for Immersive Conversational Recommendation"><img src="assets/images/papers/2026-acl-scene-labeling.webp" alt="Figure from: Evaluating Scene-based In-Situ Item Labeling for Immersive Conversational Recommendation" loading="lazy"></button>
+  <div class="card-body">
+    <span class="badge">ACL 2026 Findings</span>
+    <h3 class="pub-title">Evaluating Scene-based In-Situ Item Labeling for Immersive Conversational Recommendation</h3>
+    <p class="pub-authors"><span class="me">Jiazhou Liang</span><sup>*</sup>, Yifan Simon Liu<sup>*</sup>, David Guo<sup>*</sup>, Minqi Sun, Yilun Jiang, and Scott Sanner</p>
+    <p class="card-links"><a href="papers/2026-acl-scene-labeling.pdf">PDF</a> <a href="https://arxiv.org/abs/2604.09698">arXiv</a> <a href="https://github.com/D3Mlab/ICRS">Code</a> <a href="publications.html#liang2026evaluating">Abstract</a></p>
   </div>
-  <div class="pub-body">
-    <div class="pub-title">Goal-Oriented Reasoning for RAG-based Memory in Conversational Agentic LLM Systems</div>
-    <div class="pub-authors"><span class="me">Jiazhou Liang</span>, Armin Toroghi, Yifan Simon Liu, Faeze Moradi Kalarde, Liam Gallagher, and Scott Sanner</div>
-    <div class="pub-venue"><em>arXiv preprint arXiv:2605.12213</em>, 2026.</div>
-    <div class="pub-links">[<a href="papers/2026-arxiv-goal-mem.pdf">PDF</a>] [<a href="https://arxiv.org/abs/2605.12213">arXiv</a>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="abs-liang2026goalmem">Abstract</button>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="bib-liang2026goalmem">BibTeX</button>]</div>
-    <div class="pub-panel abstract" id="abs-liang2026goalmem" hidden><p>LLM-based conversational AI agents struggle to maintain coherent behavior over long horizons due to limited context. While RAG-based approaches are increasingly adopted to overcome this limitation by storing interactions in external memory modules and performing retrieval from them, their effectiveness in answering challenging questions (e.g., multi-hop, commonsense) ultimately depends on the agent&#x27;s ability to reason over the retrieved information. However, existing methods typically retrieve memory based on semantic similarity to the raw user utterance, which lacks explicit reasoning about missing intermediate facts and often returns evidence that is irrelevant or insufficient for grounded reasoning. In this work, we introduce Goal-Mem, a goal-oriented reasoning framework for RAG-based agentic memory that performs explicit backward chaining from the user&#x27;s utterance as a goal. Rather than progressively expanding from retrieved context, Goal-Mem decomposes each goal into atomic subgoals, performs targeted memory retrieval to satisfy each subgoal, and iteratively identifies what information from memory should be retrieved when intermediate goals cannot be resolved. We formalize this process in Natural Language Logic, a logical system that combines the verifiability of reasoning provided by FOL with the expressivity of natural language. Through extensive experiments on two datasets and comparing to nine strong memory baselines, we show that Goal-Mem consistently improves performance, particularly on tasks requiring multi-hop reasoning and implicit inference.</p></div>
-    <div class="pub-panel bibtex" id="bib-liang2026goalmem" hidden><button type="button" class="copy">Copy</button><pre>@article{liang2026goalmem,
-  title   = {Goal-Oriented Reasoning for RAG-based Memory in Conversational Agentic LLM Systems},
-  author  = {Liang, Jiazhou and Toroghi, Armin and Liu, Yifan Simon and Kalarde, Faeze Moradi and Gallagher, Liam and Sanner, Scott},
-  journal = {arXiv preprint arXiv:2605.12213},
-  year    = {2026}
-}</pre></div>
+</article>
+<article class="card pub-card pub">
+  <button type="button" class="pub-thumb card-fig" data-full="assets/images/papers/2026-acl-semantic-xpath.webp" aria-label="Enlarge figure: Semantic XPath: Structured Agentic Memory Access for Conversational AI"><img src="assets/images/papers/2026-acl-semantic-xpath.webp" alt="Figure from: Semantic XPath: Structured Agentic Memory Access for Conversational AI" loading="lazy"></button>
+  <div class="card-body">
+    <span class="badge">ACL 2026 Demo</span>
+    <h3 class="pub-title">Semantic XPath: Structured Agentic Memory Access for Conversational AI</h3>
+    <p class="pub-authors">Yifan Simon Liu<sup>*</sup>, Ruifan Wu<sup>*</sup>, Liam Gallagher<sup>*</sup>, <span class="me">Jiazhou Liang</span><sup>*</sup>, Armin Toroghi, and Scott Sanner</p>
+    <p class="card-links"><a href="papers/2026-acl-semantic-xpath.pdf">PDF</a> <a href="https://arxiv.org/abs/2603.01160">arXiv</a> <a href="https://github.com/D3Mlab/SemanticXpath-Chat">Code</a> <a href="https://semanticxpathchat.com">Demo</a> <a href="publications.html#liu2026semantic">Abstract</a></p>
   </div>
-</li>
-<li class="pub" id="liang2026evaluating" data-topics="egocentric recsys">
-  <div class="pub-side">
-    <button type="button" class="pub-thumb" data-full="assets/images/papers/2026-acl-scene-labeling.webp" aria-label="Enlarge figure: Evaluating Scene-based In-Situ Item Labeling for Immersive Conversational Recommendation">
-      <img src="assets/images/papers/2026-acl-scene-labeling.webp" alt="Figure from: Evaluating Scene-based In-Situ Item Labeling for Immersive Conversational Recommendation" loading="lazy">
-    </button>
-    <span class="pub-tag">ACL 2026 Findings</span>
+</article>
+<article class="card pub-card pub">
+  <button type="button" class="pub-thumb card-fig" data-full="assets/images/papers/2026-aaai-linpc.webp" aria-label="Enlarge figure: Near-optimal Linear Predictive Clustering in Non-separable Spaces via MIP and QPBO Reductions"><img src="assets/images/papers/2026-aaai-linpc.webp" alt="Figure from: Near-optimal Linear Predictive Clustering in Non-separable Spaces via MIP and QPBO Reductions" loading="lazy"></button>
+  <div class="card-body">
+    <span class="badge">AAAI 2026</span>
+    <h3 class="pub-title">Near-optimal Linear Predictive Clustering in Non-separable Spaces via MIP and QPBO Reductions</h3>
+    <p class="pub-authors"><span class="me">Jiazhou Liang</span><sup>*</sup>, Hassan Khurram<sup>*</sup>, and Scott Sanner</p>
+    <p class="card-links"><a href="papers/2026-aaai-linpc.pdf">PDF</a> <a href="https://arxiv.org/abs/2511.10809">arXiv</a> <a href="https://github.com/D3Mlab/LPC-NS">Code</a> <a href="publications.html#liang2026near">Abstract</a></p>
   </div>
-  <div class="pub-body">
-    <div class="pub-title">Evaluating Scene-based In-Situ Item Labeling for Immersive Conversational Recommendation</div>
-    <div class="pub-authors"><span class="me">Jiazhou Liang</span><sup>*</sup>, Yifan Simon Liu<sup>*</sup>, David Guo<sup>*</sup>, Minqi Sun, Yilun Jiang, and Scott Sanner</div>
-    <div class="pub-venue"><em>Findings of the Association for Computational Linguistics: ACL 2026</em>, pp. 40932–40953, 2026.</div>
-    <div class="pub-links">[<a href="papers/2026-acl-scene-labeling.pdf">PDF</a>] [<a href="https://arxiv.org/abs/2604.09698">arXiv</a>] [<a href="https://github.com/D3Mlab/ICRS">Code</a>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="abs-liang2026evaluating">Abstract</button>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="bib-liang2026evaluating">BibTeX</button>]</div>
-    <div class="pub-panel abstract" id="abs-liang2026evaluating" hidden><p>The growing ubiquity of Extended Reality (XR) is driving Conversational Recommendation Systems (CRS) toward visually immersive experiences. We formalize this paradigm as Immersive CRS (ICRS), where recommended items are highlighted directly in the user’s scene-based visual environment and augmented with in-situ labels. While item recommendation has been widely studied, the problem of how to select and evaluate which information to present as immersive labels remains an open problem. To this end, we introduce a principled categorization of information needs into explicit intent satisfaction and proactive information needs and use these to define novel evaluation metrics for item label selection. We benchmark IR-, LLM-, and VLM-based methods across three datasets and ICRS scenarios: fashion, movie recommendation, and retail shopping. Our evaluation reveals three important limitations of existing methods: (1) they fail to leverage scenario-specific information modalities (e.g., visual cues for fashion, metadata for retail), (2) they present redundant information that is visually inferable, and (3) they poorly anticipate users’ proactive information needs from explicit dialogue alone. In summary, this work provides both a novel evaluation paradigm for in-situ item labeling in ICRS and highlights key challenges for future work.</p></div>
-    <div class="pub-panel bibtex" id="bib-liang2026evaluating" hidden><button type="button" class="copy">Copy</button><pre>@inproceedings{liang2026evaluating,
-  title     = {Evaluating Scene-based In-Situ Item Labeling for Immersive Conversational Recommendation},
-  author    = {Liang, Jiazhou and Liu, Yifan Simon and Guo, David and Sun, Minqi and Jiang, Yilun and Sanner, Scott},
-  booktitle = {Findings of the Association for Computational Linguistics: ACL 2026},
-  pages     = {40932--40953},
-  year      = {2026}
-}</pre></div>
+</article>
+<article class="card pub-card pub">
+  <button type="button" class="pub-thumb card-fig" data-full="assets/images/papers/2026-smr-mapping.webp" aria-label="Enlarge figure: Mapping Social Change: A Unified Framework for Temporal Clustering"><img src="assets/images/papers/2026-smr-mapping.webp" alt="Figure from: Mapping Social Change: A Unified Framework for Temporal Clustering" loading="lazy"></button>
+  <div class="card-body">
+    <span class="badge">SMR</span>
+    <h3 class="pub-title">Mapping Social Change: A Unified Framework for Temporal Clustering</h3>
+    <p class="pub-authors"><span class="me">Jiazhou Liang</span>, Jolomi Tosanwumi, Ethan Fosse, Daniel Silver, and Scott Sanner</p>
+    <p class="card-links"><a href="papers/2026-smr-mapping.pdf">PDF</a> <a href="https://doi.org/10.1177/00491241251396789">DOI</a> <a href="publications.html#liang2026mapping">Abstract</a></p>
   </div>
-</li>
-<li class="pub" id="liu2026semantic" data-topics="memory">
-  <div class="pub-side">
-    <button type="button" class="pub-thumb" data-full="assets/images/papers/2026-acl-semantic-xpath.webp" aria-label="Enlarge figure: Semantic XPath: Structured Agentic Memory Access for Conversational AI">
-      <img src="assets/images/papers/2026-acl-semantic-xpath.webp" alt="Figure from: Semantic XPath: Structured Agentic Memory Access for Conversational AI" loading="lazy">
-    </button>
-    <span class="pub-tag">ACL 2026 Demo</span>
-  </div>
-  <div class="pub-body">
-    <div class="pub-title">Semantic XPath: Structured Agentic Memory Access for Conversational AI</div>
-    <div class="pub-authors">Yifan Simon Liu<sup>*</sup>, Ruifan Wu<sup>*</sup>, Liam Gallagher<sup>*</sup>, <span class="me">Jiazhou Liang</span><sup>*</sup>, Armin Toroghi, and Scott Sanner</div>
-    <div class="pub-venue"><em>Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 3: System Demonstrations)</em>, 2026.</div>
-    <div class="pub-links">[<a href="papers/2026-acl-semantic-xpath.pdf">PDF</a>] [<a href="https://arxiv.org/abs/2603.01160">arXiv</a>] [<a href="https://github.com/D3Mlab/SemanticXpath-Chat">Code</a>] [<a href="https://semanticxpathchat.com">Demo</a>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="abs-liu2026semantic">Abstract</button>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="bib-liu2026semantic">BibTeX</button>]</div>
-    <div class="pub-panel abstract" id="abs-liu2026semantic" hidden><p>Conversational AI (ConvAI) agents increasingly maintain structured memory to support long-term, task-oriented interactions. Incontext memory approaches append the growing history to the model input, which scales poorly under context-window limits. RAGbased methods retrieve request-relevant information, but most assume flat memory collections and ignore structure. We propose SEMANTIC XPATH, a tree-structured memory module to access and update structured conversational memory. SEMANTIC XPATH improves performance over flat-RAG baselines by 176.7% while using only 9.1% of the tokens required by in-context memory. We also introduce SEMANTICXPATH CHAT, an end-to-end ConvAI demo system that visualizes the structured memory and query execution details. Overall, this paper demonstrates a candidate for the next generation of long-term, task-oriented ConvAI systems built on structured memory.</p></div>
-    <div class="pub-panel bibtex" id="bib-liu2026semantic" hidden><button type="button" class="copy">Copy</button><pre>@inproceedings{liu2026semantic,
-  title     = {Semantic XPath: Structured Agentic Memory Access for Conversational AI},
-  author    = {Liu, Yifan Simon and Wu, Ruifan and Gallagher, Liam and Liang, Jiazhou and Toroghi, Armin and Sanner, Scott},
-  booktitle = {Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 3: System Demonstrations)},
-  year      = {2026}
-}</pre></div>
-  </div>
-</li>
-<li class="pub" id="liang2026near" data-topics="clustering">
-  <div class="pub-side">
-    <button type="button" class="pub-thumb" data-full="assets/images/papers/2026-aaai-linpc.webp" aria-label="Enlarge figure: Near-optimal Linear Predictive Clustering in Non-separable Spaces via MIP and QPBO Reductions">
-      <img src="assets/images/papers/2026-aaai-linpc.webp" alt="Figure from: Near-optimal Linear Predictive Clustering in Non-separable Spaces via MIP and QPBO Reductions" loading="lazy">
-    </button>
-    <span class="pub-tag">AAAI 2026</span>
-  </div>
-  <div class="pub-body">
-    <div class="pub-title">Near-optimal Linear Predictive Clustering in Non-separable Spaces via MIP and QPBO Reductions</div>
-    <div class="pub-authors"><span class="me">Jiazhou Liang</span><sup>*</sup>, Hassan Khurram<sup>*</sup>, and Scott Sanner</div>
-    <div class="pub-venue"><em>Proceedings of the AAAI Conference on Artificial Intelligence</em>, pp. 23409–23416, 2026.</div>
-    <div class="pub-links">[<a href="papers/2026-aaai-linpc.pdf">PDF</a>] [<a href="https://arxiv.org/abs/2511.10809">arXiv</a>] [<a href="https://github.com/D3Mlab/LPC-NS">Code</a>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="abs-liang2026near">Abstract</button>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="bib-liang2026near">BibTeX</button>]</div>
-    <div class="pub-panel abstract" id="abs-liang2026near" hidden><p>Linear Predictive Clustering (LPC) partitions samples based on shared linear relationships between feature and target variables, with numerous applications including marketing, medicine, and education. Greedy optimization methods, commonly used for LPC, alternate between clustering and linear regression but lack global optimality. While effective for separable clusters, they struggle in non-separable settings where clusters overlap in feature space. In an alternative constrained optimization paradigm, Bertsimas and Shioda (2007) formulated LPC as a Mixed-Integer Program (MIP), ensuring global optimality regardless of separability but suffering from poor scalability. This work builds on the constrained optimization paradigm to introduce two novel approaches that improve the efficiency of global optimization for LPC. By leveraging key theoretical properties of separability, we derive near-optimal approximations with provable error bounds, significantly reducing the MIP formulation&#x27;s complexity and improving scalability. Additionally, we can further approximate LPC as a Quadratic Pseudo-Boolean Optimization (QPBO) problem, achieving substantial computational improvements in some settings. Comparative analyses on synthetic and real-world datasets demonstrate that our methods consistently achieve near-optimal solutions with substantially lower regression errors than greedy optimization while exhibiting superior scalability over existing MIP formulations.</p></div>
-    <div class="pub-panel bibtex" id="bib-liang2026near" hidden><button type="button" class="copy">Copy</button><pre>@inproceedings{liang2026near,
-  title     = {Near-optimal Linear Predictive Clustering in Non-separable Spaces via MIP and QPBO Reductions},
-  author    = {Liang, Jiazhou and Khurram, Hassan and Sanner, Scott},
-  booktitle = {Proceedings of the AAAI Conference on Artificial Intelligence},
-  volume    = {40},
-  number    = {28},
-  pages     = {23409--23416},
-  year      = {2026}
-}</pre></div>
-  </div>
-</li>
-<li class="pub" id="liang2026mapping" data-topics="clustering">
-  <div class="pub-side">
-    <button type="button" class="pub-thumb" data-full="assets/images/papers/2026-smr-mapping.webp" aria-label="Enlarge figure: Mapping Social Change: A Unified Framework for Temporal Clustering">
-      <img src="assets/images/papers/2026-smr-mapping.webp" alt="Figure from: Mapping Social Change: A Unified Framework for Temporal Clustering" loading="lazy">
-    </button>
-    <span class="pub-tag">SMR</span>
-  </div>
-  <div class="pub-body">
-    <div class="pub-title">Mapping Social Change: A Unified Framework for Temporal Clustering</div>
-    <div class="pub-authors"><span class="me">Jiazhou Liang</span>, Jolomi Tosanwumi, Ethan Fosse, Daniel Silver, and Scott Sanner</div>
-    <div class="pub-venue"><em>Sociological Methods &amp; Research</em>, 2026.</div>
-    <div class="pub-links">[<a href="papers/2026-smr-mapping.pdf">PDF</a>] [<a href="https://doi.org/10.1177/00491241251396789">DOI</a>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="abs-liang2026mapping">Abstract</button>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="bib-liang2026mapping">BibTeX</button>]</div>
-    <div class="pub-panel abstract" id="abs-liang2026mapping" hidden><p>Analyzing social change requires detecting patterns of continuity and difference over time. While time-series clustering offers a valuable approach, existing techniques are often limited by assuming fixed cluster definitions and static assignments of entities to clusters. To address these limitations, we introduce a unified framework of temporal clustering methods that allows for both dynamic cluster definitions and the transition of entities between clusters, generalizing and extending previous work. We also provide new algorithms for this dynamic clustering that optimize global objectives, with optional constraints on the transitions of entities across clusters. This framework expands the methodological toolkit for analyzing social change, and we provide guidelines for its application. We illustrate our approach with three case studies: polarization of social and political attitudes across U.S. states; cross-national cultural change; and the evolution of neighborhood business patterns. We conclude with directions for further research.</p></div>
-    <div class="pub-panel bibtex" id="bib-liang2026mapping" hidden><button type="button" class="copy">Copy</button><pre>@article{liang2026mapping,
-  title   = {Mapping Social Change: A Unified Framework for Temporal Clustering},
-  author  = {Liang, Jiazhou and Tosanwumi, Jolomi and Fosse, Ethan and Silver, Daniel and Sanner, Scott},
-  journal = {Sociological Methods \&amp; Research},
-  doi     = {10.1177/00491241251396789},
-  year    = {2026}
-}</pre></div>
-  </div>
-</li>
-</ul>
+</article>
+</div>
 <!-- END:selected -->
+    </section>
 
-</main>
+    <section id="news" class="block" data-reveal aria-labelledby="news-heading">
+      <div class="block-head">
+        <span class="kicker">Updates</span>
+        <h2 id="news-heading">News</h2>
+      </div>
+      <ol class="timeline" id="news-list">
+      <li><time>Oct 2026</time><p>New preprint on spatially grounded conversational memory for egocentric assistants, with the Ego-SpaCR benchmark: <a href="https://arxiv.org/abs/2610.05526">arXiv:2610.05526</a>.</p></li>
+      <li><time>Aug 2026</time><p>Joined the Thoughtworks AI Lab as an AI Research Intern.</p></li>
+      <li><time>Jun 2026</time><p>New preprint on segment-tree memory for long-horizon agents: <a href="https://arxiv.org/abs/2606.04555">arXiv:2606.04555</a>.</p></li>
+      <li><time>May 2026</time><p>New preprint on goal-oriented reasoning for RAG-based agent memory: <a href="https://arxiv.org/abs/2605.12213">arXiv:2605.12213</a>.</p></li>
+      <li><time>May 2026</time><p>Four papers accepted to ACL 2026: three in Findings and one in System Demonstrations.</p></li>
+      <li class="more"><time>Apr 2026</time><p>NL-PDDL appears at ICLR 2026.</p></li>
+      <li class="more"><time>Jan 2026</time><p>Our paper on near-optimal linear predictive clustering appears at AAAI 2026.</p></li>
+      <li class="more"><time>Nov 2025</time><p>MA-DPR appears at EMNLP 2025.</p></li>
+      <li class="more"><time>Sep 2025</time><p>Started my Ph.D. at the University of Toronto; awarded the Ontario Graduate Scholarship.</p></li>
+      </ol>
+      <button type="button" class="more-toggle" id="news-toggle" aria-expanded="false" aria-controls="news-list">Show all news</button>
+    </section>
+
+  </main>
+</div>
 
 <footer class="site-footer">
-  <div class="container">&copy; 2026 Jiazhou Liang. Last updated November 2026.</div>
+  <div class="footer-inner">
+    <span>&copy; 2026 Jiazhou Liang</span>
+    <span>Last updated November 2026</span>
+  </div>
 </footer>
 
 <script src="assets/js/site.js"></script>
