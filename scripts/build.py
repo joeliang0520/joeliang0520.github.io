@@ -64,7 +64,7 @@ def render_bibtex(p):
         fields.append(("journal", p["venue"]))
     elif t == "conference":
         kind = "inproceedings"
-        fields.append(("booktitle", bib_escape(p["venue"])))
+        fields.append(("booktitle", bib_escape(p.get("bib_venue", p["venue"]))))
     elif t == "journal":
         kind = "article"
         fields.append(("journal", bib_escape(p["venue"])))
