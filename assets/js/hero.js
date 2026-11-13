@@ -1,12 +1,11 @@
-// Homepage hero: the four "How should it..." question cards beside the floor plan.
+// Research questions page: the four "How should it..." question cards beside the floor plan.
 // - Each card's text gets its own vector mark, drawn per wrapped line:
 //   brackets -> viewfinder corners + a scan sweep   (understand surroundings)
 //   timeline -> a line with day markers             (remember multi-day interactions)
 //   converge -> two strokes that merge into one     (stay aligned)
 //   wave     -> a speech-like wave ending in a spark (present information)
-// - plan.js fires a 'plan:phase' event as its story moves through the four
-//   questions; the matching card becomes active (its mini scene plays, its mark
-//   redraws) and a connector runs from the card to that spot on the map.
+// - The cards then take turns in order (01 -> 04, repeating): the active card
+//   plays its mini scene and redraws its mark while the others fade back.
 (function () {
   var root = document.getElementById('asks');
   if (!root || !document.documentElement.classList.contains('js')) return;
@@ -186,73 +185,37 @@
     });
   }
 
-  // ---- Connector from the active card to its spot on the map ----
-  var hero = document.getElementById('hero');
-  var plan = document.getElementById('plan');
-  var links = document.createElementNS(NS, 'svg');
-  links.setAttribute('class', 'hero-links');
-  links.setAttribute('aria-hidden', 'true');
-  hero.appendChild(links);
-  var active = null, pointFn = null, linkPath, linkEnd, linkRing, raf = null;
+  // ---- Take turns: highlight one card at a time, in order ----
   var canAnimate = !reduce && typeof root.animate === 'function';
+  var STEP = 5000, current = -1, cycle = null, hovering = false;
 
-  function setActive(i, point) {
-    var next = i >= 0 ? asks[i] : null;
-    pointFn = point || null;
-    root.classList.toggle('playing', !!next);
-    if (next !== active) {
-      asks.forEach(function (a) { a.classList.toggle('active', a === next); });
-      if (next && started && canAnimate) draw(next, 0, true);
-      active = next;
-      while (links.firstChild) links.removeChild(links.firstChild);
-      linkPath = linkEnd = linkRing = null;
-      if (next && pointFn) {
-        var color = getComputedStyle(next.querySelector('.ask-text')).color;
-        linkPath = el('path', { stroke: color }, links);
-        linkRing = el('circle', { r: 7, stroke: color, 'class': 'ring' }, links);
-        linkEnd = el('circle', { r: 3, fill: color, 'class': 'end' }, links);
-        if (canAnimate) {
-          linkPath.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 400 });
-        }
-      }
-    }
-    updateLink();
-    if (!raf && linkPath) raf = requestAnimationFrame(loop);
+  function setActive(i) {
+    current = i;
+    root.classList.add('playing');
+    asks.forEach(function (a, k) { a.classList.toggle('active', k === i); });
+    draw(asks[i], 0, true);
   }
-
-  function updateLink() {
-    if (!linkPath || !active || !pointFn) return;
-    var hr = hero.getBoundingClientRect(), cr = active.getBoundingClientRect();
-    var mr = plan.getBoundingClientRect();
-    // Stacked (narrow) layout: no room for a connector.
-    if (mr.left < cr.right) { links.style.display = 'none'; return; }
-    links.style.display = '';
-    var p = pointFn(), m = plan.getScreenCTM();
-    if (!p || !m) return;
-    var tx = m.a * p.x + m.c * p.y + m.e - hr.left;
-    var ty = m.b * p.x + m.d * p.y + m.f - hr.top;
-    var sx = cr.right - hr.left + 2, sy = cr.top + cr.height / 2 - hr.top;
-    var k = Math.max(30, (tx - sx) * 0.45);
-    linkPath.setAttribute('d', 'M' + sx.toFixed(1) + ' ' + sy.toFixed(1) + 'C' + (sx + k).toFixed(1) + ' ' +
-      sy.toFixed(1) + ' ' + (tx - k).toFixed(1) + ' ' + ty.toFixed(1) + ' ' + tx.toFixed(1) + ' ' + ty.toFixed(1));
-    linkEnd.setAttribute('cx', tx); linkEnd.setAttribute('cy', ty);
-    linkRing.setAttribute('cx', tx); linkRing.setAttribute('cy', ty);
+  function next() {
+    if (!hovering && !document.hidden) setActive((current + 1) % asks.length);
   }
-
-  function loop() {
-    updateLink();
-    raf = linkPath ? requestAnimationFrame(loop) : null;
+  function startCycle(first) {
+    setActive(first);
+    cycle = setInterval(next, STEP);
   }
-
-  document.addEventListener('plan:phase', function (e) {
-    setActive(e.detail.phase, e.detail.point);
-  });
+  // Pause the turn-taking while the pointer is over the cards.
+  root.addEventListener('mouseenter', function () { hovering = true; });
+  root.addEventListener('mouseleave', function () { hovering = false; });
 
   var started = false, timer;
   function start() {
     if (started) return;
     build(canAnimate);
     started = true;
+    if (canAnimate) {
+      // Begin at the card named in the URL (#see, #remember, ...) if any.
+      var hashed = asks.indexOf(document.getElementById(location.hash.slice(1)));
+      setTimeout(function () { startCycle(hashed >= 0 ? hashed : 0); }, 150 + asks.length * 420 + 900);
+    }
     // Re-layout (resize, late font swap) redraws the marks in place without animating.
     if ('ResizeObserver' in window) {
       var w = root.offsetWidth;
@@ -260,7 +223,7 @@
         if (root.offsetWidth === w) return;
         w = root.offsetWidth;
         clearTimeout(timer);
-        timer = setTimeout(function () { build(false); updateLink(); }, 120);
+        timer = setTimeout(function () { build(false); }, 120);
       }).observe(root);
     }
   }

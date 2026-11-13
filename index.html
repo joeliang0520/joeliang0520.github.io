@@ -49,7 +49,6 @@
     <nav class="toc" aria-label="On this page">
       <span class="toc-label">On this page</span>
       <a href="#about">About</a>
-      <a href="#focus">Current focus</a>
       <a href="#research">Research</a>
       <a href="#publications">Selected publications</a>
       <a href="#news">News</a>
@@ -85,106 +84,6 @@
       <ul class="chips" aria-label="Research interests">
         <li>Spatial memory</li><li>Egocentric AI</li><li>Agent memory</li><li>Conversational recommendation</li><li>Retrieval</li>
       </ul>
-    </section>
-
-    <section id="focus" class="block focus" data-reveal aria-labelledby="focus-heading">
-      <div class="block-head">
-        <span class="kicker">Current focus</span>
-        <h2 id="focus-heading">Spatial memory for egocentric assistants</h2>
-      </div>
-      <div class="focus-demo">
-      <figure class="plan-wrap">
-        <svg class="plan" id="plan" viewBox="0 0 460 300" role="img" aria-labelledby="plan-title plan-desc">
-          <title id="plan-title">Schematic of spatially grounded conversational memory</title>
-          <desc id="plan-desc">A person wearing smart glasses walks through a living room and a storage room. Each object that enters their field of view is pinned to the assistant's memory, and what the user says about an object is attached to it.</desc>
-          <defs>
-            <pattern id="plan-grid" width="20" height="20" patternUnits="userSpaceOnUse">
-              <path d="M20 0H0V20" class="grid-line"/>
-            </pattern>
-          </defs>
-          <rect width="460" height="300" fill="url(#plan-grid)"/>
-          <path id="route" class="route" d="M85 300 C90 255 100 225 108 200 S70 140 62 112 S150 82 205 84 S270 150 300 147 S345 140 360 128 S400 120 392 160 S330 170 300 156 S240 160 218 172"/>
-          <g class="walls">
-            <path d="M60 290 H10 V10 H450 V290 H110"/>
-            <path d="M290 10 V112 M290 178 V290"/>
-          </g>
-          <text class="room" x="150" y="279" text-anchor="middle">LIVING ROOM</text>
-          <text class="room" x="370" y="279" text-anchor="middle">STORAGE</text>
-
-          <g class="obj" data-key="sofa" data-x="95" data-y="43">
-            <rect x="40" y="26" width="110" height="34" rx="7"/>
-            <path d="M76.6 26 V60 M113.3 26 V60"/>
-            <text class="lbl" x="95" y="74">sofa</text>
-          </g>
-          <g class="obj" data-key="table" data-x="125" data-y="140">
-            <rect x="90" y="118" width="70" height="44" rx="3"/>
-            <text class="lbl" x="125" y="176">table</text>
-          </g>
-          <g class="obj" data-key="mug" data-x="145" data-y="132">
-            <circle cx="145" cy="132" r="5"/>
-            <path d="M150 130 h3 v4 h-3"/>
-            <text class="lbl" x="145" y="113">mug</text>
-          </g>
-          <g class="obj" data-key="lamp" data-x="240" data-y="44">
-            <circle cx="240" cy="44" r="11"/>
-            <circle cx="240" cy="44" r="3"/>
-            <text class="lbl" x="240" y="70">lamp</text>
-          </g>
-          <g class="obj" data-key="armchair" data-x="200" data-y="215">
-            <rect x="180" y="195" width="40" height="40" rx="8"/>
-            <rect x="187" y="202" width="26" height="26" rx="4"/>
-            <text class="lbl" x="200" y="249">armchair</text>
-          </g>
-          <g class="obj" data-key="shelf" data-x="425" data-y="88">
-            <rect x="412" y="28" width="26" height="120" rx="2"/>
-            <path d="M412 58 H438 M412 88 H438 M412 118 H438"/>
-            <text class="lbl" x="425" y="164">shelf</text>
-          </g>
-          <g class="obj" data-key="boxes" data-x="340" data-y="228">
-            <rect x="316" y="214" width="26" height="26" rx="2"/>
-            <rect x="345" y="221" width="20" height="20" rx="2"/>
-            <path d="M316 227 H342 M345 231 H365"/>
-            <text class="lbl" x="340" y="256">boxes</text>
-          </g>
-
-          <g id="pins"></g>
-          <line id="link" class="link" x1="0" y1="0" x2="0" y2="0"/>
-
-          <g id="walker" transform="translate(85 300)">
-            <path class="cone" d="M0 0 L73.6 -42.5 A85 85 0 0 1 73.6 42.5 Z"/>
-            <ellipse class="body" rx="7" ry="12.5"/>
-            <circle class="head" r="7.6"/>
-            <rect class="glasses" x="5.2" y="-6.6" width="3.8" height="13.2" rx="1.9"/>
-          </g>
-          <g id="speech" class="speech">
-            <rect x="-13" y="-9" width="26" height="15" rx="7"/>
-            <circle cx="-6" cy="-1.5" r="1.6"/><circle cx="0" cy="-1.5" r="1.6"/><circle cx="6" cy="-1.5" r="1.6"/>
-          </g>
-        </svg>
-        <figcaption>Schematic illustration. The shaded cone is the field of view of the user's smart glasses.</figcaption>
-      </figure>
-
-      <div class="memory" aria-live="off">
-        <div class="memory-head">
-          <span>Assistant memory</span>
-          <button type="button" class="plan-toggle" id="plan-toggle" aria-pressed="false">Pause</button>
-        </div>
-        <ul class="mem-list" id="mem-list"></ul>
-        <div class="memory-head"><span>Conversation</span></div>
-        <ul class="dialog" id="dialog"></ul>
-      </div>
-    </div>
-    <p class="focus-text">
-      Assistants on AI glasses see the user's surroundings and hear what the user says, but
-      conversational memory usually keeps only the dialogue. In
-      <a href="publications.html#liang2026spacmem">SpaC-MEM</a>, we reconstruct objects in 3D from
-      RGB video and attach each turn of the conversation to the objects it mentions, so the
-      assistant can answer questions such as "Where did Dana leave her mug?" We also release the
-      Ego-SpaCR benchmark (620 video sessions, 3,100 questions).
-      [<a href="papers/2026-arxiv-spac-mem.pdf">PDF</a>]
-      [<a href="https://arxiv.org/abs/2610.05526">arXiv</a>]
-      [<a href="https://github.com/joeliang0520/SAPCR-MEM">Code</a>]
-    </p>
     </section>
 
     <section id="research" class="block" data-reveal aria-labelledby="themes-heading">
@@ -356,6 +255,5 @@
 </footer>
 
 <script src="assets/js/site.js"></script>
-<script src="assets/js/plan.js"></script>
 </body>
 </html>

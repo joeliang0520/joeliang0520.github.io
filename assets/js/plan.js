@@ -1,4 +1,4 @@
-// Animated floor plan for the "Current Focus" section on the home page.
+// Animated floor plan on the research questions page (questions.html).
 // A person wearing smart glasses walks a route; objects that fall inside the
 // glasses' field of view are pinned to memory, and dialogue is attached to them.
 (function () {
@@ -33,34 +33,23 @@
   function obj(key) { return objects.filter(function (o) { return o.key === key; })[0]; }
 
   // Dialogue: each line fires once the object it mentions has been seen.
-  // `phase` is the homepage question card (0-3) that this moment illustrates.
   var script = [
     { after: 'mug', delay: 0.5, who: 'User', text: 'That’s Dana’s mug on the table.',
-      attach: 'mug', note: 'Dana’s', phase: 1 },
+      attach: 'mug', note: 'Dana’s' },
     { after: 'boxes', delay: 0.4, who: 'User', text: 'These boxes go on the shelf.',
-      attach: 'boxes', note: 'move to shelf', phase: 2 },
-    { atEnd: true, delay: 1.2, who: 'User', text: 'Where did Dana leave her mug?', attach: 'mug',
-      phase: 1 },
+      attach: 'boxes', note: 'move to shelf' },
+    { atEnd: true, delay: 1.2, who: 'User', text: 'Where did Dana leave her mug?', attach: 'mug' },
     { atEnd: true, delay: 2.8, who: 'Assistant', text: 'On the living-room table, in front of the sofa.',
-      attach: 'mug', answer: true, phase: 3 }
+      attach: 'mug', answer: true }
   ];
   var day = document.getElementById('day');
-  // Without the day badge (home page) there is no day jump to pause for.
-  if (!day) { script[2].delay = 0.3; script[3].delay = 1.6; }
 
-  function phase(i, point) {
-    svg.setAttribute('data-phase', i);
-    document.dispatchEvent(new CustomEvent('plan:phase', { detail: { phase: i, point: point } }));
-  }
   function setDay(n) {
     if (!day) return;
     day.querySelector('text').textContent = 'DAY ' + n;
     day.classList.toggle('later', n > 1);
   }
-  function ahead() {
-    var p = state.p || pose(0);
-    return { x: p.x + Math.cos(p.a) * 42, y: p.y + Math.sin(p.a) * 42 };
-  }
+
 
   var state;
   function reset() {
@@ -72,7 +61,6 @@
     link.classList.remove('on');
     speech.classList.remove('on');
     setDay(1);
-    phase(-1);
   }
 
   function addPin(o) {
@@ -103,7 +91,6 @@
     state.seen[o.key] = true;
     state.seenAt[o.key] = state.t;
     o.el.classList.add('seen');
-    if (state.phase === undefined) { state.phase = 0; phase(0, ahead); }
     addPin(o);
     addMemory(o);
   }
@@ -129,11 +116,6 @@
     o.el.classList.remove('hit');
     void o.el.getBoundingClientRect();
     o.el.classList.add('hit');
-    if (line.phase !== undefined) {
-      phase(line.phase, function () { return { x: o.x, y: o.y }; });
-      // After a remark about an object, go back to watching the surroundings.
-      if (!line.atEnd) state.backToSee = state.t + 3;
-    }
 
     if (line.who === 'User') {
       link.setAttribute('x1', pos.x);
@@ -159,11 +141,6 @@
   function step(dt) {
     state.t += dt;
     var p = pose(state.t);
-    state.p = p;
-    if (state.backToSee && state.t > state.backToSee && state.endAt === undefined) {
-      state.backToSee = 0;
-      phase(0, ahead);
-    }
     walker.setAttribute('transform', 'translate(' + p.x.toFixed(1) + ' ' + p.y.toFixed(1) +
       ') rotate(' + (p.a * 180 / Math.PI).toFixed(1) + ')');
     speech.setAttribute('transform', 'translate(' + (p.x - 4).toFixed(1) + ' ' + (p.y - 24).toFixed(1) + ')');
