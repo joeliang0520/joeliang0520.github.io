@@ -12,8 +12,9 @@ cv.html               CV summary; links to the PDF in uploads/
 data/publications.json  Publication data (single source of truth)
 scripts/build.py      Renders publication lists into index.html and publications.html
 assets/css/style.css  Stylesheet
-assets/js/site.js     Abstract / BibTeX toggles
-assets/images/        Profile photo
+assets/js/site.js     Abstract / BibTeX toggles, filters, figure lightbox, scroll reveal
+assets/js/plan.js     Animated floor plan in the "Current Focus" section
+assets/images/        Profile photo; papers/ holds the figure shown for each paper
 papers/               Paper PDFs
 uploads/Jiazhou_Liang_CV.pdf
 ```
@@ -26,6 +27,8 @@ uploads/Jiazhou_Liang_CV.pdf
    - `title`, `authors` (full names; append `*` for equal contribution)
    - `venue` (full name), `short` (label shown at left, e.g. `ACL 2026`)
    - optional: `pages`, `volume`, `number`, `doi`, `arxiv`, `pdf`, `code`, `demo`, `school`
+   - `fig`: thumbnail image (e.g. `assets/images/papers/<name>.webp`), usually Figure 1 of the paper
+   - `topics`: any of `memory`, `egocentric`, `recsys`, `clustering` (used by the filter buttons)
    - `abstract`
    - `selected: true` to also list it on the home page
 3. Run `python3 scripts/build.py` (standard library only), then commit.

@@ -32,19 +32,33 @@
     <a href="https://scholar.google.ca/citations?user=AzhfC5EAAAAJ&amp;hl=en">Google Scholar</a>.
   </p>
 
-<!-- BEGIN:publications -->
-<h2 id="preprint">Preprints</h2>
+  <div class="filters" role="group" aria-label="Filter by topic">
+    <button type="button" data-topic="all" aria-pressed="true">All</button>
+    <button type="button" data-topic="memory" aria-pressed="false">Agent memory</button>
+    <button type="button" data-topic="egocentric" aria-pressed="false">Egocentric &amp; embodied AI</button>
+    <button type="button" data-topic="recsys" aria-pressed="false">Recommendation &amp; retrieval</button>
+    <button type="button" data-topic="clustering" aria-pressed="false">Clustering &amp; optimization</button>
+    <span class="filter-count" id="filter-count" aria-live="polite">14 papers</span>
+  </div>
 
+<!-- BEGIN:publications -->
+<section class="pub-section">
+<h2 id="preprint">Preprints</h2>
 <ul class="pubs">
-<li class="pub" id="liang2026spacmem">
-  <div class="pub-tag">arXiv 2026</div>
+<li class="pub" id="liang2026spacmem" data-topics="memory egocentric">
+  <div class="pub-side">
+    <button type="button" class="pub-thumb" data-full="assets/images/papers/2026-arxiv-spac-mem.webp" aria-label="Enlarge figure: Have I Scene This Before? Spatially Grounded Conversational Memory for Complex Queries in Egocentric Assistants">
+      <img src="assets/images/papers/2026-arxiv-spac-mem.webp" alt="Figure from: Have I Scene This Before? Spatially Grounded Conversational Memory for Complex Queries in Egocentric Assistants" loading="lazy">
+    </button>
+    <span class="pub-tag">arXiv 2026</span>
+  </div>
   <div class="pub-body">
     <div class="pub-title">Have I Scene This Before? Spatially Grounded Conversational Memory for Complex Queries in Egocentric Assistants</div>
     <div class="pub-authors"><span class="me">Jiazhou Liang</span>, Liam Gallagher, Kiko Chen, David Guo, Armin Toroghi, Yifan Simon Liu, and Scott Sanner</div>
     <div class="pub-venue"><em>arXiv preprint arXiv:2610.05526</em>, 2026.</div>
     <div class="pub-links">[<a href="papers/2026-arxiv-spac-mem.pdf">PDF</a>] [<a href="https://arxiv.org/abs/2610.05526">arXiv</a>] [<a href="https://github.com/joeliang0520/SAPCR-MEM">Code</a>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="abs-liang2026spacmem">Abstract</button>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="bib-liang2026spacmem">BibTeX</button>]</div>
     <div class="pub-panel abstract" id="abs-liang2026spacmem" hidden><p>Egocentric assistants must connect what users say with what they see across long interaction histories. We formalize this challenge as Spatially grounded Conversational Reasoning (SpaCR): cross-scene, recall-oriented, and counterfactual spatial queries that combine user-stated facts with geometric evidence. Direct vision-language models incur high inference costs and context limits as histories grow, while keyframe selection and retrieval can omit objects or evidence needed for complete recall. We propose Spatially grounded Conversational Memory (SpaC-MEM), an object-centric working memory that uses 3D reconstruction and segmentation to ground conversational information in persistent physical objects. It compresses multimodal histories while preserving spatial evidence and allowing object-specific facts to be updated through dialogue. We also introduce Ego-SpaCR, a benchmark comprising 620 ScanNet video sessions augmented with 95 task-oriented conversations and 3,100 evaluation queries. SpaC-MEM achieves the highest overall answer accuracy among the evaluated methods and improves object recall while requiring substantially fewer reference input tokens than native-video baselines. Removing 3D spatial information substantially degrades performance, highlighting the importance of preserving spatial and conversational evidence together.</p></div>
-    <div class="pub-panel bibtex" id="bib-liang2026spacmem" hidden><pre>@article{liang2026spacmem,
+    <div class="pub-panel bibtex" id="bib-liang2026spacmem" hidden><button type="button" class="copy">Copy</button><pre>@article{liang2026spacmem,
   title   = {Have I Scene This Before? Spatially Grounded Conversational Memory for Complex Queries in Egocentric Assistants},
   author  = {Liang, Jiazhou and Gallagher, Liam and Chen, Kiko and Guo, David and Toroghi, Armin and Liu, Yifan Simon and Sanner, Scott},
   journal = {arXiv preprint arXiv:2610.05526},
@@ -52,15 +66,20 @@
 }</pre></div>
   </div>
 </li>
-<li class="pub" id="liu2026segtree">
-  <div class="pub-tag">arXiv 2026</div>
+<li class="pub" id="liu2026segtree" data-topics="memory">
+  <div class="pub-side">
+    <button type="button" class="pub-thumb" data-full="assets/images/papers/2026-arxiv-segtree-mem.webp" aria-label="Enlarge figure: Temporal Order Matters for Agentic Memory: Segment Trees for Long-Horizon Agents">
+      <img src="assets/images/papers/2026-arxiv-segtree-mem.webp" alt="Figure from: Temporal Order Matters for Agentic Memory: Segment Trees for Long-Horizon Agents" loading="lazy">
+    </button>
+    <span class="pub-tag">arXiv 2026</span>
+  </div>
   <div class="pub-body">
     <div class="pub-title">Temporal Order Matters for Agentic Memory: Segment Trees for Long-Horizon Agents</div>
     <div class="pub-authors">Yifan Simon Liu, Liam Gallagher, Faeze Moradi Kalarde, <span class="me">Jiazhou Liang</span>, Armin Toroghi, and Scott Sanner</div>
     <div class="pub-venue"><em>arXiv preprint arXiv:2606.04555</em>, 2026.</div>
     <div class="pub-links">[<a href="papers/2026-arxiv-segtree-mem.pdf">PDF</a>] [<a href="https://arxiv.org/abs/2606.04555">arXiv</a>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="abs-liu2026segtree">Abstract</button>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="bib-liu2026segtree">BibTeX</button>]</div>
     <div class="pub-panel abstract" id="abs-liu2026segtree" hidden><p>Long-horizon conversational agents need to interact with users through evolving events, tasks, and goals. Such histories are naturally temporal, yet many existing memory systems organize information primarily by topical similarity and may ignore the order in which events occur. We introduce Segment Tree Memory, or SegTreeMem, a memory architecture that represents conversation history as a temporally ordered Segment Tree over utterances. SegTreeMem incrementally inserts new utterances through an online rightmost-frontier update rule, preserving chronological order while forming hierarchical memory segments. For retrieval, SegTreeMem propagates relevance scores through the tree to combine local semantic matching with hierarchical temporal context. Across three long-horizon memory benchmarks and two LLM backbones, SegTreeMem improves answer quality over flat retrieval, graph-structured memory, and tree-structured memory baselines. Additional temporal-order permutation analysis shows that the performance gain depends on preserving temporal order during memory construction, supporting the claim that temporal order is a key structure for agentic memory.</p></div>
-    <div class="pub-panel bibtex" id="bib-liu2026segtree" hidden><pre>@article{liu2026segtree,
+    <div class="pub-panel bibtex" id="bib-liu2026segtree" hidden><button type="button" class="copy">Copy</button><pre>@article{liu2026segtree,
   title   = {Temporal Order Matters for Agentic Memory: Segment Trees for Long-Horizon Agents},
   author  = {Liu, Yifan Simon and Gallagher, Liam and Kalarde, Faeze Moradi and Liang, Jiazhou and Toroghi, Armin and Sanner, Scott},
   journal = {arXiv preprint arXiv:2606.04555},
@@ -68,15 +87,20 @@
 }</pre></div>
   </div>
 </li>
-<li class="pub" id="liang2026goalmem">
-  <div class="pub-tag">arXiv 2026</div>
+<li class="pub" id="liang2026goalmem" data-topics="memory">
+  <div class="pub-side">
+    <button type="button" class="pub-thumb" data-full="assets/images/papers/2026-arxiv-goal-mem.webp" aria-label="Enlarge figure: Goal-Oriented Reasoning for RAG-based Memory in Conversational Agentic LLM Systems">
+      <img src="assets/images/papers/2026-arxiv-goal-mem.webp" alt="Figure from: Goal-Oriented Reasoning for RAG-based Memory in Conversational Agentic LLM Systems" loading="lazy">
+    </button>
+    <span class="pub-tag">arXiv 2026</span>
+  </div>
   <div class="pub-body">
     <div class="pub-title">Goal-Oriented Reasoning for RAG-based Memory in Conversational Agentic LLM Systems</div>
     <div class="pub-authors"><span class="me">Jiazhou Liang</span>, Armin Toroghi, Yifan Simon Liu, Faeze Moradi Kalarde, Liam Gallagher, and Scott Sanner</div>
     <div class="pub-venue"><em>arXiv preprint arXiv:2605.12213</em>, 2026.</div>
     <div class="pub-links">[<a href="papers/2026-arxiv-goal-mem.pdf">PDF</a>] [<a href="https://arxiv.org/abs/2605.12213">arXiv</a>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="abs-liang2026goalmem">Abstract</button>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="bib-liang2026goalmem">BibTeX</button>]</div>
     <div class="pub-panel abstract" id="abs-liang2026goalmem" hidden><p>LLM-based conversational AI agents struggle to maintain coherent behavior over long horizons due to limited context. While RAG-based approaches are increasingly adopted to overcome this limitation by storing interactions in external memory modules and performing retrieval from them, their effectiveness in answering challenging questions (e.g., multi-hop, commonsense) ultimately depends on the agent&#x27;s ability to reason over the retrieved information. However, existing methods typically retrieve memory based on semantic similarity to the raw user utterance, which lacks explicit reasoning about missing intermediate facts and often returns evidence that is irrelevant or insufficient for grounded reasoning. In this work, we introduce Goal-Mem, a goal-oriented reasoning framework for RAG-based agentic memory that performs explicit backward chaining from the user&#x27;s utterance as a goal. Rather than progressively expanding from retrieved context, Goal-Mem decomposes each goal into atomic subgoals, performs targeted memory retrieval to satisfy each subgoal, and iteratively identifies what information from memory should be retrieved when intermediate goals cannot be resolved. We formalize this process in Natural Language Logic, a logical system that combines the verifiability of reasoning provided by FOL with the expressivity of natural language. Through extensive experiments on two datasets and comparing to nine strong memory baselines, we show that Goal-Mem consistently improves performance, particularly on tasks requiring multi-hop reasoning and implicit inference.</p></div>
-    <div class="pub-panel bibtex" id="bib-liang2026goalmem" hidden><pre>@article{liang2026goalmem,
+    <div class="pub-panel bibtex" id="bib-liang2026goalmem" hidden><button type="button" class="copy">Copy</button><pre>@article{liang2026goalmem,
   title   = {Goal-Oriented Reasoning for RAG-based Memory in Conversational Agentic LLM Systems},
   author  = {Liang, Jiazhou and Toroghi, Armin and Liu, Yifan Simon and Kalarde, Faeze Moradi and Gallagher, Liam and Sanner, Scott},
   journal = {arXiv preprint arXiv:2605.12213},
@@ -85,21 +109,27 @@
   </div>
 </li>
 </ul>
+</section>
 
+<section class="pub-section">
 <h2 id="peer">Conference and Journal Papers</h2>
-
+<div class="year-group">
 <h3 class="year">2026</h3>
-
 <ul class="pubs">
-<li class="pub" id="liang2026evaluating">
-  <div class="pub-tag">ACL 2026 Findings</div>
+<li class="pub" id="liang2026evaluating" data-topics="egocentric recsys">
+  <div class="pub-side">
+    <button type="button" class="pub-thumb" data-full="assets/images/papers/2026-acl-scene-labeling.webp" aria-label="Enlarge figure: Evaluating Scene-based In-Situ Item Labeling for Immersive Conversational Recommendation">
+      <img src="assets/images/papers/2026-acl-scene-labeling.webp" alt="Figure from: Evaluating Scene-based In-Situ Item Labeling for Immersive Conversational Recommendation" loading="lazy">
+    </button>
+    <span class="pub-tag">ACL 2026 Findings</span>
+  </div>
   <div class="pub-body">
     <div class="pub-title">Evaluating Scene-based In-Situ Item Labeling for Immersive Conversational Recommendation</div>
     <div class="pub-authors"><span class="me">Jiazhou Liang</span><sup>*</sup>, Yifan Simon Liu<sup>*</sup>, David Guo<sup>*</sup>, Minqi Sun, Yilun Jiang, and Scott Sanner</div>
     <div class="pub-venue"><em>Findings of the Association for Computational Linguistics: ACL 2026</em>, pp. 40932–40953, 2026.</div>
     <div class="pub-links">[<a href="papers/2026-acl-scene-labeling.pdf">PDF</a>] [<a href="https://arxiv.org/abs/2604.09698">arXiv</a>] [<a href="https://github.com/D3Mlab/ICRS">Code</a>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="abs-liang2026evaluating">Abstract</button>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="bib-liang2026evaluating">BibTeX</button>]</div>
     <div class="pub-panel abstract" id="abs-liang2026evaluating" hidden><p>The growing ubiquity of Extended Reality (XR) is driving Conversational Recommendation Systems (CRS) toward visually immersive experiences. We formalize this paradigm as Immersive CRS (ICRS), where recommended items are highlighted directly in the user’s scene-based visual environment and augmented with in-situ labels. While item recommendation has been widely studied, the problem of how to select and evaluate which information to present as immersive labels remains an open problem. To this end, we introduce a principled categorization of information needs into explicit intent satisfaction and proactive information needs and use these to define novel evaluation metrics for item label selection. We benchmark IR-, LLM-, and VLM-based methods across three datasets and ICRS scenarios: fashion, movie recommendation, and retail shopping. Our evaluation reveals three important limitations of existing methods: (1) they fail to leverage scenario-specific information modalities (e.g., visual cues for fashion, metadata for retail), (2) they present redundant information that is visually inferable, and (3) they poorly anticipate users’ proactive information needs from explicit dialogue alone. In summary, this work provides both a novel evaluation paradigm for in-situ item labeling in ICRS and highlights key challenges for future work.</p></div>
-    <div class="pub-panel bibtex" id="bib-liang2026evaluating" hidden><pre>@inproceedings{liang2026evaluating,
+    <div class="pub-panel bibtex" id="bib-liang2026evaluating" hidden><button type="button" class="copy">Copy</button><pre>@inproceedings{liang2026evaluating,
   title     = {Evaluating Scene-based In-Situ Item Labeling for Immersive Conversational Recommendation},
   author    = {Liang, Jiazhou and Liu, Yifan Simon and Guo, David and Sun, Minqi and Jiang, Yilun and Sanner, Scott},
   booktitle = {Findings of the Association for Computational Linguistics: ACL 2026},
@@ -108,15 +138,20 @@
 }</pre></div>
   </div>
 </li>
-<li class="pub" id="liu2026semantic">
-  <div class="pub-tag">ACL 2026 Demo</div>
+<li class="pub" id="liu2026semantic" data-topics="memory">
+  <div class="pub-side">
+    <button type="button" class="pub-thumb" data-full="assets/images/papers/2026-acl-semantic-xpath.webp" aria-label="Enlarge figure: Semantic XPath: Structured Agentic Memory Access for Conversational AI">
+      <img src="assets/images/papers/2026-acl-semantic-xpath.webp" alt="Figure from: Semantic XPath: Structured Agentic Memory Access for Conversational AI" loading="lazy">
+    </button>
+    <span class="pub-tag">ACL 2026 Demo</span>
+  </div>
   <div class="pub-body">
     <div class="pub-title">Semantic XPath: Structured Agentic Memory Access for Conversational AI</div>
     <div class="pub-authors">Yifan Simon Liu<sup>*</sup>, Ruifan Wu<sup>*</sup>, Liam Gallagher<sup>*</sup>, <span class="me">Jiazhou Liang</span><sup>*</sup>, Armin Toroghi, and Scott Sanner</div>
     <div class="pub-venue"><em>Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 3: System Demonstrations)</em>, 2026.</div>
     <div class="pub-links">[<a href="papers/2026-acl-semantic-xpath.pdf">PDF</a>] [<a href="https://arxiv.org/abs/2603.01160">arXiv</a>] [<a href="https://github.com/D3Mlab/SemanticXpath-Chat">Code</a>] [<a href="https://semanticxpathchat.com">Demo</a>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="abs-liu2026semantic">Abstract</button>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="bib-liu2026semantic">BibTeX</button>]</div>
     <div class="pub-panel abstract" id="abs-liu2026semantic" hidden><p>Conversational AI (ConvAI) agents increasingly maintain structured memory to support long-term, task-oriented interactions. Incontext memory approaches append the growing history to the model input, which scales poorly under context-window limits. RAGbased methods retrieve request-relevant information, but most assume flat memory collections and ignore structure. We propose SEMANTIC XPATH, a tree-structured memory module to access and update structured conversational memory. SEMANTIC XPATH improves performance over flat-RAG baselines by 176.7% while using only 9.1% of the tokens required by in-context memory. We also introduce SEMANTICXPATH CHAT, an end-to-end ConvAI demo system that visualizes the structured memory and query execution details. Overall, this paper demonstrates a candidate for the next generation of long-term, task-oriented ConvAI systems built on structured memory.</p></div>
-    <div class="pub-panel bibtex" id="bib-liu2026semantic" hidden><pre>@inproceedings{liu2026semantic,
+    <div class="pub-panel bibtex" id="bib-liu2026semantic" hidden><button type="button" class="copy">Copy</button><pre>@inproceedings{liu2026semantic,
   title     = {Semantic XPath: Structured Agentic Memory Access for Conversational AI},
   author    = {Liu, Yifan Simon and Wu, Ruifan and Gallagher, Liam and Liang, Jiazhou and Toroghi, Armin and Sanner, Scott},
   booktitle = {Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 3: System Demonstrations)},
@@ -124,15 +159,20 @@
 }</pre></div>
   </div>
 </li>
-<li class="pub" id="liu2026multimodal">
-  <div class="pub-tag">ACL 2026 Findings</div>
+<li class="pub" id="liu2026multimodal" data-topics="recsys">
+  <div class="pub-side">
+    <button type="button" class="pub-thumb" data-full="assets/images/papers/2026-acl-mm-gpr.webp" aria-label="Enlarge figure: Multimodal Item Scoring for Natural Language Recommendation via Gaussian Process Regression with LLM Relevance Judgments">
+      <img src="assets/images/papers/2026-acl-mm-gpr.webp" alt="Figure from: Multimodal Item Scoring for Natural Language Recommendation via Gaussian Process Regression with LLM Relevance Judgments" loading="lazy">
+    </button>
+    <span class="pub-tag">ACL 2026 Findings</span>
+  </div>
   <div class="pub-body">
     <div class="pub-title">Multimodal Item Scoring for Natural Language Recommendation via Gaussian Process Regression with LLM Relevance Judgments</div>
     <div class="pub-authors">Yifan Simon Liu<sup>*</sup>, Qianfeng Wen<sup>*</sup>, <span class="me">Jiazhou Liang</span><sup>*</sup>, Mark Zhao<sup>*</sup>, Justin Cui, Anton Korikov, Armin Toroghi, Junyoung Kim, and Scott Sanner</div>
     <div class="pub-venue"><em>Findings of the Association for Computational Linguistics: ACL 2026</em>, pp. 36859–36876, 2026.</div>
     <div class="pub-links">[<a href="papers/2026-acl-mm-gpr.pdf">PDF</a>] [<a href="https://arxiv.org/abs/2510.22023">arXiv</a>] [<a href="https://github.com/QianfengWen/Bandit_Retrieval">Code</a>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="abs-liu2026multimodal">Abstract</button>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="bib-liu2026multimodal">BibTeX</button>]</div>
     <div class="pub-panel abstract" id="abs-liu2026multimodal" hidden><p>Natural Language Recommendation (NLRec) generates item suggestions based on the relevance between user-issued NL requests and NL item description passages. Existing NLRec approaches often use Dense Retrieval (DR) to compute item relevance scores from aggregation of inner products between user request embeddings and relevant passage embeddings. However, DR views the request as the sole relevance signal, resulting in a unimodal scoring function centered on the request embedding, which is often a weak proxy for true relevance. To better capture the multiple relevance modes that may arise in complex NLRec data, we propose GPR-LLM, which uses Gaussian Process Regression (GPR) to estimate the underlying relevance function from multiple LLMjudged anchor passages instead of treating the request as the sole relevance signal. Experiments on four NLRec datasets and three LLM backbones demonstrate that GPR-LLM consistently outperforms baseline methods including DR, cross-encoder, and pointwise LLM-based relevance scoring by up to 65%.</p></div>
-    <div class="pub-panel bibtex" id="bib-liu2026multimodal" hidden><pre>@inproceedings{liu2026multimodal,
+    <div class="pub-panel bibtex" id="bib-liu2026multimodal" hidden><button type="button" class="copy">Copy</button><pre>@inproceedings{liu2026multimodal,
   title     = {Multimodal Item Scoring for Natural Language Recommendation via Gaussian Process Regression with LLM Relevance Judgments},
   author    = {Liu, Yifan Simon and Wen, Qianfeng and Liang, Jiazhou and Zhao, Mark and Cui, Justin and Korikov, Anton and Toroghi, Armin and Kim, Junyoung and Sanner, Scott},
   booktitle = {Findings of the Association for Computational Linguistics: ACL 2026},
@@ -141,15 +181,20 @@
 }</pre></div>
   </div>
 </li>
-<li class="pub" id="kim2026bayesian">
-  <div class="pub-tag">ACL 2026 Findings</div>
+<li class="pub" id="kim2026bayesian" data-topics="recsys">
+  <div class="pub-side">
+    <button type="button" class="pub-thumb" data-full="assets/images/papers/2026-acl-bald.webp" aria-label="Enlarge figure: Bayesian Active Learning with Gaussian Processes Guided by LLM Relevance Scoring for Dense Passage Retrieval">
+      <img src="assets/images/papers/2026-acl-bald.webp" alt="Figure from: Bayesian Active Learning with Gaussian Processes Guided by LLM Relevance Scoring for Dense Passage Retrieval" loading="lazy">
+    </button>
+    <span class="pub-tag">ACL 2026 Findings</span>
+  </div>
   <div class="pub-body">
     <div class="pub-title">Bayesian Active Learning with Gaussian Processes Guided by LLM Relevance Scoring for Dense Passage Retrieval</div>
     <div class="pub-authors">Junyoung Kim, Anton Korikov, <span class="me">Jiazhou Liang</span>, Justin Cui, Yifan Simon Liu, Qianfeng Wen, Mark Zhao, and Scott Sanner</div>
     <div class="pub-venue"><em>Findings of the Association for Computational Linguistics: ACL 2026</em>, pp. 9884–9898, 2026.</div>
     <div class="pub-links">[<a href="papers/2026-acl-bald.pdf">PDF</a>] [<a href="https://arxiv.org/abs/2604.17906">arXiv</a>] [<a href="https://github.com/junieberry/BAGEL">Code</a>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="abs-kim2026bayesian">Abstract</button>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="bib-kim2026bayesian">BibTeX</button>]</div>
     <div class="pub-panel abstract" id="abs-kim2026bayesian" hidden><p>While Large Language Models (LLMs) exhibit exceptional zero-shot relevance modeling, their high computational cost necessitates framing passage retrieval as a budget-constrained global optimization problem. Existing approaches passively rely on first-stage dense retrievers, which leads to two limitations: (1) failing to retrieve relevant passages in semantically distinct clusters, and (2) failing to propagate relevance signals to the broader corpus. To address these limitations, we propose Bayesian Active Learning with Gaussian Processes guidEd by LLM relevance scoring (BAGEL)1, a novel framework that propagates sparse LLM relevance signals across the embedding space to guide global exploration. BAGEL models the multimodal relevance distribution across the entire embedding space with a query-specific Gaussian Process (GP) based on LLM relevance scores. Subsequently, it iteratively selects passages for scoring by strategically balancing the exploitation of highconfidence regions with the exploration of uncertain areas. Extensive experiments across four benchmark datasets and two LLM backbones demonstrate that BAGEL effectively explores and captures complex relevance distributions and outperforms LLM reranking methods under the same LLM budget on all four datasets.</p></div>
-    <div class="pub-panel bibtex" id="bib-kim2026bayesian" hidden><pre>@inproceedings{kim2026bayesian,
+    <div class="pub-panel bibtex" id="bib-kim2026bayesian" hidden><button type="button" class="copy">Copy</button><pre>@inproceedings{kim2026bayesian,
   title     = {Bayesian Active Learning with Gaussian Processes Guided by LLM Relevance Scoring for Dense Passage Retrieval},
   author    = {Kim, Junyoung and Korikov, Anton and Liang, Jiazhou and Cui, Justin and Liu, Yifan Simon and Wen, Qianfeng and Zhao, Mark and Sanner, Scott},
   booktitle = {Findings of the Association for Computational Linguistics: ACL 2026},
@@ -158,15 +203,20 @@
 }</pre></div>
   </div>
 </li>
-<li class="pub" id="liu2026natural">
-  <div class="pub-tag">ICLR 2026</div>
+<li class="pub" id="liu2026natural" data-topics="egocentric">
+  <div class="pub-side">
+    <button type="button" class="pub-thumb" data-full="assets/images/papers/2026-iclr-nl-pddl.webp" aria-label="Enlarge figure: Natural Language PDDL (NL-PDDL) for Open-world Goal-oriented Commonsense Regression Planning in Embodied AI">
+      <img src="assets/images/papers/2026-iclr-nl-pddl.webp" alt="Figure from: Natural Language PDDL (NL-PDDL) for Open-world Goal-oriented Commonsense Regression Planning in Embodied AI" loading="lazy">
+    </button>
+    <span class="pub-tag">ICLR 2026</span>
+  </div>
   <div class="pub-body">
     <div class="pub-title">Natural Language PDDL (NL-PDDL) for Open-world Goal-oriented Commonsense Regression Planning in Embodied AI</div>
     <div class="pub-authors">Xiaotian Liu, Armin Toroghi, <span class="me">Jiazhou Liang</span>, David Courtis, Ruiwen Li, Ali Pesaranghader, Jaehong Kim, Tanmana Sadhu, Hyejeong Jeon, and Scott Sanner</div>
     <div class="pub-venue"><em>The Fourteenth International Conference on Learning Representations (ICLR)</em>, 2026.</div>
     <div class="pub-links">[<a href="papers/2026-iclr-nl-pddl.pdf">PDF</a>] [<a href="https://github.com/D3Mlab/NL-PDDL">Code</a>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="abs-liu2026natural">Abstract</button>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="bib-liu2026natural">BibTeX</button>]</div>
     <div class="pub-panel abstract" id="abs-liu2026natural" hidden><p>Planning in open-world environments, where agents must act with partially observed states and incomplete knowledge, is a central challenge in embodied AI. Open-world planning involves not only sequencing actions but also determining what information the agent needs to sense to enable those actions. Existing approaches using Large Language Models (LLM) and Vision-Language Models (VLM) cannot reliably plan over long horizons and complex goals, where they often hallucinate and fail to reason causally over agent-environment interactions. Alternatively, classical PDDL planners offer correct and principled reasoning, but fail in open-world settings: they presuppose complete models and depend on exhaustive grounding over all objects, states, and actions; they cannot address misalignment between goal specifications (e.g., “heat the bread”) and action specifications (e.g., “toast the bread”); and they do not generalize across modalities (e.g., text, vision). To address these core challenges: (i) we extend symbolic PDDL into a flexible natural language representation that we term NL-PDDL, improving accessibility for non-expert users as well as generalization over modalities; (ii) we generalize regression-style planning to NL-PDDL with commonsense entailment reasoning to determine what needs to be observed for goal achievement in partially-observed environments with potential goal–action specification misalignment; and (iii) we leverage the lifted specification of NL-PDDL to facilitate open-world planning that avoids exhaustive grounding and yields a time and space complexity independent of the number of ground objects, states, and actions. Our experiments in three diverse domains — classical Blocksworld and the embodied ALFWorld environment with both textual and visual states — show that NL-PDDL substantially outperforms existing baselines, is more robust to longer horizons and more complex goals, and generalizes across modalities.</p></div>
-    <div class="pub-panel bibtex" id="bib-liu2026natural" hidden><pre>@inproceedings{liu2026natural,
+    <div class="pub-panel bibtex" id="bib-liu2026natural" hidden><button type="button" class="copy">Copy</button><pre>@inproceedings{liu2026natural,
   title     = {Natural Language PDDL (NL-PDDL) for Open-world Goal-oriented Commonsense Regression Planning in Embodied AI},
   author    = {Liu, Xiaotian and Toroghi, Armin and Liang, Jiazhou and Courtis, David and Li, Ruiwen and Pesaranghader, Ali and Kim, Jaehong and Sadhu, Tanmana and Jeon, Hyejeong and Sanner, Scott},
   booktitle = {The Fourteenth International Conference on Learning Representations (ICLR)},
@@ -174,15 +224,20 @@
 }</pre></div>
   </div>
 </li>
-<li class="pub" id="liang2026near">
-  <div class="pub-tag">AAAI 2026</div>
+<li class="pub" id="liang2026near" data-topics="clustering">
+  <div class="pub-side">
+    <button type="button" class="pub-thumb" data-full="assets/images/papers/2026-aaai-linpc.webp" aria-label="Enlarge figure: Near-optimal Linear Predictive Clustering in Non-separable Spaces via MIP and QPBO Reductions">
+      <img src="assets/images/papers/2026-aaai-linpc.webp" alt="Figure from: Near-optimal Linear Predictive Clustering in Non-separable Spaces via MIP and QPBO Reductions" loading="lazy">
+    </button>
+    <span class="pub-tag">AAAI 2026</span>
+  </div>
   <div class="pub-body">
     <div class="pub-title">Near-optimal Linear Predictive Clustering in Non-separable Spaces via MIP and QPBO Reductions</div>
     <div class="pub-authors"><span class="me">Jiazhou Liang</span><sup>*</sup>, Hassan Khurram<sup>*</sup>, and Scott Sanner</div>
     <div class="pub-venue"><em>Proceedings of the AAAI Conference on Artificial Intelligence</em>, pp. 23409–23416, 2026.</div>
     <div class="pub-links">[<a href="papers/2026-aaai-linpc.pdf">PDF</a>] [<a href="https://arxiv.org/abs/2511.10809">arXiv</a>] [<a href="https://github.com/D3Mlab/LPC-NS">Code</a>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="abs-liang2026near">Abstract</button>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="bib-liang2026near">BibTeX</button>]</div>
     <div class="pub-panel abstract" id="abs-liang2026near" hidden><p>Linear Predictive Clustering (LPC) partitions samples based on shared linear relationships between feature and target variables, with numerous applications including marketing, medicine, and education. Greedy optimization methods, commonly used for LPC, alternate between clustering and linear regression but lack global optimality. While effective for separable clusters, they struggle in non-separable settings where clusters overlap in feature space. In an alternative constrained optimization paradigm, Bertsimas and Shioda (2007) formulated LPC as a Mixed-Integer Program (MIP), ensuring global optimality regardless of separability but suffering from poor scalability. This work builds on the constrained optimization paradigm to introduce two novel approaches that improve the efficiency of global optimization for LPC. By leveraging key theoretical properties of separability, we derive near-optimal approximations with provable error bounds, significantly reducing the MIP formulation&#x27;s complexity and improving scalability. Additionally, we can further approximate LPC as a Quadratic Pseudo-Boolean Optimization (QPBO) problem, achieving substantial computational improvements in some settings. Comparative analyses on synthetic and real-world datasets demonstrate that our methods consistently achieve near-optimal solutions with substantially lower regression errors than greedy optimization while exhibiting superior scalability over existing MIP formulations.</p></div>
-    <div class="pub-panel bibtex" id="bib-liang2026near" hidden><pre>@inproceedings{liang2026near,
+    <div class="pub-panel bibtex" id="bib-liang2026near" hidden><button type="button" class="copy">Copy</button><pre>@inproceedings{liang2026near,
   title     = {Near-optimal Linear Predictive Clustering in Non-separable Spaces via MIP and QPBO Reductions},
   author    = {Liang, Jiazhou and Khurram, Hassan and Sanner, Scott},
   booktitle = {Proceedings of the AAAI Conference on Artificial Intelligence},
@@ -193,15 +248,20 @@
 }</pre></div>
   </div>
 </li>
-<li class="pub" id="guo2026vogue">
-  <div class="pub-tag">UMAP 2026</div>
+<li class="pub" id="guo2026vogue" data-topics="recsys">
+  <div class="pub-side">
+    <button type="button" class="pub-thumb" data-full="assets/images/papers/2026-umap-vogue.webp" aria-label="Enlarge figure: VOGUE: A Multimodal Dataset for Conversational Recommendation in Fashion">
+      <img src="assets/images/papers/2026-umap-vogue.webp" alt="Figure from: VOGUE: A Multimodal Dataset for Conversational Recommendation in Fashion" loading="lazy">
+    </button>
+    <span class="pub-tag">UMAP 2026</span>
+  </div>
   <div class="pub-body">
     <div class="pub-title">VOGUE: A Multimodal Dataset for Conversational Recommendation in Fashion</div>
     <div class="pub-authors">David Guo<sup>*</sup>, Minqi Sun<sup>*</sup>, Yilun Jiang<sup>*</sup>, <span class="me">Jiazhou Liang</span>, and Scott Sanner</div>
     <div class="pub-venue"><em>Proceedings of the 34th ACM Conference on User Modeling, Adaptation and Personalization (UMAP)</em>, 2026.</div>
     <div class="pub-links">[<a href="papers/2026-umap-vogue.pdf">PDF</a>] [<a href="https://arxiv.org/abs/2510.21151">arXiv</a>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="abs-guo2026vogue">Abstract</button>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="bib-guo2026vogue">BibTeX</button>]</div>
     <div class="pub-panel abstract" id="abs-guo2026vogue" hidden><p>Multimodal conversational recommendation has emerged as a promising paradigm for delivering personalized experiences through natural dialogue enriched by visual and contextual grounding. Yet, current multimodal conversational recommendation datasets remain limited: existing resources either simulate conversations, omit user history, or fail to collect sufficiently detailed feedback, all of which constrain the types of research and evaluation they support. To address these gaps, we introduce VOGUE, a novel dataset of 60 human-human dialogues in realistic fashion shopping scenarios. Each dialogue is paired with a shared visual catalogue, item metadata, user fashion profiles/histories, and post-conversation ratings from both Seekers and Assistants. This design enables rigorous evaluation of conversational inference, including not only alignment between predicted and ground-truth preferences, but also calibration against full rating distributions and comparison with explicit and implicit user satisfaction signals. Our initial analyses of VOGUE reveal distinctive dynamics of visually grounded dialogue, e.g., recommenders frequently recommend items simultaneously in feature-based groups, which creates distinct conversational phases bridged by Seeker critiques and refinements. Benchmarking Multimodal Large Language Models against human Recommenders shows that while MLLMs approach human-level alignment in aggregate, they exhibit systematic distribution errors in reproducing human ratings and struggle to generalize preference inference beyond explicitly discussed items. These findings establish VOGUE as both a unique resource for studying multimodal conversational systems and a challenge dataset beyond the current recommendation capabilities of existing top-tier multimodal foundation models such as GPT-4o-mini, GPT-5-mini, and Gemini-2.5-Flash.</p></div>
-    <div class="pub-panel bibtex" id="bib-guo2026vogue" hidden><pre>@inproceedings{guo2026vogue,
+    <div class="pub-panel bibtex" id="bib-guo2026vogue" hidden><button type="button" class="copy">Copy</button><pre>@inproceedings{guo2026vogue,
   title     = {VOGUE: A Multimodal Dataset for Conversational Recommendation in Fashion},
   author    = {Guo, David and Sun, Minqi and Jiang, Yilun and Liang, Jiazhou and Sanner, Scott},
   booktitle = {Proceedings of the 34th ACM Conference on User Modeling, Adaptation and Personalization (UMAP)},
@@ -209,15 +269,20 @@
 }</pre></div>
   </div>
 </li>
-<li class="pub" id="liang2026mapping">
-  <div class="pub-tag">SMR</div>
+<li class="pub" id="liang2026mapping" data-topics="clustering">
+  <div class="pub-side">
+    <button type="button" class="pub-thumb" data-full="assets/images/papers/2026-smr-mapping.webp" aria-label="Enlarge figure: Mapping Social Change: A Unified Framework for Temporal Clustering">
+      <img src="assets/images/papers/2026-smr-mapping.webp" alt="Figure from: Mapping Social Change: A Unified Framework for Temporal Clustering" loading="lazy">
+    </button>
+    <span class="pub-tag">SMR</span>
+  </div>
   <div class="pub-body">
     <div class="pub-title">Mapping Social Change: A Unified Framework for Temporal Clustering</div>
     <div class="pub-authors"><span class="me">Jiazhou Liang</span>, Jolomi Tosanwumi, Ethan Fosse, Daniel Silver, and Scott Sanner</div>
     <div class="pub-venue"><em>Sociological Methods &amp; Research</em>, 2026.</div>
     <div class="pub-links">[<a href="papers/2026-smr-mapping.pdf">PDF</a>] [<a href="https://doi.org/10.1177/00491241251396789">DOI</a>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="abs-liang2026mapping">Abstract</button>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="bib-liang2026mapping">BibTeX</button>]</div>
     <div class="pub-panel abstract" id="abs-liang2026mapping" hidden><p>Analyzing social change requires detecting patterns of continuity and difference over time. While time-series clustering offers a valuable approach, existing techniques are often limited by assuming fixed cluster definitions and static assignments of entities to clusters. To address these limitations, we introduce a unified framework of temporal clustering methods that allows for both dynamic cluster definitions and the transition of entities between clusters, generalizing and extending previous work. We also provide new algorithms for this dynamic clustering that optimize global objectives, with optional constraints on the transitions of entities across clusters. This framework expands the methodological toolkit for analyzing social change, and we provide guidelines for its application. We illustrate our approach with three case studies: polarization of social and political attitudes across U.S. states; cross-national cultural change; and the evolution of neighborhood business patterns. We conclude with directions for further research.</p></div>
-    <div class="pub-panel bibtex" id="bib-liang2026mapping" hidden><pre>@article{liang2026mapping,
+    <div class="pub-panel bibtex" id="bib-liang2026mapping" hidden><button type="button" class="copy">Copy</button><pre>@article{liang2026mapping,
   title   = {Mapping Social Change: A Unified Framework for Temporal Clustering},
   author  = {Liang, Jiazhou and Tosanwumi, Jolomi and Fosse, Ethan and Silver, Daniel and Sanner, Scott},
   journal = {Sociological Methods \&amp; Research},
@@ -227,19 +292,24 @@
   </div>
 </li>
 </ul>
-
+</div>
+<div class="year-group">
 <h3 class="year">2025</h3>
-
 <ul class="pubs">
-<li class="pub" id="liu2025madpr">
-  <div class="pub-tag">EMNLP 2025</div>
+<li class="pub" id="liu2025madpr" data-topics="recsys">
+  <div class="pub-side">
+    <button type="button" class="pub-thumb" data-full="assets/images/papers/2025-emnlp-ma-dpr.webp" aria-label="Enlarge figure: MA-DPR: Manifold-aware Distance Metrics for Dense Passage Retrieval">
+      <img src="assets/images/papers/2025-emnlp-ma-dpr.webp" alt="Figure from: MA-DPR: Manifold-aware Distance Metrics for Dense Passage Retrieval" loading="lazy">
+    </button>
+    <span class="pub-tag">EMNLP 2025</span>
+  </div>
   <div class="pub-body">
     <div class="pub-title">MA-DPR: Manifold-aware Distance Metrics for Dense Passage Retrieval</div>
     <div class="pub-authors">Yifan Simon Liu, Qianfeng Wen, Mark Zhao, <span class="me">Jiazhou Liang</span>, and Scott Sanner</div>
     <div class="pub-venue"><em>Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing (EMNLP)</em>, pp. 31073–31091, 2025.</div>
     <div class="pub-links">[<a href="papers/2025-emnlp-ma-dpr.pdf">PDF</a>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="abs-liu2025madpr">Abstract</button>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="bib-liu2025madpr">BibTeX</button>]</div>
     <div class="pub-panel abstract" id="abs-liu2025madpr" hidden><p>Dense Passage Retrieval (DPR) typically relies on Euclidean or cosine distance to measure query-passage relevance in embedding space, which is effective when embeddings lie on a linear manifold. However, our experiments across DPR benchmarks suggest that embeddings often lie on lower-dimensional, non-linear manifolds, especially in out-of-distribution (OOD) settings, where cosine and Euclidean distance fail to capture semantic similarity. To address this limitation, we propose a manifold-aware distance metric for DPR (MA-DPR) that models the intrinsic manifold structure of passages using a nearest neighbor graph and measures query-passage distance based on their shortest path in this graph. We show that MA-DPR outperforms Euclidean and cosine distances by up to 26% on OOD passage retrieval with comparable in-distribution performance across various embedding models while incurring a minimal increase in query inference time. Empirical evidence suggests that manifold-aware distance allows DPR to leverage context from related neighboring passages, making it effective even in the absence of direct semantic overlap. MADPR can be applied to a wide range of dense embedding and retrieval tasks, offering potential benefits across a wide spectrum of domains.</p></div>
-    <div class="pub-panel bibtex" id="bib-liu2025madpr" hidden><pre>@inproceedings{liu2025madpr,
+    <div class="pub-panel bibtex" id="bib-liu2025madpr" hidden><button type="button" class="copy">Copy</button><pre>@inproceedings{liu2025madpr,
   title     = {MA-DPR: Manifold-aware Distance Metrics for Dense Passage Retrieval},
   author    = {Liu, Yifan Simon and Wen, Qianfeng and Zhao, Mark and Liang, Jiazhou and Sanner, Scott},
   booktitle = {Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing (EMNLP)},
@@ -248,15 +318,20 @@
 }</pre></div>
   </div>
 </li>
-<li class="pub" id="tosanwumi2025tscluster">
-  <div class="pub-tag">EPB</div>
+<li class="pub" id="tosanwumi2025tscluster" data-topics="clustering">
+  <div class="pub-side">
+    <button type="button" class="pub-thumb" data-full="assets/images/papers/2024-tscluster.webp" aria-label="Enlarge figure: tscluster: A Python Package for the Optimal Temporal Clustering Framework">
+      <img src="assets/images/papers/2024-tscluster.webp" alt="Figure from: tscluster: A Python Package for the Optimal Temporal Clustering Framework" loading="lazy">
+    </button>
+    <span class="pub-tag">EPB</span>
+  </div>
   <div class="pub-body">
     <div class="pub-title">tscluster: A Python Package for the Optimal Temporal Clustering Framework</div>
     <div class="pub-authors">Jolomi Tosanwumi<sup>*</sup>, <span class="me">Jiazhou Liang</span><sup>*</sup>, Daniel Silver, Ethan Fosse, and Scott Sanner</div>
     <div class="pub-venue"><em>Environment and Planning B: Urban Analytics and City Science</em>, 52(4):1014–1024, 2025.</div>
     <div class="pub-links">[<a href="papers/2024-tscluster.pdf">PDF</a>] [<a href="https://doi.org/10.1177/23998083241293833">DOI</a>] [<a href="https://github.com/tscluster-project/tscluster">Code</a>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="abs-tosanwumi2025tscluster">Abstract</button>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="bib-tosanwumi2025tscluster">BibTeX</button>]</div>
     <div class="pub-panel abstract" id="abs-tosanwumi2025tscluster" hidden><p>Temporal clustering extends the conventional task of data clustering by grouping time series data according to shared temporal trends across sociospatial units, with diverse applications in the social sciences, especially urban science. The two dominant methods are as follows: Time Series Clustering (TSC), with dynamic cluster centres but static labels for each entity, and Sequence Label Analysis (SLA), with static cluster centres but dynamic labels. To implement the universe of models spanning the design space between TSC and SLA, we present tscluster, an open-source Python framework. tscluster offers: (1) several innovative techniques, such as Bounded Dynamic Clustering (BDC), that are not available in existing libraries, allowing users to set an upper bound on the number of label changes and identify the most dynamically evolving time series; (2) a user-friendly interface for applying and comparing these methods; (3) globally optimal solutions for the clustering objective by employing a mixed-integer linear programming formulation, enhancing the reproducibility and robustness of the results in contrast to existing methods based on initializationsensitive local optimization; and (4) a suite of visualization tools for interpretability and comparison of clustering results. We present our framework using a case study of neighbourhood change in Toronto, comparing two methods available in tscluster. Supplemental materials provide an additional case study of local business development in Chicago and a detailed mathematical exposition of our framework. tscluster can be installed via PyPI (pypi.org/project/tscluster), and the source code is accessible on Github (github.com/tscluster-project/tscluster). Documentation is available online at the tscluster website (tscluster.readthedocs.io).</p></div>
-    <div class="pub-panel bibtex" id="bib-tosanwumi2025tscluster" hidden><pre>@article{tosanwumi2025tscluster,
+    <div class="pub-panel bibtex" id="bib-tosanwumi2025tscluster" hidden><button type="button" class="copy">Copy</button><pre>@article{tosanwumi2025tscluster,
   title   = {tscluster: A Python Package for the Optimal Temporal Clustering Framework},
   author  = {Tosanwumi, Jolomi and Liang, Jiazhou and Silver, Daniel and Fosse, Ethan and Sanner, Scott},
   journal = {Environment and Planning B: Urban Analytics and City Science},
@@ -269,19 +344,26 @@
   </div>
 </li>
 </ul>
+</div>
+</section>
 
+<section class="pub-section">
 <h2 id="thesis">Thesis</h2>
-
 <ul class="pubs">
-<li class="pub" id="liang2025thesis">
-  <div class="pub-tag">MASc Thesis</div>
+<li class="pub" id="liang2025thesis" data-topics="clustering">
+  <div class="pub-side">
+    <button type="button" class="pub-thumb" data-full="assets/images/papers/2025-masc-thesis.webp" aria-label="Enlarge figure: Novel Optimization Methods for Temporal and Predictive Clustering">
+      <img src="assets/images/papers/2025-masc-thesis.webp" alt="Figure from: Novel Optimization Methods for Temporal and Predictive Clustering" loading="lazy">
+    </button>
+    <span class="pub-tag">MASc Thesis</span>
+  </div>
   <div class="pub-body">
     <div class="pub-title">Novel Optimization Methods for Temporal and Predictive Clustering</div>
     <div class="pub-authors"><span class="me">Jiazhou Liang</span></div>
     <div class="pub-venue"><em>Master of Applied Science Thesis, University of Toronto</em>, 2025.</div>
     <div class="pub-links">[<a href="papers/2025-masc-thesis.pdf">PDF</a>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="abs-liang2025thesis">Abstract</button>] [<button type="button" class="toggle" aria-expanded="false" aria-controls="bib-liang2025thesis">BibTeX</button>]</div>
     <div class="pub-panel abstract" id="abs-liang2025thesis" hidden><p>Clustering, an unsupervised machine learning technique designed to group unlabeled samples based on their similarity to each other, presents several challenges due to the complexity of modern datasets: (1) Samples may contain features beyond static observations, such as temporal sequences where variables are observed across multiple time points; and (2) clustering may extend beyond grouping samples based on geometric similarity (e.g., Euclidean distance) in feature space, incorporating alternative objectives, such as grouping samples with similar predictive relationships between feature variables and target variables. These complexities pose significant limitations for conventional clustering methods since they are primarily designed to group static data points based on geometric similarity in feature space. This thesis introduces several novel clustering methods and objectives tailored to address these challenges. To guarantee globally optimal clustering results with respect to the defined clustering objectives, each proposed method is formulated as a Mixed-Integer Linear Program (MILP) along with techniques to improve scalability. First, to address clustering with non-static features, we propose a unified framework for Temporal Clustering, which groups samples with time-dependent features while ensuring that cluster labels remain temporally coherent across successive time points. We also develop an alternative Majorization-Minimization (MM) algorithm that iteratively optimizes cluster centers and labels, enabling efficient scaling to large datasets. Second, to extend clustering beyond shared geometric similarity, we introduce a novel MILP formulation for Linear Predictive Clustering (LPC) by grouping samples based on shared linear relationships between feature and target variables. This MILP formulation of LPC is designed for non-separable settings in which clusters overlap in the feature space but exhibit distinct linear relationships to the target variables. We exploit this non-separable structure to deliver near-optimal performance with substantially reduced computational overhead compared to prior MILP-based approaches. Third, we present Granger-causal Clustering, which integrates clustering with both temporal data and shared linear relationships. Specifically, it groups samples that exhibit similar linear autoregressive structures, where the same lagged feature variables significantly improve the prediction of a target variable over time. Collectively, these contributions advance the frontier of clustering by incorporating temporal, predictive, and causal structures within a principled optimization framework.</p></div>
-    <div class="pub-panel bibtex" id="bib-liang2025thesis" hidden><pre>@mastersthesis{liang2025thesis,
+    <div class="pub-panel bibtex" id="bib-liang2025thesis" hidden><button type="button" class="copy">Copy</button><pre>@mastersthesis{liang2025thesis,
   title  = {Novel Optimization Methods for Temporal and Predictive Clustering},
   author = {Liang, Jiazhou},
   school = {University of Toronto},
@@ -290,6 +372,7 @@
   </div>
 </li>
 </ul>
+</section>
 <!-- END:publications -->
 
 </main>

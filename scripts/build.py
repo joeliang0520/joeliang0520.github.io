@@ -113,17 +113,30 @@ def render_links(p):
     return " ".join(f"[{l}]" for l in links)
 
 
+def render_figure(p):
+    tag = f'<span class="pub-tag">{esc(p["short"])}</span>'
+    if not p.get("fig"):
+        return f'<div class="pub-side">{tag}</div>'
+    return f"""<div class="pub-side">
+    <button type="button" class="pub-thumb" data-full="{esc(p['fig'])}" aria-label="Enlarge figure: {esc(p['title'])}">
+      <img src="{esc(p['fig'])}" alt="Figure from: {esc(p['title'])}" loading="lazy">
+    </button>
+    {tag}
+  </div>"""
+
+
 def render_pub(p):
     pid = esc(p["id"])
-    return f"""<li class="pub" id="{pid}">
-  <div class="pub-tag">{esc(p['short'])}</div>
+    topics = esc(" ".join(p.get("topics", [])))
+    return f"""<li class="pub" id="{pid}" data-topics="{topics}">
+  {render_figure(p)}
   <div class="pub-body">
     <div class="pub-title">{esc(p['title'])}</div>
     <div class="pub-authors">{render_authors(p['authors'])}</div>
     <div class="pub-venue">{render_venue(p)}</div>
     <div class="pub-links">{render_links(p)}</div>
     <div class="pub-panel abstract" id="abs-{pid}" hidden><p>{esc(p['abstract'])}</p></div>
-    <div class="pub-panel bibtex" id="bib-{pid}" hidden><pre>{esc(render_bibtex(p))}</pre></div>
+    <div class="pub-panel bibtex" id="bib-{pid}" hidden><button type="button" class="copy">Copy</button><pre>{esc(render_bibtex(p))}</pre></div>
   </div>
 </li>"""
 
@@ -141,13 +154,14 @@ def render_full(pubs):
             items = [p for p in pubs if p["type"] == key]
         if not items:
             continue
-        out.append(f'<h2 id="{key}">{heading}</h2>')
+        block = [f'<h2 id="{key}">{heading}</h2>']
         if key == "peer":
             for year in sorted({p["year"] for p in items}, reverse=True):
-                out.append(f'<h3 class="year">{year}</h3>')
-                out.append(render_list([p for p in items if p["year"] == year]))
+                block.append(f'<div class="year-group">\n<h3 class="year">{year}</h3>')
+                block.append(render_list([p for p in items if p["year"] == year]) + "\n</div>")
         else:
-            out.append(render_list(items))
+            block.append(render_list(items))
+        out.append('<section class="pub-section">\n' + "\n".join(block) + "\n</section>")
     return "\n\n".join(out)
 
 
@@ -163,8 +177,9 @@ def splice(path, name, content):
 def main():
     pubs = json.loads((ROOT / "data" / "publications.json").read_text(encoding="utf-8"))
     for p in pubs:
-        if p.get("pdf") and not (ROOT / p["pdf"]).exists():
-            print(f"warning: missing PDF {p['pdf']}")
+        for k in ("pdf", "fig"):
+            if p.get(k) and not (ROOT / p[k]).exists():
+                print(f"warning: missing file {p[k]}")
     splice(ROOT / "index.html", "selected", render_list([p for p in pubs if p.get("selected")]))
     splice(ROOT / "publications.html", "publications", render_full(pubs))
     print(f"rendered {len(pubs)} publications")
