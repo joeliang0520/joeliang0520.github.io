@@ -1,0 +1,267 @@
+/* Jiazhou (Joe) Liang - academic homepage */
+
+:root {
+  --text: #222;
+  --muted: #5f6368;
+  --rule: #d9d9d9;
+  --link: #1e3a6e;
+  --link-hover: #0b5394;
+  --bg: #fff;
+  --panel: #f6f6f4;
+  --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+  --mono: Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+a { color: var(--link); text-decoration: none; }
+a:hover { color: var(--link-hover); text-decoration: underline; }
+
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- Navigation ---------- */
+.site-nav {
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--sans);
+}
+.site-nav .container {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px 24px;
+  padding-top: 14px;
+  padding-bottom: 12px;
+}
+.site-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+}
+.site-name:hover { color: var(--text); text-decoration: none; }
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 22px;
+  font-size: 16px;
+}
+.site-nav ul a { color: var(--muted); }
+.site-nav ul a:hover { color: var(--link); text-decoration: none; }
+.site-nav ul a[aria-current="page"] { color: var(--text); font-weight: 600; }
+
+/* ---------- Headings ---------- */
+main.container { padding-top: 36px; padding-bottom: 40px; }
+
+h1 {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0 0 6px;
+}
+h2 {
+  font-size: 21px;
+  font-weight: 600;
+  color: var(--link);
+  margin: 40px 0 14px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--rule);
+}
+h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 22px 0 8px;
+}
+p { margin: 0 0 14px; }
+
+.page-intro { color: var(--muted); margin-bottom: 4px; }
+
+/* ---------- Profile header (home) ---------- */
+.profile {
+  display: flex;
+  gap: 36px;
+  align-items: flex-start;
+}
+.profile-text { flex: 1; min-width: 0; }
+.profile-photo {
+  flex: 0 0 180px;
+  width: 180px;
+  height: auto;
+  border-radius: 2px;
+}
+.profile .position { margin: 0; line-height: 1.5; }
+.profile .contact {
+  margin: 14px 0 0;
+  font-family: var(--sans);
+  font-size: 15.5px;
+}
+.profile .links {
+  margin-top: 6px;
+  font-family: var(--sans);
+  font-size: 15.5px;
+}
+.links .sep { color: var(--rule); margin: 0 7px; }
+
+.bio { margin-top: 26px; }
+
+/* ---------- News ---------- */
+.news {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.news li {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 12px;
+  padding: 4px 0;
+}
+.news .date {
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 15px;
+  padding-top: 1px;
+  white-space: nowrap;
+}
+
+/* ---------- Publications ---------- */
+.pubs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.pub {
+  display: grid;
+  grid-template-columns: 128px 1fr;
+  gap: 16px;
+  padding: 11px 0;
+}
+.pub + .pub { border-top: 1px solid #eee; }
+.pub-tag {
+  font-family: var(--sans);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--link);
+  padding-top: 3px;
+  line-height: 1.35;
+}
+.pub-title { font-weight: 600; line-height: 1.4; }
+.pub-authors, .pub-venue { font-size: 16px; }
+.pub-venue { color: var(--muted); }
+.pub .me { font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+.pub sup { font-size: 0.7em; }
+.pub-links {
+  margin-top: 3px;
+  font-family: var(--sans);
+  font-size: 14.5px;
+  color: var(--muted);
+}
+.toggle {
+  font: inherit;
+  color: var(--link);
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.toggle:hover { color: var(--link-hover); text-decoration: underline; }
+.toggle[aria-expanded="true"] { font-weight: 600; }
+.pub-panel {
+  margin-top: 10px;
+  padding: 12px 14px;
+  background: var(--panel);
+  border-left: 3px solid var(--rule);
+}
+.pub-panel p { margin: 0; font-size: 15.5px; line-height: 1.55; text-align: justify; hyphens: auto; }
+.pub-panel pre {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 12.5px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.year {
+  font-family: var(--sans);
+  color: var(--muted);
+  font-size: 16px;
+  margin: 22px 0 2px;
+}
+.note {
+  font-size: 15px;
+  color: var(--muted);
+}
+
+/* ---------- CV page ---------- */
+.cv-entry { margin: 0 0 16px; }
+.cv-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.cv-head .when {
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 15px;
+  white-space: nowrap;
+}
+.cv-sub { font-style: italic; }
+.cv-entry ul, .plain-list {
+  margin: 4px 0 0;
+  padding-left: 20px;
+}
+.cv-entry li, .plain-list li { margin: 2px 0; }
+.awards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.awards li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  padding: 2px 0;
+}
+.awards .when { color: var(--muted); font-family: var(--sans); font-size: 15px; white-space: nowrap; }
+
+/* ---------- Footer ---------- */
+.site-footer {
+  border-top: 1px solid var(--rule);
+  padding: 18px 0 30px;
+  font-family: var(--sans);
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  main.container { padding-top: 24px; }
+  .profile { flex-direction: column-reverse; gap: 18px; }
+  .profile-photo { width: 140px; flex-basis: auto; }
+  .pub { grid-template-columns: 1fr; gap: 2px; }
+  .news li { grid-template-columns: 1fr; gap: 0; }
+  .site-nav ul { gap: 16px; }
+}
+
+@media print {
+  .site-nav, .pub-links, .site-footer { display: none; }
+}
