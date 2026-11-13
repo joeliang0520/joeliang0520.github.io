@@ -389,6 +389,20 @@ html:not(.js) .ask-text { text-decoration: underline; text-decoration-color: var
 .hl-marks .dot { stroke: none; transform-box: fill-box; transform-origin: center; transform: scale(0); }
 .hl-marks .dot.on { transform: scale(1); transition: transform .35s cubic-bezier(.3,1.8,.5,1); }
 .hl-marks .scan { stroke-width: 1.5; opacity: 0; }
+.lead a.q {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+  transition: color .2s ease, text-decoration-color .2s ease;
+}
+.lead a.q:hover, .lead a.q:focus-visible { color: var(--link); text-decoration-style: solid; text-decoration-color: var(--link); }
+.rail-back { font-size: 15px; color: var(--muted); }
+.rail-back:hover { color: var(--link); }
+.ask { scroll-margin-top: calc(var(--nav-h) + 24px); }
+.ask:target { outline: 2px solid color-mix(in srgb, var(--hl) 60%, transparent); outline-offset: 3px; }
 .chips { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; padding: 0; }
 .chips li {
   padding: 3px 12px;
@@ -603,7 +617,14 @@ html:not(.js) .ask-text { text-decoration: underline; text-decoration-color: var
 .js [data-reveal] { opacity: 0; transform: translateY(12px); transition: opacity .7s ease, transform .7s ease; }
 .js [data-reveal].in { opacity: 1; transform: none; }
 
-/* ---------- Hero: animated floor plan ---------- */
+/* ---------- Animated floor plan (home: Current focus; questions page: hero) ---------- */
+.focus {
+  padding: 26px;
+  background: linear-gradient(180deg, var(--bg-tint), var(--bg-soft));
+  border: 1px solid var(--rule);
+  border-radius: 16px;
+}
+.focus-demo { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 16px; align-items: stretch; }
 .plan-wrap { margin: 0; }
 .plan { display: block; width: 100%; height: auto; background: #fff; border: 1px solid var(--rule); border-radius: 10px; }
 .plan-wrap figcaption { margin-top: 6px; font-size: 13px; color: var(--faint); }
@@ -630,13 +651,13 @@ html:not(.js) .ask-text { text-decoration: underline; text-decoration-color: var
 .plan #walker .head { fill: #f2d3b6; stroke: #3b4252; stroke-width: 1.6; }
 .plan #walker .glasses { fill: var(--link); }
 .plan { --pc: var(--accent); }
-.plan[data-phase="0"] { --pc: #0f766e; }
-.plan[data-phase="1"] { --pc: #1e3a6e; }
-.plan[data-phase="2"] { --pc: #8a3a8f; }
-.plan[data-phase="3"] { --pc: #c2611a; }
+.hero .plan[data-phase="0"] { --pc: #0f766e; }
+.hero .plan[data-phase="1"] { --pc: #1e3a6e; }
+.hero .plan[data-phase="2"] { --pc: #8a3a8f; }
+.hero .plan[data-phase="3"] { --pc: #c2611a; }
 .plan .link { stroke: var(--pc); }
-.plan[data-phase="0"] #walker .cone { fill: rgba(15, 118, 110, .14); stroke: rgba(15, 118, 110, .35); }
-.plan #walker .cone { transition: fill .5s ease, stroke .5s ease; }
+.hero .plan[data-phase="0"] #walker .cone { fill: rgba(15, 118, 110, .14); stroke: rgba(15, 118, 110, .35); }
+.hero .plan #walker .cone { transition: fill .5s ease, stroke .5s ease; }
 .plan .day rect { fill: #fff; stroke: var(--rule-strong); stroke-width: 1; transition: stroke .4s ease, fill .4s ease; }
 .plan .day text { font: 700 9px var(--sans); letter-spacing: .14em; fill: var(--muted); }
 .plan .day.later rect { fill: #eef2f8; stroke: #1e3a6e; }
@@ -649,9 +670,8 @@ html:not(.js) .ask-text { text-decoration: underline; text-decoration-color: var
 .plan .speech circle { fill: var(--accent); }
 
 .memory {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
-  gap: 34px;
+  display: flex;
+  flex-direction: column;
   font-size: 14px;
   border: 1px solid var(--rule);
   border-radius: 10px;
@@ -682,11 +702,14 @@ html:not(.js) .ask-text { text-decoration: underline; text-decoration-color: var
   cursor: pointer;
 }
 .mem-list, .dialog { list-style: none; margin: 0; padding: 0; }
-.mem-list { display: flex; flex-wrap: wrap; gap: 5px; align-content: flex-start; min-height: 58px; }
-.mem-list li { display: inline-flex; align-items: baseline; gap: 5px; padding: 1px 9px 1px 7px; border: 1px solid var(--rule); border-radius: 999px; animation: slide-in .4s ease; line-height: 1.5; font-size: 13.5px; }
-.mem-list .mem-where { display: none; }
-.mem-list:empty::before { content: "Objects the glasses see are saved here."; color: var(--faint); font-style: italic; }
-.dialog:empty::before { content: "What the user says shows up here."; color: var(--faint); font-style: italic; }
+.mem-list { min-height: 184px; }
+.mem-list li { display: flex; align-items: baseline; gap: 6px; padding: 2px 4px; margin: 0 -4px; border-radius: 4px; animation: slide-in .4s ease; line-height: 1.5; }
+.hero .memory { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 34px; }
+.hero .mem-list { display: flex; flex-wrap: wrap; gap: 5px; align-content: flex-start; min-height: 58px; }
+.hero .mem-list li { display: inline-flex; gap: 5px; padding: 1px 9px 1px 7px; margin: 0; border: 1px solid var(--rule); border-radius: 999px; font-size: 13.5px; }
+.hero .mem-list .mem-where { display: none; }
+.hero .mem-list:empty::before { content: "Objects the glasses see are saved here."; color: var(--faint); font-style: italic; }
+.hero .dialog:empty::before { content: "What the user says shows up here."; color: var(--faint); font-style: italic; }
 .mem-list li.flash { animation: flash 1.6s ease; }
 @keyframes flash { 0%, 100% { background: transparent; } 25% { background: var(--accent-soft); } }
 @keyframes slide-in { from { opacity: 0; transform: translateX(-6px); } to { opacity: 1; transform: none; } }
@@ -695,8 +718,10 @@ html:not(.js) .ask-text { text-decoration: underline; text-decoration-color: var
 .mem-where { color: var(--muted); }
 .mem-note { color: var(--accent); font-style: italic; }
 .mem-note:not(:empty)::before { content: "· "; color: var(--muted); font-style: normal; }
-.dialog { min-height: 64px; }
+.dialog { min-height: 96px; }
+.hero .dialog { min-height: 64px; }
 .dialog li { padding: 2px 0; line-height: 1.4; animation: slide-in .4s ease; }
+.focus-text { margin: 16px 0 0; font-size: 16px; }
 .dialog .who { display: inline-block; min-width: 66px; font-size: 12px; font-weight: 600; color: var(--faint); }
 .dialog li.a { color: var(--link); }
 
@@ -760,7 +785,9 @@ html:not(.js) .ask-text { text-decoration: underline; text-decoration-color: var
 /* ---------- Responsive ---------- */
 @media (max-width: 1000px) {
   .page { grid-template-columns: 220px minmax(0, 1fr); gap: 36px; }
-  .hero, .memory { grid-template-columns: 1fr; gap: 18px; }
+  .focus-demo { grid-template-columns: 1fr; }
+  .mem-list { min-height: 0; }
+  .hero, .hero .memory { grid-template-columns: 1fr; gap: 18px; }
   .hero .plan-wrap, .hero .asks { grid-column: 1; grid-row: auto; }
   .hero-links { display: none; }
   .js .ask.on.active { transform: none; }
@@ -784,6 +811,7 @@ html:not(.js) .ask-text { text-decoration: underline; text-decoration-color: var
   .page { padding-left: 16px; padding-right: 16px; }
   .site-nav ul a { padding: 4px 8px; font-size: 15px; }
   .profile { grid-template-columns: 1fr; }
+  .focus { padding: 16px; border-radius: 12px; }
   .lead { font-size: 21px; }
   .ask-text { font-size: 17.5px; }
   .pubs .pub { grid-template-columns: 1fr; gap: 10px; }
@@ -807,6 +835,6 @@ html:not(.js) .ask-text { text-decoration: underline; text-decoration-color: var
 }
 
 @media print {
-  .site-nav, .rail, .pub-links, .site-footer, .hero-links, .plan-wrap, .memory { display: none; }
+  .site-nav, .rail, .pub-links, .site-footer, .focus, .hero-links, .hero .plan-wrap, .hero .memory { display: none; }
   .page { display: block; }
 }

@@ -45,6 +45,8 @@
       attach: 'mug', answer: true, phase: 3 }
   ];
   var day = document.getElementById('day');
+  // Without the day badge (home page) there is no day jump to pause for.
+  if (!day) { script[2].delay = 0.3; script[3].delay = 1.6; }
 
   function phase(i, point) {
     svg.setAttribute('data-phase', i);
