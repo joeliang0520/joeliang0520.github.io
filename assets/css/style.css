@@ -437,6 +437,13 @@ html:not(.js) .ask-text { text-decoration: underline; text-decoration-color: var
 .theme h3 { font-size: 17.5px; margin-bottom: 4px; }
 .theme p { margin: 0 0 6px; font-size: 15.5px; line-height: 1.5; color: var(--muted); }
 .theme .theme-papers { font-size: 14px; margin: 0; }
+.theme:has(.theme-link) { position: relative; cursor: pointer; }
+.theme-link { color: inherit; }
+.theme-link::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
+.theme-link span { display: inline-block; color: var(--link); transition: transform .2s ease; }
+.theme:hover .theme-link { color: var(--link); text-decoration: none; }
+.theme:hover .theme-link span { transform: translateX(3px); }
+.theme .theme-papers a { position: relative; z-index: 1; }
 
 /* Selected publication cards */
 .card-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
