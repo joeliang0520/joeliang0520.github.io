@@ -13,7 +13,8 @@
   var toggle = document.getElementById('story-toggle');
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  var LOOP = 58.5;                 // seconds
+  var LOOP = 58.5;                 // seconds of story time
+  var SPEED = 1.4;                 // story seconds per real second (loop ≈ 42 s)
   var ASPECT = 460 / 300;
   var STARTS = [0, 11, 27, 43];    // where each question card's part begins
   var STILLS = [8.6, 25.5, 42.8, 56];  // representative frames for reduced motion
@@ -171,7 +172,7 @@
   var time = 0, raf = null, last = null, paused = false, visible = true;
   function frameLoop(now) {
     if (last !== null) {
-      time += Math.min((now - last) / 1000, 0.05);
+      time += Math.min((now - last) / 1000, 0.05) * SPEED;
       if (time >= LOOP) time -= LOOP;
       render(time);
     }

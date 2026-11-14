@@ -749,7 +749,7 @@ html:not(.js) .ask-text { text-decoration: underline; text-decoration-color: var
   overflow: hidden;
 }
 .stage-view .layer { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
-.stage-cap { display: flex; gap: 10px; align-items: baseline; margin-top: 10px; min-height: 4.4em; font-size: 14.5px; line-height: 1.45; color: var(--muted); }
+.stage-cap { display: flex; gap: 10px; align-items: baseline; margin-top: 10px; min-height: 4.4em; font-size: 15.5px; line-height: 1.45; color: var(--muted); }
 .stage-num { flex: none; font-family: var(--mono); font-size: 12px; font-weight: 700; color: var(--accent); }
 #stage-text { transition: opacity .25s ease; }
 #stage-text.swap { opacity: 0; }
@@ -774,7 +774,7 @@ html:not(.js) .ask-text { text-decoration: underline; text-decoration-color: var
 #map .w { fill: none; stroke: #3b4252; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
 #map .ob { fill: #fff; stroke: #9aa3b2; stroke-width: 1.2; }
 #map .ol { fill: none; stroke: #9aa3b2; stroke-width: 1.2; }
-#map .rm { font: 600 7px var(--sans); letter-spacing: .14em; fill: #a3a9b4; }
+#map .rm { font: 600 8px var(--sans); letter-spacing: .14em; fill: #a3a9b4; }
 #map .cb { fill: #f3e9dc; stroke: #b08968; stroke-width: 1.2; }
 #map .rb { fill: #f7d9d6; stroke: #c0392b; stroke-width: 1.2; }
 #map .rib { fill: none; stroke: #c0392b; stroke-width: 1.2; }
@@ -786,7 +786,7 @@ html:not(.js) .ask-text { text-decoration: underline; text-decoration-color: var
 #map .pin2 { fill: #1e3a6e; stroke: #fff; stroke-width: 1.2; }
 #map .tg rect { fill: #0f766e; }
 #map .tg2 rect { fill: #1e3a6e; }
-#map .tg text, #map .tg2 text { font: 700 7px var(--sans); fill: #fff; }
+#map .tg text, #map .tg2 text { font: 700 8.5px var(--sans); fill: #fff; }
 #map .halo { fill: none; stroke: #c2611a; stroke-width: 2.4; }
 #map .cone { fill: rgba(15, 118, 110, .12); stroke: rgba(15, 118, 110, .3); stroke-width: 1; }
 #map .hb, #hud .hb { fill: #3b4252; }
@@ -794,15 +794,15 @@ html:not(.js) .ask-text { text-decoration: underline; text-decoration-color: var
 #map .hg { fill: var(--link); }
 #map .tl-line { fill: none; stroke: #c9cfd9; stroke-width: 3; stroke-linecap: round; }
 #map .tl-dot { fill: #1e3a6e; stroke: #fff; stroke-width: 2; }
-#map .tl-day { font: 700 34px var(--sans); letter-spacing: .12em; fill: #1e3a6e; }
-#map .tl-sub { font: 400 26px var(--sans); fill: #5d6570; }
+#map .tl-day { font: 700 40px var(--sans); letter-spacing: .12em; fill: #1e3a6e; }
+#map .tl-sub { font: 400 32px var(--sans); fill: #5d6570; }
 #map .recall { fill: none; stroke: #1e3a6e; stroke-width: 2.2; stroke-linecap: round; stroke-dasharray: 1; }
-#map .recall-cap text { font: 400 28px var(--sans); fill: #5d6570; }
-#map .recall-cap .rc2 { font: 700 34px var(--serif); fill: #1e3a6e; }
+#map .recall-cap text { font: 400 34px var(--sans); fill: #5d6570; }
+#map .recall-cap .rc2 { font: 700 42px var(--serif); fill: #1e3a6e; }
 #map .prop { fill: none; stroke: #8a3a8f; stroke-width: 1.6; stroke-dasharray: 4 3; animation: march 1s linear infinite; }
 #map .nope { fill: none; stroke: #c0392b; stroke-width: 2.4; stroke-linecap: round; }
 #map .gift rect { fill: #fff; stroke: #c0392b; stroke-width: 1; }
-#map .gift text { font: 700 6.5px var(--sans); fill: #c0392b; }
+#map .gift text { font: 700 7.5px var(--sans); fill: #c0392b; }
 #map .chk circle { fill: #8a3a8f; }
 #map .chk path { fill: none; stroke: #fff; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
 #map .talk { fill: none; stroke-width: 1.6; }
@@ -837,16 +837,16 @@ html:not(.js) .ask-text { text-decoration: underline; text-decoration-color: var
 #pov .scanA { stroke: #0f766e; stroke-width: 1.6; }
 #pov .bb { fill: rgba(15, 118, 110, .06); stroke: #0f766e; stroke-width: 1.4; stroke-dasharray: 5 3; }
 #pov .dt { fill: #0f766e; }
-#pov .det text { font: 700 9px var(--sans); fill: #fff; }
+#pov .det text { font: 700 10.5px var(--sans); fill: #fff; }
 #pov .roomchip rect { fill: rgba(255, 255, 255, .92); stroke: #0f766e; stroke-width: 1.2; }
-#pov .roomchip text { font: 700 9.5px var(--sans); fill: #0f766e; }
+#pov .roomchip text { font: 700 11px var(--sans); fill: #0f766e; }
 #pov .lead { fill: none; stroke: #c2611a; stroke-width: 1.4; stroke-dasharray: 4 3; animation: march 1s linear infinite; }
 #pov .lab rect { fill: rgba(255, 247, 239, .95); stroke: #c2611a; stroke-width: 1.2; }
-#pov .lab text { font: 600 10.5px var(--sans); fill: #8a3f0e; }
+#pov .lab text { font: 600 12px var(--sans); fill: #8a3f0e; }
 #pov .bell { fill: none; stroke: #c2611a; stroke-width: 2; stroke-linecap: round; }
 #pov .note rect { fill: #fff; stroke: #c2611a; stroke-width: 1.6; }
 #pov .note-i { fill: #c2611a; }
-#pov .note text { font: 400 10.5px var(--sans); fill: #3b4252; }
+#pov .note text { font: 400 12px var(--sans); fill: #3b4252; }
 #pov .note .nb { font-weight: 700; fill: #8a3f0e; }
 #pov .gaze circle { fill: none; stroke: #c2611a; stroke-width: 1.6; }
 #pov .gaze .gd { fill: #c2611a; stroke: none; }
@@ -859,10 +859,10 @@ html:not(.js) .ask-text { text-decoration: underline; text-decoration-color: var
 #hud .panel { fill: rgba(255, 255, 255, .94); stroke: #e2e5ea; stroke-width: 1; }
 #hud .say rect { fill: #fff; stroke: #c4cad4; stroke-width: 1; }
 #hud .bot-say rect { fill: #f6eef6; stroke: #8a3a8f; }
-#hud .say text, #hud .pref text { font: 400 9.4px var(--sans); fill: #1f2328; }
+#hud .say text, #hud .pref text { font: 400 10.6px var(--sans); fill: #1f2328; }
 #hud .say .b { font-weight: 700; fill: #3b4252; }
 #hud .bot-say .b { fill: #8a3a8f; }
 #hud .pref rect { fill: #fff; stroke: #8a3a8f; stroke-width: 1; stroke-dasharray: 3 2; }
 #hud .pref .b { font-weight: 700; fill: #8a3a8f; }
 #hud .badge rect { fill: rgba(255, 255, 255, .92); stroke: #cfd5de; stroke-width: 1; }
-#hud .badge text { font: 700 9px var(--sans); letter-spacing: .12em; fill: #1e3a6e; }
+#hud .badge text { font: 700 10.5px var(--sans); letter-spacing: .12em; fill: #1e3a6e; }
