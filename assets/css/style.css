@@ -621,29 +621,9 @@ html:not(.js) .ask-text { text-decoration: underline; text-decoration-color: var
 .js [data-reveal] { opacity: 0; transform: translateY(12px); transition: opacity .7s ease, transform .7s ease; }
 .js [data-reveal].in { opacity: 1; transform: none; }
 
-/* ---------- Animated floor plan (questions page) ---------- */
-.plan { display: block; width: 100%; height: auto; background: #fff; border: 1px solid var(--rule); border-radius: 10px; }
-.plan .grid-line { fill: none; stroke: #eef0ee; stroke-width: .6; }
-.plan .walls path { fill: none; stroke: #3b4252; stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; }
-.plan .room { font: 600 8.5px var(--sans); letter-spacing: .14em; fill: #a3a9b4; }
-.plan .route { fill: none; stroke: #b9c3d6; stroke-width: 1.4; stroke-dasharray: 1.5 5; stroke-linecap: round; }
-.plan .obj rect, .plan .obj circle, .plan .obj path { fill: #fff; stroke: #9aa3b2; stroke-width: 1.4; transition: stroke .4s ease, fill .4s ease; }
-.plan .obj path { fill: none; }
-.plan .obj .lbl { font: 600 9.5px var(--sans); fill: var(--link); text-anchor: middle; opacity: 0; transition: opacity .5s ease; }
-.plan .obj.seen rect, .plan .obj.seen circle, .plan .obj.seen path { stroke: var(--link); }
-.plan .obj.seen rect, .plan .obj.seen circle { fill: #eef2f8; }
-.plan .obj.seen .lbl { opacity: 1; }
-.plan .obj.hit rect, .plan .obj.hit circle { animation: hit 1.4s ease; }
-@keyframes hit { 0%, 100% { fill: #eef2f8; } 30% { fill: #fde7c8; } }
-.plan .pin-dot { fill: var(--accent); }
-.plan .pin-ring { fill: none; stroke: var(--accent); stroke-width: 1.4; transform-box: fill-box; transform-origin: center; animation: ping 1.2s ease-out forwards; }
+/* Shared keyframes */
 @keyframes ping { from { transform: scale(.3); opacity: 1; } to { transform: scale(1.8); opacity: 0; } }
 @keyframes march { to { stroke-dashoffset: -14; } }
-.plan #walker .cone { fill: rgba(30, 58, 110, .09); stroke: rgba(30, 58, 110, .18); stroke-width: 1; }
-.plan #walker .body { fill: #3b4252; }
-.plan #walker .head { fill: #f2d3b6; stroke: #3b4252; stroke-width: 1.6; }
-.plan #walker .glasses { fill: var(--link); }
-
 
 /* Theme icons */
 .icon { flex: 0 0 48px; width: 48px; height: 48px; overflow: visible; }
@@ -758,203 +738,131 @@ html:not(.js) .ask-text { text-decoration: underline; text-decoration-color: var
 /* Current focus text under the stage */
 .focus-text { margin: 16px 0 0; font-size: 16px; }
 
-/* ---------- Questions page: the stage that swaps scenes with the active card ---------- */
+/* ---------- Questions page: one continuous story beside the cards ---------- */
 .stage { margin: 0; }
 .stage-view {
   position: relative;
   aspect-ratio: 460 / 300;
   border: 1px solid var(--rule);
   border-radius: 10px;
-  background: #fff;
+  background: #f4f6f9;
   overflow: hidden;
 }
-.scene { position: absolute; inset: 0; display: block; width: 100%; height: 100%; opacity: 0; transition: opacity .6s ease; }
-.scene.on { opacity: 1; }
-.stage .plan { border: 0; border-radius: 0; background: transparent; }
-.stage-cap { display: flex; gap: 10px; align-items: baseline; margin-top: 10px; min-height: 3em; font-size: 14.5px; line-height: 1.45; color: var(--muted); }
+.stage-view .layer { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
+.stage-cap { display: flex; gap: 10px; align-items: baseline; margin-top: 10px; min-height: 4.4em; font-size: 14.5px; line-height: 1.45; color: var(--muted); }
 .stage-num { flex: none; font-family: var(--mono); font-size: 12px; font-weight: 700; color: var(--accent); }
-#stage-text { transition: opacity .3s ease; }
+#stage-text { transition: opacity .25s ease; }
 #stage-text.swap { opacity: 0; }
-.scene-days [class], .scene-align [class], .scene-pov [class] { transform-box: view-box; }
-.scene text { font-family: var(--sans); }
-.scene .grid-line { fill: none; stroke: #eef0ee; stroke-width: .6; }
-.scene .w { fill: none; stroke: #3b4252; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
-.scene .ob { fill: #fff; stroke: #9aa3b2; stroke-width: 1.4; }
-.scene .ol { fill: none; stroke: #9aa3b2; stroke-width: 1.4; }
-.scene .rm { font-size: 8.5px; font-weight: 600; letter-spacing: .14em; fill: #a3a9b4; }
-.scene .hb { fill: #3b4252; }
-.scene .hh { fill: #f2d3b6; stroke: #3b4252; stroke-width: 1.6; }
-.scene .hg { fill: var(--link); }
+.stage .flash { background: #fff; pointer-events: none; }
+#hud { pointer-events: none; }
+.stage-btn {
+  position: absolute; right: 8px; bottom: 8px; z-index: 3;
+  padding: 1px 10px;
+  font: 12px var(--sans); color: var(--link);
+  background: rgba(255, 255, 255, .9);
+  border: 1px solid var(--rule); border-radius: 999px;
+  cursor: pointer;
+}
+.stage-btn:hover { border-color: var(--rule-strong); }
 
-/* 02 days: zoom out from one room to the whole home; each day's memory stays in its room. */
-.scene-days { --c: #1e3a6e; }
-.scene-days .trail { fill: none; stroke: var(--c); stroke-width: 2; stroke-linecap: round; opacity: .55; stroke-dasharray: 1; stroke-dashoffset: 0; }
-.scene-days .t2 { stroke: #0f766e; }
-.scene-days .t3 { stroke: #8a3a8f; }
-.scene-days .w1, .scene-days .w2 { opacity: 0; }
-.scene-days .tag rect, .scene-days .bub rect { fill: #fff; stroke: var(--c); stroke-width: 1.1; }
-.scene-days .pin { fill: var(--accent); }
-.scene-days .tag text, .scene-days .bub text { font-size: 10px; font-weight: 600; fill: #1f2328; }
-.scene-days .d { fill: var(--c); font-weight: 700; }
-.scene-days .ans rect { fill: #eef2f8; }
-.scene-days .ans text { fill: var(--c); }
-.scene-days .recall { fill: none; stroke: var(--c); stroke-width: 1.6; stroke-dasharray: 5 4; animation: march 1s linear infinite; }
-.scene-days .ring { fill: none; stroke: var(--accent); stroke-width: 2; }
-.scene-days .tl-bg { fill: #fff; }
-.scene-days .tl { stroke: #dfe3e9; stroke-width: 3; stroke-linecap: round; }
-.scene-days .tl-fill { stroke: var(--c); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: .06; }
-.scene-days .dd { fill: var(--c); stroke: #fff; stroke-width: 2; }
-.scene-days .dl { font-size: 9px; font-weight: 700; letter-spacing: .12em; fill: var(--muted); }
-.scene-days .ph { fill: none; stroke: var(--c); stroke-width: 2; transform: translateX(300px); }
-.scene-days.play .world { animation: days-world 12s ease-in-out both; }
-.scene-days.play .t1 { animation: days-t1 12s linear both; }
-.scene-days.play .t2 { animation: days-t2 12s linear both; }
-.scene-days.play .t3 { animation: days-t3 12s linear both; }
-.scene-days.play .w1 { animation: days-w1 12s ease both; }
-.scene-days.play .w2 { animation: days-w2 12s ease both; }
-.scene-days.play .w3 { animation: days-w3 12s ease both; }
-.scene-days.play .g1 { animation: days-g1 12s ease both; }
-.scene-days.play .g2 { animation: days-g2 12s ease both; }
-.scene-days.play .g3 { animation: days-g3 12s ease both; }
-.scene-days.play .recall { animation: days-recall 12s ease both, march 1s linear infinite; }
-.scene-days.play .ring { animation: days-ring 12s ease both; }
-.scene-days.play .ans { animation: days-ans 12s ease both; }
-.scene-days.play .ph { animation: days-ph 12s ease-in-out both; }
-.scene-days.play .tl-fill { animation: days-fill 12s ease-in-out both; }
-.scene-days.play .dd2 { animation: days-dd2 12s ease both; }
-.scene-days.play .dd3 { animation: days-dd3 12s ease both; }
-@keyframes days-world { 0%, 24% { transform: scale(1.75) translate(-10px, -8px); } 36%, 100% { transform: none; } }
-@keyframes days-t1 { 0%, 2% { stroke-dashoffset: 1; } 18%, 100% { stroke-dashoffset: 0; } }
-@keyframes days-t2 { 0%, 38% { stroke-dashoffset: 1; } 52%, 100% { stroke-dashoffset: 0; } }
-@keyframes days-t3 { 0%, 62% { stroke-dashoffset: 1; } 72%, 100% { stroke-dashoffset: 0; } }
-@keyframes days-w1 { 0%, 22% { opacity: 1; } 27%, 100% { opacity: 0; } }
-@keyframes days-w2 { 0%, 38% { opacity: 0; } 41%, 54% { opacity: 1; } 58%, 100% { opacity: 0; } }
-@keyframes days-w3 { 0%, 62% { opacity: 0; } 65%, 100% { opacity: 1; } }
-@keyframes days-g1 { 0%, 17% { opacity: 0; } 21%, 100% { opacity: 1; } }
-@keyframes days-g2 { 0%, 51% { opacity: 0; } 55%, 100% { opacity: 1; } }
-@keyframes days-g3 { 0%, 72% { opacity: 0; } 75%, 100% { opacity: 1; } }
-@keyframes days-recall { 0%, 76% { opacity: 0; } 80%, 100% { opacity: 1; } }
-@keyframes days-ring { 0%, 82% { opacity: 0; } 85% { opacity: 1; } 88% { opacity: .2; } 91%, 100% { opacity: 1; } }
-@keyframes days-ans { 0%, 87% { opacity: 0; } 91%, 100% { opacity: 1; } }
-@keyframes days-ph { 0%, 26% { transform: none; } 36%, 56% { transform: translateX(150px); } 62%, 100% { transform: translateX(300px); } }
-@keyframes days-fill { 0%, 26% { stroke-dashoffset: .94; } 36%, 56% { stroke-dashoffset: .5; } 62%, 100% { stroke-dashoffset: .06; } }
-@keyframes days-dd2 { 0%, 34% { fill: #fff; stroke: #c9cfd9; } 37%, 100% { fill: #1e3a6e; stroke: #fff; } }
-@keyframes days-dd3 { 0%, 59% { fill: #fff; stroke: #c9cfd9; } 62%, 100% { fill: #1e3a6e; stroke: #fff; } }
+/* Map layer: a floor plan the camera tilts (hybrid view), zooms and pans. */
+#map-wrap { overflow: hidden; background: linear-gradient(180deg, #e9eef5, #f6f7f9 45%); }
+#map { display: block; width: 100%; height: 100%; transform-origin: 50% 62%; }
+#map * { vector-effect: non-scaling-stroke; }
+#map .grid-line { fill: none; stroke: #e3e7ee; stroke-width: .6; }
+#map .apt-bg { fill: #fff; }
+#map .w { fill: none; stroke: #3b4252; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+#map .ob { fill: #fff; stroke: #9aa3b2; stroke-width: 1.2; }
+#map .ol { fill: none; stroke: #9aa3b2; stroke-width: 1.2; }
+#map .rm { font: 600 7px var(--sans); letter-spacing: .14em; fill: #a3a9b4; }
+#map .cb { fill: #f3e9dc; stroke: #b08968; stroke-width: 1.2; }
+#map .rb { fill: #f7d9d6; stroke: #c0392b; stroke-width: 1.2; }
+#map .rib { fill: none; stroke: #c0392b; stroke-width: 1.2; }
+#map .trail { fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 0; opacity: .75; }
+#map .tr1 { stroke: #0f766e; }
+#map .tr2 { stroke: #1e3a6e; }
+#map .tr3 { stroke: #8a3a8f; }
+#map .pin { fill: #0f766e; stroke: #fff; stroke-width: 1.2; }
+#map .pin2 { fill: #1e3a6e; stroke: #fff; stroke-width: 1.2; }
+#map .tg rect { fill: #0f766e; }
+#map .tg2 rect { fill: #1e3a6e; }
+#map .tg text, #map .tg2 text { font: 700 7px var(--sans); fill: #fff; }
+#map .halo { fill: none; stroke: #c2611a; stroke-width: 2.4; }
+#map .cone { fill: rgba(15, 118, 110, .12); stroke: rgba(15, 118, 110, .3); stroke-width: 1; }
+#map .hb, #hud .hb { fill: #3b4252; }
+#map .hh { fill: #f2d3b6; stroke: #3b4252; stroke-width: 1.4; }
+#map .hg { fill: var(--link); }
+#map .tl-line { fill: none; stroke: #c9cfd9; stroke-width: 3; stroke-linecap: round; }
+#map .tl-dot { fill: #1e3a6e; stroke: #fff; stroke-width: 2; }
+#map .tl-day { font: 700 34px var(--sans); letter-spacing: .12em; fill: #1e3a6e; }
+#map .tl-sub { font: 400 26px var(--sans); fill: #5d6570; }
+#map .recall { fill: none; stroke: #1e3a6e; stroke-width: 2.2; stroke-linecap: round; stroke-dasharray: 1; }
+#map .recall-cap text { font: 400 28px var(--sans); fill: #5d6570; }
+#map .recall-cap .rc2 { font: 700 34px var(--serif); fill: #1e3a6e; }
+#map .prop { fill: none; stroke: #8a3a8f; stroke-width: 1.6; stroke-dasharray: 4 3; animation: march 1s linear infinite; }
+#map .nope { fill: none; stroke: #c0392b; stroke-width: 2.4; stroke-linecap: round; }
+#map .gift rect { fill: #fff; stroke: #c0392b; stroke-width: 1; }
+#map .gift text { font: 700 6.5px var(--sans); fill: #c0392b; }
+#map .chk circle { fill: #8a3a8f; }
+#map .chk path { fill: none; stroke: #fff; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+#map .talk { fill: none; stroke-width: 1.6; }
+#map .tu { stroke: #3b4252; }
+#map .tb { stroke: #8a3a8f; }
+#map .glow { fill: rgba(138, 58, 143, .14); }
+#map .bot-b { fill: #fff; stroke: #8a3a8f; stroke-width: 1.6; }
+#map .eye { fill: #8a3a8f; }
+#map .ant { fill: none; stroke: #8a3a8f; stroke-width: 1.6; }
+#map .bot { animation: bot-bob 2.4s ease-in-out infinite; }
+@keyframes bot-bob { 0%, 100% { transform: none; } 50% { transform: translateY(-3px); } }
 
-/* 03 aligned: the assistant proposes, the user corrects, the assistant keeps the preference. */
-.scene-align { --c: #8a3a8f; }
-.scene-align .say rect { fill: #fff; stroke: #9aa3b2; stroke-width: 1.1; }
-.scene-align .bot-say rect { fill: color-mix(in srgb, var(--c) 8%, #fff); stroke: var(--c); }
-.scene-align .say text { font-size: 10.5px; fill: #1f2328; }
-.scene-align .say .b { font-weight: 700; fill: #3b4252; }
-.scene-align .bot-say .b { fill: var(--c); }
-.scene-align .box { fill: #f3e9dc; stroke: #b08968; stroke-width: 1.4; }
-.scene-align .red { fill: #f7d9d6; stroke: #c0392b; }
-.scene-align .ribbon { fill: none; stroke: #c0392b; stroke-width: 1.4; }
-.scene-align .bx1 { transform: translate(216px, -174px); }
-.scene-align .bx2 { transform: translate(177px, -128px); }
-.scene-align .bx3 { transform: translate(40px, 32px); }
-.scene-align .prop { fill: none; stroke: #a3a9b4; stroke-width: 1.6; stroke-dasharray: 5 4; opacity: 0; }
-.scene-align .nope { fill: none; stroke: #c0392b; stroke-width: 2.4; stroke-linecap: round; opacity: 0; }
-.scene-align .chk circle { fill: var(--c); }
-.scene-align .chk path { fill: none; stroke: #fff; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-.scene-align .chip rect { fill: #fff; stroke: var(--c); stroke-width: 1.1; stroke-dasharray: 3 2; }
-.scene-align .gift rect { stroke: #c0392b; }
-.scene-align .chip text { font-size: 9.5px; font-weight: 600; fill: #c0392b; }
-.scene-align .pref rect { fill: color-mix(in srgb, var(--c) 10%, #fff); stroke-dasharray: none; }
-.scene-align .pref text { fill: #3b4252; font-weight: 400; }
-.scene-align .pref .b { font-weight: 700; fill: var(--c); }
-.scene-align .glow { fill: color-mix(in srgb, var(--c) 14%, transparent); }
-.scene-align .bot-b { fill: #fff; stroke: var(--c); stroke-width: 1.6; }
-.scene-align .eye { fill: var(--c); }
-.scene-align .ant { fill: none; stroke: var(--c); stroke-width: 1.6; }
-.scene-align .bot { animation: bob 2.4s ease-in-out infinite; }
-@keyframes bob { 0%, 100% { transform: none; } 50% { transform: translateY(-3px); } }
-.scene-align .talk { fill: none; stroke-width: 1.5; opacity: 0; }
-.scene-align .tu { stroke: #3b4252; }
-.scene-align .tb { stroke: var(--c); }
-.scene-align.play .s1 { animation: al-s1 13s ease both; }
-.scene-align.play .s2 { animation: al-s2 13s ease both; }
-.scene-align.play .s3 { animation: al-s3 13s ease both; }
-.scene-align.play .s4 { animation: al-s4 13s ease both; }
-.scene-align.play .tu { animation: al-tu 13s ease both; }
-.scene-align.play .tb { animation: al-tb 13s ease both; }
-.scene-align.play .p1, .scene-align.play .p2 { animation: al-p12 13s ease both, march 1s linear infinite; }
-.scene-align.play .p3 { animation: al-p3 13s ease both, march 1s linear infinite; }
-.scene-align.play .nope { animation: al-nope 13s ease both; }
-.scene-align.play .gift { animation: al-gift 13s ease both; }
-.scene-align.play .pref { animation: al-pref 13s ease both; }
-.scene-align.play .bx1 { animation: al-bx1 13s ease-in-out both; }
-.scene-align.play .bx2 { animation: al-bx2 13s ease-in-out both; }
-.scene-align.play .bx3 { animation: al-bx3 13s ease-in-out both; }
-.scene-align.play .chk { animation: al-chk 13s ease both; }
-@keyframes al-s1 { 0%, 3% { opacity: 0; transform: translateY(6px); } 7%, 100% { opacity: 1; transform: none; } }
-@keyframes al-s2 { 0%, 17% { opacity: 0; transform: translateY(6px); } 21%, 100% { opacity: 1; transform: none; } }
-@keyframes al-s3 { 0%, 37% { opacity: 0; transform: translateY(6px); } 41%, 100% { opacity: 1; transform: none; } }
-@keyframes al-s4 { 0%, 59% { opacity: 0; transform: translateY(6px); } 63%, 100% { opacity: 1; transform: none; } }
-@keyframes al-tu { 0%, 3% { opacity: 0; } 5%, 12% { opacity: 1; } 15%, 37% { opacity: 0; } 39%, 46% { opacity: 1; } 49%, 100% { opacity: 0; } }
-@keyframes al-tb { 0%, 17% { opacity: 0; } 19%, 26% { opacity: 1; } 29%, 59% { opacity: 0; } 61%, 68% { opacity: 1; } 71%, 100% { opacity: 0; } }
-@keyframes al-p12 { 0%, 23% { opacity: 0; } 27%, 68% { opacity: 1; } 72%, 100% { opacity: 0; } }
-@keyframes al-p3 { 0%, 23% { opacity: 0; } 27%, 45% { opacity: 1; } 49%, 100% { opacity: 0; } }
-@keyframes al-nope { 0%, 45% { opacity: 0; } 49%, 68% { opacity: 1; } 72%, 100% { opacity: 0; } }
-@keyframes al-gift { 0%, 47% { opacity: 0; } 51%, 100% { opacity: 1; } }
-@keyframes al-pref { 0%, 51% { opacity: 0; transform: translateY(4px); } 55%, 100% { opacity: 1; transform: none; } }
-@keyframes al-bx1 { 0%, 70% { transform: none; } 84%, 100% { transform: translate(216px, -174px); } }
-@keyframes al-bx2 { 0%, 72% { transform: none; } 86%, 100% { transform: translate(177px, -128px); } }
-@keyframes al-bx3 { 0%, 72% { transform: none; } 82%, 100% { transform: translate(40px, 32px); } }
-@keyframes al-chk { 0%, 86% { opacity: 0; } 90%, 100% { opacity: 1; } }
+/* First-person layer: the room through the glasses. */
+#pov .wall { fill: #f4f5f7; }
+#pov .floor { fill: #e8ebf0; }
+#pov .persp { fill: none; stroke: #d3d8e0; stroke-width: 1.2; }
+#pov .win { fill: #fff; stroke: #cfd5de; stroke-width: 2; }
+#pov .win-l { fill: none; stroke: #cfd5de; stroke-width: 2; }
+#pov .sofa { fill: #e3e8f0; stroke: #9aa3b2; stroke-width: 1.4; }
+#pov .door { fill: #fff; stroke: #9aa3b2; stroke-width: 1.6; }
+#pov .knob { fill: #9aa3b2; }
+#pov .shelf { fill: #fff; stroke: #9aa3b2; stroke-width: 1.6; }
+#pov .shelf-l { fill: none; stroke: #9aa3b2; stroke-width: 1.6; }
+#pov .cbox { fill: #f3e9dc; stroke: #b08968; stroke-width: 1.3; }
+#pov .rbox { fill: #f7d9d6; stroke: #c0392b; stroke-width: 1.4; }
+#pov .rib { fill: none; stroke: #c0392b; stroke-width: 1.4; }
+#pov .tbl { fill: #fff; stroke: #9aa3b2; stroke-width: 1.4; stroke-linejoin: round; }
+#pov .tbl-l { fill: none; stroke: #9aa3b2; stroke-width: 1.6; }
+#pov .mug { fill: #fff; stroke: #1e3a6e; stroke-width: 1.6; }
+#pov .mug-h { fill: none; stroke: #1e3a6e; stroke-width: 1.6; }
+#pov .vf { fill: none; stroke: #0f766e; stroke-width: 2.4; stroke-linecap: round; }
+#pov .scanA { stroke: #0f766e; stroke-width: 1.6; }
+#pov .bb { fill: rgba(15, 118, 110, .06); stroke: #0f766e; stroke-width: 1.4; stroke-dasharray: 5 3; }
+#pov .dt { fill: #0f766e; }
+#pov .det text { font: 700 9px var(--sans); fill: #fff; }
+#pov .roomchip rect { fill: rgba(255, 255, 255, .92); stroke: #0f766e; stroke-width: 1.2; }
+#pov .roomchip text { font: 700 9.5px var(--sans); fill: #0f766e; }
+#pov .lead { fill: none; stroke: #c2611a; stroke-width: 1.4; stroke-dasharray: 4 3; animation: march 1s linear infinite; }
+#pov .lab rect { fill: rgba(255, 247, 239, .95); stroke: #c2611a; stroke-width: 1.2; }
+#pov .lab text { font: 600 10.5px var(--sans); fill: #8a3f0e; }
+#pov .bell { fill: none; stroke: #c2611a; stroke-width: 2; stroke-linecap: round; }
+#pov .note rect { fill: #fff; stroke: #c2611a; stroke-width: 1.6; }
+#pov .note-i { fill: #c2611a; }
+#pov .note text { font: 400 10.5px var(--sans); fill: #3b4252; }
+#pov .note .nb { font-weight: 700; fill: #8a3f0e; }
+#pov .gaze circle { fill: none; stroke: #c2611a; stroke-width: 1.6; }
+#pov .gaze .gd { fill: #c2611a; stroke: none; }
+#pov .gaze path { fill: none; stroke: #c2611a; stroke-width: 1.6; stroke-linecap: round; }
+#pov .frameD { transform-box: view-box; transform-origin: 230px 150px; }
+#pov .frame { fill: #1f2630; }
+#pov .rim { fill: none; stroke: #3b4252; stroke-width: 5; }
 
-/* 04 present: zoom into the glasses; labels follow the gaze; a reminder lands when Dana arrives. */
-.scene-pov { --c: #c2611a; }
-.scene-pov .td { opacity: 0; transform-origin: 230px 205px; }
-.scene-pov .note { transform-origin: 122px 241px; }
-.scene-pov .td .cone { fill: rgba(194, 97, 26, .12); stroke: rgba(194, 97, 26, .3); stroke-width: 1; }
-.scene-pov .pov { transform-origin: 230px 150px; }
-.scene-pov .wall { fill: #f4f5f7; }
-.scene-pov .floor { fill: #e8ebf0; }
-.scene-pov .persp { fill: none; stroke: #d3d8e0; stroke-width: 1.2; }
-.scene-pov .win { fill: #fff; stroke: #cfd5de; stroke-width: 2; }
-.scene-pov .win-l { fill: none; stroke: #cfd5de; stroke-width: 2; }
-.scene-pov .sofa { fill: #e3e8f0; stroke: #9aa3b2; stroke-width: 1.4; }
-.scene-pov .door { fill: #fff; stroke: #9aa3b2; stroke-width: 1.6; }
-.scene-pov .knob { fill: #9aa3b2; }
-.scene-pov .shelf { fill: #fff; stroke: #9aa3b2; stroke-width: 1.6; }
-.scene-pov .shelf-l { fill: none; stroke: #9aa3b2; stroke-width: 1.6; }
-.scene-pov .cbox { fill: #f3e9dc; stroke: #b08968; stroke-width: 1.3; }
-.scene-pov .rbox { fill: #f7d9d6; stroke: #c0392b; stroke-width: 1.4; }
-.scene-pov .rib { fill: none; stroke: #c0392b; stroke-width: 1.4; }
-.scene-pov .tbl { fill: #fff; stroke: #9aa3b2; stroke-width: 1.4; stroke-linejoin: round; }
-.scene-pov .tbl-l { fill: none; stroke: #9aa3b2; stroke-width: 1.6; }
-.scene-pov .mug { fill: #fff; stroke: #1e3a6e; stroke-width: 1.6; }
-.scene-pov .mug-h { fill: none; stroke: #1e3a6e; stroke-width: 1.6; }
-.scene-pov .lead { fill: none; stroke: var(--c); stroke-width: 1.4; stroke-dasharray: 4 3; animation: march 1s linear infinite; }
-.scene-pov .lab rect { fill: rgba(255, 247, 239, .95); stroke: var(--c); stroke-width: 1.2; }
-.scene-pov .lab text { font-size: 10.5px; font-weight: 600; fill: #8a3f0e; }
-.scene-pov .l1, .scene-pov .l2 { opacity: .35; }
-.scene-pov .bell { fill: none; stroke: var(--c); stroke-width: 2; stroke-linecap: round; opacity: 0; }
-.scene-pov .note rect { fill: #fff; stroke: var(--c); stroke-width: 1.6; }
-.scene-pov .note-i { fill: var(--c); }
-.scene-pov .note text { font-size: 10.5px; fill: #3b4252; }
-.scene-pov .note .nb { font-weight: 700; fill: #8a3f0e; }
-.scene-pov .gaze { transform: translate(283px, 202px); }
-.scene-pov .gaze circle { fill: none; stroke: var(--c); stroke-width: 1.6; }
-.scene-pov .gaze .gd { fill: var(--c); stroke: none; }
-.scene-pov .gaze path { fill: none; stroke: var(--c); stroke-width: 1.6; stroke-linecap: round; }
-.scene-pov .frame { fill: #1f2630; }
-.scene-pov .rim { fill: none; stroke: #3b4252; stroke-width: 5; }
-.scene-pov.play .td { animation: pov-td 12s ease-in both; }
-.scene-pov.play .pov { animation: pov-in 12s ease-out both; }
-.scene-pov.play .gaze { animation: pov-gaze 12s ease-in-out both; }
-.scene-pov.play .l1 { animation: pov-l1 12s ease both, march 1s linear infinite; }
-.scene-pov.play .l2 { animation: pov-l2 12s ease both, march 1s linear infinite; }
-.scene-pov.play .l3 { animation: pov-l3 12s ease both, march 1s linear infinite; }
-.scene-pov.play .bell { animation: pov-bell 12s ease both; }
-.scene-pov.play .note { animation: pov-note 12s cubic-bezier(.3, 1.4, .5, 1) both; }
-@keyframes pov-td { 0%, 9% { opacity: 1; transform: none; } 20% { opacity: 0; transform: scale(5); } 100% { opacity: 0; transform: scale(5); } }
-@keyframes pov-in { 0%, 15% { opacity: 0; transform: scale(1.18); } 25%, 100% { opacity: 1; transform: none; } }
-@keyframes pov-gaze { 0%, 36% { transform: translate(148px, 176px); } 44%, 52% { transform: translate(409px, 116px); } 60%, 100% { transform: translate(283px, 202px); } }
-@keyframes pov-l1 { 0%, 27% { opacity: 0; } 31%, 44% { opacity: 1; } 48%, 100% { opacity: .35; } }
-@keyframes pov-l2 { 0%, 44% { opacity: 0; } 48%, 60% { opacity: 1; } 64%, 100% { opacity: .35; } }
-@keyframes pov-l3 { 0%, 60% { opacity: 0; } 64%, 100% { opacity: 1; } }
-@keyframes pov-bell { 0%, 66% { opacity: 0; } 68% { opacity: 1; } 70% { opacity: .1; } 72% { opacity: 1; } 74% { opacity: .1; } 76% { opacity: 1; } 80%, 100% { opacity: 0; } }
-@keyframes pov-note { 0%, 74% { opacity: 0; transform: translateY(14px); } 80%, 100% { opacity: 1; transform: none; } }
+/* Screen overlay: chat panel and day badge. */
+#hud .panel { fill: rgba(255, 255, 255, .94); stroke: #e2e5ea; stroke-width: 1; }
+#hud .say rect { fill: #fff; stroke: #c4cad4; stroke-width: 1; }
+#hud .bot-say rect { fill: #f6eef6; stroke: #8a3a8f; }
+#hud .say text, #hud .pref text { font: 400 9.4px var(--sans); fill: #1f2328; }
+#hud .say .b { font-weight: 700; fill: #3b4252; }
+#hud .bot-say .b { fill: #8a3a8f; }
+#hud .pref rect { fill: #fff; stroke: #8a3a8f; stroke-width: 1; stroke-dasharray: 3 2; }
+#hud .pref .b { font-weight: 700; fill: #8a3a8f; }
+#hud .badge rect { fill: rgba(255, 255, 255, .92); stroke: #cfd5de; stroke-width: 1; }
+#hud .badge text { font: 700 9px var(--sans); letter-spacing: .12em; fill: #1e3a6e; }

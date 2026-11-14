@@ -63,143 +63,26 @@
         <li class="ask ask-show" id="present" data-shape="wave"><span class="ask-num">04</span><span class="ask-fig"><svg class="mini mini-show" viewBox="0 0 80 56" aria-hidden="true"><line class="tl" x1="8" y1="47" x2="72" y2="47"/><path class="tick" d="M18 44.5v5M30 44.5v5M64 44.5v5"/><path class="moment" d="M50 42.6l1.3 3 3.2.9-3.2 1-1.3 3-1.3-3-3.2-1 3.2-.9z"/><g class="head"><line x1="8" y1="38" x2="8" y2="51"/><circle cx="8" cy="38" r="2.4"/></g><g class="hud"><rect x="24" y="5" width="44" height="22" rx="5"/><path class="ln" d="M30 13h22M30 19h15"/><path class="spark" d="M61 12.6l.9 2 2 .9-2 .9-.9 2-.9-2-2-.9 2-.9z"/><path class="tail" d="M45 27l5 7 3-7"/></g></svg></span><span class="ask-text">present information at the right moment?</span></li>
       </ol>
       </div>
-<figure class="stage" id="stage">
-        <div class="stage-view">
-<svg class="plan scene scene-see on" id="plan" data-scene="0" viewBox="0 0 460 300" role="img" aria-labelledby="plan-title plan-desc">
-        <title id="plan-title">Schematic of spatially grounded conversational memory</title>
-        <desc id="plan-desc">A person wearing smart glasses walks through a living room and a storage room. Each object that enters their field of view is pinned to the assistant's memory, and what the user says about an object is attached to it.</desc>
-        <defs>
-          <pattern id="plan-grid" width="20" height="20" patternUnits="userSpaceOnUse">
-            <path d="M20 0H0V20" class="grid-line"/>
-          </pattern>
-        </defs>
-        <rect width="460" height="300" fill="url(#plan-grid)"/>
-        <path id="route" class="route" d="M85 300 C90 255 100 225 108 200 S70 140 62 112 S150 82 205 84 S270 150 300 147 S345 140 360 128 S400 120 392 160 S330 170 300 156 S240 160 218 172"/>
-        <g class="walls">
-          <path d="M60 290 H10 V10 H450 V290 H110"/>
-          <path d="M290 10 V112 M290 178 V290"/>
-        </g>
-        <text class="room" x="150" y="279" text-anchor="middle">LIVING ROOM</text>
-        <text class="room" x="370" y="279" text-anchor="middle">STORAGE</text>
-
-        <g class="obj" data-key="sofa" data-x="95" data-y="43">
-          <rect x="40" y="26" width="110" height="34" rx="7"/>
-          <path d="M76.6 26 V60 M113.3 26 V60"/>
-          <text class="lbl" x="95" y="74">sofa</text>
-        </g>
-        <g class="obj" data-key="table" data-x="125" data-y="140">
-          <rect x="90" y="118" width="70" height="44" rx="3"/>
-          <text class="lbl" x="125" y="176">table</text>
-        </g>
-        <g class="obj" data-key="mug" data-x="145" data-y="132">
-          <circle cx="145" cy="132" r="5"/>
-          <path d="M150 130 h3 v4 h-3"/>
-          <text class="lbl" x="145" y="113">mug</text>
-        </g>
-        <g class="obj" data-key="lamp" data-x="240" data-y="44">
-          <circle cx="240" cy="44" r="11"/>
-          <circle cx="240" cy="44" r="3"/>
-          <text class="lbl" x="240" y="70">lamp</text>
-        </g>
-        <g class="obj" data-key="armchair" data-x="200" data-y="215">
-          <rect x="180" y="195" width="40" height="40" rx="8"/>
-          <rect x="187" y="202" width="26" height="26" rx="4"/>
-          <text class="lbl" x="200" y="249">armchair</text>
-        </g>
-        <g class="obj" data-key="shelf" data-x="425" data-y="88">
-          <rect x="412" y="28" width="26" height="120" rx="2"/>
-          <path d="M412 58 H438 M412 88 H438 M412 118 H438"/>
-          <text class="lbl" x="425" y="164">shelf</text>
-        </g>
-        <g class="obj" data-key="boxes" data-x="340" data-y="228">
-          <rect x="316" y="214" width="26" height="26" rx="2"/>
-          <rect x="345" y="221" width="20" height="20" rx="2"/>
-          <path d="M316 227 H342 M345 231 H365"/>
-          <text class="lbl" x="340" y="256">boxes</text>
-        </g>
-        <g id="pins"></g>
-
-        <g id="walker" transform="translate(85 300)">
-          <path class="cone" d="M0 0 L73.6 -42.5 A85 85 0 0 1 73.6 42.5 Z"/>
-          <ellipse class="body" rx="7" ry="12.5"/>
-          <circle class="head" r="7.6"/>
-          <rect class="glasses" x="5.2" y="-6.6" width="3.8" height="13.2" rx="1.9"/>
-        </g>
-      </svg>
-<svg class="scene scene-days" data-scene="1" viewBox="0 0 460 300" role="img" aria-label="Memories from three days, each pinned to the room where it happened">
-<defs><pattern id="g-days" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" class="grid-line"/></pattern></defs><rect width="460" height="300" fill="url(#g-days)"/>
-<g class="world">
-<path class="w" d="M10 10H450V236H10Z"/>
-<path class="w" d="M190 10V55M190 85V130M320 10V50M320 80V130M10 130H70M100 130H300M330 130H450M200 130V170M200 200V236"/>
-<text class="rm" x="100" y="124" text-anchor="middle">LIVING ROOM</text><text class="rm" x="255" y="124" text-anchor="middle">KITCHEN</text><text class="rm" x="385" y="124" text-anchor="middle">BEDROOM</text><text class="rm" x="105" y="229" text-anchor="middle">OFFICE</text><text class="rm" x="325" y="229" text-anchor="middle">STORAGE</text>
-<rect class="ob" x="24" y="18" width="80" height="22" rx="5"/><rect class="ob" x="60" y="60" width="50" height="32" rx="3"/><circle class="ob" cx="98" cy="70" r="4"/>
-<rect class="ob" x="196" y="16" width="118" height="16" rx="2"/><rect class="ob" x="290" y="44" width="24" height="30" rx="2"/><circle class="ob" cx="232" cy="24" r="3.5"/>
-<rect class="ob" x="360" y="18" width="70" height="50" rx="4"/><rect class="ob" x="364" y="22" width="22" height="14" rx="3"/><rect class="ob" x="336" y="20" width="16" height="16" rx="2"/>
-<rect class="ob" x="24" y="146" width="80" height="26" rx="2"/><circle class="ob" cx="64" cy="190" r="9"/>
-<rect class="ob" x="420" y="140" width="22" height="88" rx="2"/><rect class="ob" x="300" y="196" width="24" height="24" rx="2"/><rect class="ob" x="328" y="202" width="18" height="18" rx="2"/>
-<path class="trail t1" pathLength="1" d="M40 120 C60 108 46 96 70 104 S124 112 136 92 S146 60 122 56"/>
-<path class="trail t2" pathLength="1" d="M205 120 C222 100 210 84 238 74 S298 92 296 108 S258 66 240 44"/>
-<path class="trail t3" pathLength="1" d="M330 120 C346 102 372 112 388 100 S410 92 400 82"/>
-<g class="who w1" transform="translate(122 56) rotate(-120)"><ellipse class="hb" rx="7" ry="12.5"/><circle class="hh" r="7.6"/><rect class="hg" x="5.2" y="-6.6" width="3.8" height="13.2" rx="1.9"/></g>
-<g class="who w2" transform="translate(240 44) rotate(-110)"><ellipse class="hb" rx="7" ry="12.5"/><circle class="hh" r="7.6"/><rect class="hg" x="5.2" y="-6.6" width="3.8" height="13.2" rx="1.9"/></g>
-<g class="who w3" transform="translate(400 82) rotate(-100)"><ellipse class="hb" rx="7" ry="12.5"/><circle class="hh" r="7.6"/><rect class="hg" x="5.2" y="-6.6" width="3.8" height="13.2" rx="1.9"/></g>
-<g class="tag g1"><circle class="pin" cx="98" cy="70" r="4"/><rect x="104" y="38" width="80" height="18" rx="5"/><text x="110" y="50.6"><tspan class="d">D1</tspan> Dana’s mug</text></g>
-<g class="tag g2"><circle class="pin" cx="232" cy="24" r="4"/><rect x="242" y="38" width="56" height="18" rx="5"/><text x="248" y="50.6"><tspan class="d">D2</tspan> keys</text></g>
-<path class="recall" d="M392 80 C330 -6 172 -6 104 64"/>
-<circle class="ring" cx="98" cy="70" r="10"/>
-<g class="bub g3"><rect x="328" y="40" width="118" height="20" rx="6"/><text x="336" y="53.6"><tspan class="d">D3</tspan> Where’s Dana’s mug?</text></g>
-<g class="bub ans"><rect x="18" y="95" width="160" height="19" rx="6"/><text x="26" y="108">Living-room table, seen Day 1</text></g>
-</g>
-<rect class="tl-bg" x="0" y="246" width="460" height="54"/>
-<line class="tl" x1="60" y1="266" x2="400" y2="266"/><line class="tl-fill" x1="60" y1="266" x2="400" y2="266" pathLength="1"/>
-<circle class="dd dd1" cx="80" cy="266" r="5"/><circle class="dd dd2" cx="230" cy="266" r="5"/><circle class="dd dd3" cx="380" cy="266" r="5"/>
-<text class="dl" x="80" y="289" text-anchor="middle">DAY 1</text><text class="dl" x="230" y="289" text-anchor="middle">DAY 2</text><text class="dl" x="380" y="289" text-anchor="middle">DAY 3</text>
-<circle class="ph" cx="80" cy="266" r="8"/>
-</svg>
-<svg class="scene scene-align" data-scene="2" viewBox="0 0 460 300" role="img" aria-label="The user and the assistant agree on a plan: shelve the boxes but keep the red gift box out">
-<defs><pattern id="g-align" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" class="grid-line"/></pattern></defs><rect width="460" height="300" fill="url(#g-align)"/>
-<defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a3a9b4"/></marker></defs>
-<path class="w" d="M10 10H450V290H370M320 290H10Z"/>
-<text class="rm" x="96" y="282" text-anchor="middle">STORAGE</text>
-<rect class="ob" x="384" y="30" width="56" height="200" rx="2"/><path class="ol" d="M384 80H440M384 130H440M384 180H440"/>
-<path class="prop p1" d="M214 226 Q300 150 380 64" marker-end="url(#arr)"/>
-<path class="prop p2" d="M252 234 Q320 180 380 112" marker-end="url(#arr)"/>
-<path class="prop p3" d="M296 230 Q340 204 380 162" marker-end="url(#arr)"/>
-<path class="nope" d="M334 192 l12 12 M346 192 l-12 12"/>
-<rect class="box bx1" x="176" y="214" width="38" height="38" rx="2"/>
-<rect class="box bx2" x="220" y="222" width="32" height="32" rx="2"/>
-<g class="bx3"><rect class="box red" x="260" y="214" width="36" height="36" rx="2"/><path class="ribbon" d="M278 214V250M260 232H296"/><g class="chip gift"><rect x="226" y="192" width="104" height="18" rx="5"/><text x="234" y="204.5">Dana’s gift: keep out</text></g></g>
-<g class="chk c1"><circle cx="432" cy="40" r="8"/><path d="M428 40l3 3 5-6"/></g>
-<g class="chk c2"><circle cx="432" cy="92" r="8"/><path d="M428 92l3 3 5-6"/></g>
-<g class="chk c3"><circle cx="344" cy="246" r="8"/><path d="M340 246l3 3 5-6"/></g>
-<g transform="translate(80 236) scale(1.7)"><circle class="talk tu" r="16"/><ellipse class="hb" rx="7" ry="12.5"/><circle class="hh" r="7.6"/><rect class="hg" x="5.2" y="-6.6" width="3.8" height="13.2" rx="1.9"/></g>
-<g transform="translate(130 196)"><circle class="talk tb" r="22"/><g class="bot"><circle class="glow" r="17"/><rect class="bot-b" x="-12" y="-10" width="24" height="20" rx="7"/><circle class="eye" cx="-4.5" cy="-1" r="2.2"/><circle class="eye" cx="4.5" cy="-1" r="2.2"/><path class="ant" d="M0 -10V-15"/><circle class="eye" cx="0" cy="-16.5" r="2"/></g></g>
-<g class="chip pref"><rect x="34" y="148" width="214" height="20" rx="6"/><text x="44" y="161.5"><tspan class="b">Saved preference</tspan> red box = Dana’s gift</text></g>
-<g class="say s1 user"><rect x="20" y="16" width="270" height="24" rx="8"/><text x="30" y="32"><tspan class="b">You</tspan>  Can you help me tidy up before Dana visits?</text></g>
-<g class="say s2 bot-say"><rect x="40" y="46" width="296" height="24" rx="8"/><text x="50" y="62"><tspan class="b">Assistant</tspan>  Sure. Move all the boxes onto the shelf?</text></g>
-<g class="say s3 user"><rect x="20" y="76" width="282" height="24" rx="8"/><text x="30" y="92"><tspan class="b">You</tspan>  Yes, but keep the red one out. It’s her gift.</text></g>
-<g class="say s4 bot-say"><rect x="40" y="106" width="322" height="24" rx="8"/><text x="50" y="122"><tspan class="b">Assistant</tspan>  Got it: shelve the boxes, red box by the door.</text></g>
-</svg>
-<svg class="scene scene-pov" data-scene="3" viewBox="0 0 460 300" role="img" aria-label="Seen through the glasses: labels appear for what the user looks at, and a reminder arrives when Dana does">
-<g class="td">
-<defs><pattern id="g-pov" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" class="grid-line"/></pattern></defs><rect width="460" height="300" fill="url(#g-pov)"/>
-<path class="w" d="M10 10H450V290H10Z"/>
-<rect class="ob" x="176" y="70" width="110" height="60" rx="3"/><circle class="ob" cx="230" cy="92" r="6"/>
-<rect class="ob" x="390" y="30" width="44" height="150" rx="2"/><rect class="ob" x="290" y="220" width="30" height="30" rx="2"/>
-<g transform="translate(230 210) rotate(-90)"><path class="cone" d="M0 0 L73.6 -42.5 A85 85 0 0 1 73.6 42.5 Z"/><ellipse class="hb" rx="7" ry="12.5"/><circle class="hh" r="7.6"/><rect class="hg" x="5.2" y="-6.6" width="3.8" height="13.2" rx="1.9"/></g>
-</g>
-<g class="pov">
+<figure class="stage">
+        <div class="stage-view" id="stage" role="img" aria-label="Animated example: an assistant on AI glasses recognizes a living room, pins what it saw to a map across three days, agrees a plan with the user, and shows timely labels through the glasses.">
+<svg class="layer" id="pov" viewBox="0 0 460 300" aria-hidden="true">
 <rect class="wall" x="0" y="0" width="460" height="176"/><rect class="floor" x="0" y="176" width="460" height="124"/>
 <path class="persp" d="M151 176L0 300M191 176L115 300M269 176L345 300M309 176L460 300M0 176H460"/>
 <rect class="win" x="60" y="30" width="92" height="52" rx="2"/><path class="win-l" d="M106 30V82M60 56H152"/>
 <rect class="sofa" x="22" y="122" width="108" height="38" rx="10"/><rect class="sofa" x="16" y="148" width="120" height="28" rx="10"/>
 <rect class="door" x="258" y="46" width="50" height="130" rx="2"/><circle class="knob" cx="300" cy="114" r="2.5"/>
 <rect class="shelf" x="352" y="40" width="80" height="140" rx="2"/><path class="shelf-l" d="M352 86H432M352 132H432"/>
-<rect class="cbox" x="362" y="56" width="30" height="30" rx="1.5"/><rect class="cbox" x="396" y="100" width="26" height="32" rx="1.5"/>
-<rect class="rbox" x="266" y="188" width="34" height="28" rx="1.5"/><path class="rib" d="M283 188V216M266 202H300"/>
 <path class="tbl" d="M96 186H196L208 202H84Z"/><path class="tbl-l" d="M92 202V230M200 202V230"/>
 <rect class="mug" x="140" y="166" width="16" height="20" rx="3"/><path class="mug-h" d="M156 171h4v9h-4"/>
-<g class="hud">
+<g class="pv-d1"><rect class="cbox" x="350" y="196" width="30" height="26" rx="1.5"/><rect class="cbox" x="384" y="200" width="26" height="22" rx="1.5"/><rect class="rbox" x="412" y="192" width="24" height="24" rx="1.5"/><path class="rib" d="M424 192V216M412 204H436"/></g>
+<g class="pv-d3"><rect class="cbox" x="362" y="56" width="30" height="30" rx="1.5"/><rect class="cbox" x="396" y="100" width="26" height="32" rx="1.5"/><rect class="rbox" x="266" y="188" width="34" height="28" rx="1.5"/><path class="rib" d="M283 188V216M266 202H300"/></g>
+<g class="hudA">
+<path class="vf" d="M10 34V10H34M426 10H450V34M450 266V290H426M34 290H10V266"/>
+<g class="det det0"><rect class="bb" x="12" y="114" width="130" height="66" rx="3"/><rect class="dt" x="12" y="101" width="31" height="12" rx="3"/><text x="17" y="110">sofa</text></g><g class="det det1"><rect class="bb" x="78" y="160" width="136" height="48" rx="3"/><rect class="dt" x="78" y="147" width="36" height="12" rx="3"/><text x="83" y="156">table</text></g><g class="det det2"><rect class="bb" x="134" y="160" width="30" height="30" rx="3"/><rect class="dt" x="134" y="147" width="26" height="12" rx="3"/><text x="139" y="156">mug</text></g><g class="det det3"><rect class="bb" x="252" y="42" width="62" height="138" rx="3"/><rect class="dt" x="252" y="29" width="31" height="12" rx="3"/><text x="257" y="38">door</text></g><g class="det det4"><rect class="bb" x="346" y="34" width="92" height="152" rx="3"/><rect class="dt" x="346" y="21" width="36" height="12" rx="3"/><text x="351" y="30">shelf</text></g><g class="det det5"><rect class="bb" x="344" y="186" width="100" height="42" rx="3"/><rect class="dt" x="344" y="230" width="52" height="12" rx="3"/><text x="349" y="239">boxes ×3</text></g>
+<g class="roomchip"><rect x="14" y="268" width="150" height="20" rx="10"/><text x="26" y="282">Living room · 6 objects</text></g>
+<line class="scanA" x1="0" y1="2" x2="460" y2="2"/>
+</g>
+<g class="hudD">
 <path class="lead l1" d="M148 166 C160 140 172 120 174 114"/>
 <g class="lab l1"><rect x="26" y="92" width="150" height="22" rx="6"/><text x="36" y="107">Dana’s mug · seen Day 1</text></g>
 <path class="lead l2" d="M409 132 L404 190"/>
@@ -210,12 +93,59 @@
 <g class="note"><rect x="36" y="218" width="172" height="46" rx="9"/><path class="note-i" d="M52 247v-7a6 6 0 0 1 12 0v7l2 2H50z M55 251a3 3 0 0 0 6 0"/><text x="74" y="237" class="nb">Dana just arrived.</text><text x="74" y="253">Hand her the red box.</text></g>
 <g class="gaze"><circle r="11"/><circle class="gd" r="2"/><path d="M-16 0h-5M16 0h5M0 -16v-5M0 16v5"/></g>
 </g>
-<path class="frame" fill-rule="evenodd" d="M0 0H460V300H0Z M48 26H186A34 34 0 0 1 220 60V240A34 34 0 0 1 186 274H48A34 34 0 0 1 14 240V60A34 34 0 0 1 48 26Z M274 26H412A34 34 0 0 1 446 60V240A34 34 0 0 1 412 274H274A34 34 0 0 1 240 240V60A34 34 0 0 1 274 26Z"/>
-<path class="rim" d="M48 26H186A34 34 0 0 1 220 60V240A34 34 0 0 1 186 274H48A34 34 0 0 1 14 240V60A34 34 0 0 1 48 26Z M274 26H412A34 34 0 0 1 446 60V240A34 34 0 0 1 412 274H274A34 34 0 0 1 240 240V60A34 34 0 0 1 274 26Z M220 120 Q230 112 240 120"/>
-</g>
+<g class="frameD"><path class="frame" fill-rule="evenodd" d="M-40 -40H500V340H-40Z M48 26H186A34 34 0 0 1 220 60V240A34 34 0 0 1 186 274H48A34 34 0 0 1 14 240V60A34 34 0 0 1 48 26Z M274 26H412A34 34 0 0 1 446 60V240A34 34 0 0 1 412 274H274A34 34 0 0 1 240 240V60A34 34 0 0 1 274 26Z"/><path class="rim" d="M48 26H186A34 34 0 0 1 220 60V240A34 34 0 0 1 186 274H48A34 34 0 0 1 14 240V60A34 34 0 0 1 48 26Z M274 26H412A34 34 0 0 1 446 60V240A34 34 0 0 1 412 274H274A34 34 0 0 1 240 240V60A34 34 0 0 1 274 26Z M220 120 Q230 112 240 120"/></g>
 </svg>
+<div class="layer" id="map-wrap"><svg id="map" viewBox="-20 30 300 196" aria-hidden="true">
+<defs><pattern id="mgrid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" class="grid-line"/></pattern></defs>
+<rect x="-3000" y="-2000" width="7500" height="4500" fill="url(#mgrid)"/>
+<g id="day1"><rect class="apt-bg" x="10" y="10" width="440" height="226"/><text class="rm" x="130" y="228" text-anchor="middle">LIVING ROOM</text><text class="rm" x="350" y="112" text-anchor="middle">KITCHEN</text><text class="rm" x="305" y="228" text-anchor="middle">BEDROOM</text><text class="rm" x="405" y="228" text-anchor="middle">OFFICE</text><rect class="ob" x="18" y="70" width="28" height="96" rx="6"/><rect class="ob" x="88" y="104" width="70" height="44" rx="3"/><circle class="ob" cx="142" cy="116" r="4.5"/><path class="ol" d="M146.5 114h3v4h-3"/><rect class="ob" x="196" y="14" width="48" height="20" rx="1.5"/><path class="ol" d="M212 14V34M228 14V34"/><rect class="ob" x="256" y="16" width="188" height="14" rx="2"/><rect class="ob" x="420" y="36" width="24" height="30" rx="2"/><rect class="ob" x="262" y="150" width="60" height="70" rx="4"/><rect class="ob" x="266" y="154" width="52" height="14" rx="3"/><rect class="ob" x="368" y="128" width="76" height="20" rx="2"/><circle class="ob" cx="406" cy="170" r="8"/><rect class="cb" x="212" y="84" width="16" height="16" rx="1.5"/><rect class="cb" x="214" y="106" width="14" height="14" rx="1.5"/><rect class="rb" x="213" y="126" width="16" height="16" rx="1.5"/><path class="w" d="M150 10H10V236H450V10H185"/><path class="w" d="M250 10V60M250 95V160M250 190V236M250 120H380M410 120H450M360 120V160M360 190V236"/>
+<path class="trail tr1" pathLength="1" d="M130 230 C118 196 64 196 64 150 S120 92 204 92"/>
+<circle class="halo" cx="142" cy="116" r="13"/>
+<g class="pins1"><circle class="pin" cx="32" cy="118" r="3.4"/><circle class="pin" cx="123" cy="126" r="3.4"/><circle class="pin" cx="142" cy="116" r="3.4"/><circle class="pin" cx="220" cy="24" r="3.4"/><circle class="pin" cx="220" cy="104" r="3.4"/><circle class="pin" cx="167" cy="12" r="3.4"/></g><g class="tags1"><g class="tg"><rect x="38" y="102" width="28" height="12" rx="3"/><text x="43" y="110.8">sofa</text></g><g class="tg"><rect x="129" y="110" width="32" height="12" rx="3"/><text x="134" y="118.8">table</text></g><g class="tg"><rect x="148" y="100" width="23" height="12" rx="3"/><text x="153" y="108.8">mug</text></g><g class="tg"><rect x="226" y="8" width="32" height="12" rx="3"/><text x="231" y="16.8">shelf</text></g><g class="tg"><rect x="226" y="88" width="32" height="12" rx="3"/><text x="231" y="96.8">boxes</text></g><g class="tg"><rect x="173" y="18" width="28" height="12" rx="3"/><text x="178" y="26.8">door</text></g></g>
+<g class="walker1" transform="translate(130 215) rotate(-90)"><path class="cone" d="M0 0 L73.6 -42.5 A85 85 0 0 1 73.6 42.5 Z"/><ellipse class="hb" rx="7" ry="12.5"/><circle class="hh" r="7.6"/><rect class="hg" x="5.2" y="-6.6" width="3.8" height="13.2" rx="1.9"/></g>
+</g>
+<g id="day2" transform="translate(500 0)"><rect class="apt-bg" x="10" y="10" width="440" height="226"/><text class="rm" x="130" y="228" text-anchor="middle">LIVING ROOM</text><text class="rm" x="350" y="112" text-anchor="middle">KITCHEN</text><text class="rm" x="305" y="228" text-anchor="middle">BEDROOM</text><text class="rm" x="405" y="228" text-anchor="middle">OFFICE</text><rect class="ob" x="18" y="70" width="28" height="96" rx="6"/><rect class="ob" x="88" y="104" width="70" height="44" rx="3"/><circle class="ob" cx="142" cy="116" r="4.5"/><path class="ol" d="M146.5 114h3v4h-3"/><rect class="ob" x="196" y="14" width="48" height="20" rx="1.5"/><path class="ol" d="M212 14V34M228 14V34"/><rect class="ob" x="256" y="16" width="188" height="14" rx="2"/><rect class="ob" x="420" y="36" width="24" height="30" rx="2"/><rect class="ob" x="262" y="150" width="60" height="70" rx="4"/><rect class="ob" x="266" y="154" width="52" height="14" rx="3"/><rect class="ob" x="368" y="128" width="76" height="20" rx="2"/><circle class="ob" cx="406" cy="170" r="8"/><rect class="cb" x="212" y="84" width="16" height="16" rx="1.5"/><rect class="cb" x="214" y="106" width="14" height="14" rx="1.5"/><rect class="rb" x="213" y="126" width="16" height="16" rx="1.5"/><path class="w" d="M150 10H10V236H450V10H185"/><path class="w" d="M250 10V60M250 95V160M250 190V236M250 120H380M410 120H450M360 120V160M360 190V236"/>
+<path class="trail tr2" pathLength="1" d="M130 230 C150 186 226 96 268 80 S318 58 300 30"/>
+<g class="keys"><circle class="pin2" cx="300" cy="24" r="4"/><g class="tg2"><rect x="306" y="30" width="28" height="12" rx="3"/><text x="311" y="38.8">keys</text></g></g>
+</g>
+<g id="day3" transform="translate(1000 0)"><rect class="apt-bg" x="10" y="10" width="440" height="226"/><text class="rm" x="130" y="228" text-anchor="middle">LIVING ROOM</text><text class="rm" x="350" y="112" text-anchor="middle">KITCHEN</text><text class="rm" x="305" y="228" text-anchor="middle">BEDROOM</text><text class="rm" x="405" y="228" text-anchor="middle">OFFICE</text><rect class="ob" x="18" y="70" width="28" height="96" rx="6"/><rect class="ob" x="88" y="104" width="70" height="44" rx="3"/><circle class="ob" cx="142" cy="116" r="4.5"/><path class="ol" d="M146.5 114h3v4h-3"/><rect class="ob" x="196" y="14" width="48" height="20" rx="1.5"/><path class="ol" d="M212 14V34M228 14V34"/><rect class="ob" x="256" y="16" width="188" height="14" rx="2"/><rect class="ob" x="420" y="36" width="24" height="30" rx="2"/><rect class="ob" x="262" y="150" width="60" height="70" rx="4"/><rect class="ob" x="266" y="154" width="52" height="14" rx="3"/><rect class="ob" x="368" y="128" width="76" height="20" rx="2"/><circle class="ob" cx="406" cy="170" r="8"/><path class="w" d="M150 10H10V236H450V10H185"/><path class="w" d="M250 10V60M250 95V160M250 190V236M250 120H380M410 120H450M360 120V160M360 190V236"/>
+<path class="trail tr3" pathLength="1" d="M306 214 C286 196 262 178 240 178 S164 206 130 206"/>
+<defs><marker id="arrowhead" viewBox="0 0 10 10" refX="7" refY="5" markerUnits="userSpaceOnUse" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#8a3a8f"/></marker></defs>
+<path class="prop p12" d="M220 84 Q212 60 206 38" marker-end="url(#arrowhead)"/>
+<path class="prop p12" d="M221 106 Q228 70 221 38" marker-end="url(#arrowhead)"/>
+<path class="prop p3" d="M221 126 Q244 80 236 38" marker-end="url(#arrowhead)"/>
+<path class="nope" d="M234 76l8 8M242 76l-8 8"/>
+<rect class="cb bx1" x="212" y="84" width="16" height="16" rx="1.5"/>
+<rect class="cb bx2" x="214" y="106" width="14" height="14" rx="1.5"/>
+<g class="bx3"><rect class="rb" x="213" y="126" width="16" height="16" rx="1.5"/><path class="rib" d="M221 126V142M213 134H229"/><g class="gift"><rect x="172" y="146" width="48" height="11" rx="3"/><text x="176" y="154">Dana’s gift</text></g></g>
+<g class="chk"><circle cx="214" cy="14" r="5"/><path d="M211.5 14l2 2 3-3.5"/><circle cx="231" cy="16" r="5"/><path d="M228.5 16l2 2 3-3.5"/><circle cx="178" cy="24" r="5"/><path d="M175.5 24l2 2 3-3.5"/></g>
+<g class="user3"><circle class="talk tu" cx="130" cy="206" r="17"/><g transform="translate(130 206) rotate(-90)"><ellipse class="hb" rx="7" ry="12.5"/><circle class="hh" r="7.6"/><rect class="hg" x="5.2" y="-6.6" width="3.8" height="13.2" rx="1.9"/></g></g>
+<g class="bot3"><circle class="talk tb" cx="156" cy="184" r="15"/><g transform="translate(156 184) scale(.62)"><g class="bot"><circle class="glow" r="17"/><rect class="bot-b" x="-12" y="-10" width="24" height="20" rx="7"/><circle class="eye" cx="-4.5" cy="-1" r="2.2"/><circle class="eye" cx="4.5" cy="-1" r="2.2"/><path class="ant" d="M0 -10V-15"/><circle class="eye" cx="0" cy="-16.5" r="2"/></g></g></g>
+</g>
+<g class="tl">
+<path class="tl-line" d="M0 300H1460"/>
+<circle class="tl-dot" cx="230" cy="300" r="12"/><circle class="tl-dot" cx="730" cy="300" r="12"/><circle class="tl-dot" cx="1230" cy="300" r="12"/>
+<g class="cap1"><text class="tl-day" x="230" y="352" text-anchor="middle">DAY 1</text><text class="tl-sub" x="230" y="388" text-anchor="middle">explores the living room</text></g>
+<g class="cap2"><text class="tl-day" x="730" y="352" text-anchor="middle">DAY 2</text><text class="tl-sub" x="730" y="388" text-anchor="middle">leaves keys in the kitchen</text></g>
+<g class="cap3"><text class="tl-day" x="1230" y="352" text-anchor="middle">DAY 3</text><text class="tl-sub" x="1230" y="388" text-anchor="middle">asks “Where’s Dana’s mug?”</text></g>
+</g>
+<path class="recall" pathLength="1" d="M1130 192 C940 -300 360 -300 142 104"/>
+<g class="recall-cap"><text x="636" y="-268" text-anchor="middle">Answered from Day 1:</text><text class="rc2" x="636" y="-226" text-anchor="middle">“On the living-room table”</text></g>
+</svg></div>
+<svg class="layer" id="hud" viewBox="0 0 460 300" aria-hidden="true">
+<g class="chat"><rect class="panel" x="8" y="8" width="196" height="216" rx="12"/>
+<g class="say s1 user"><rect x="16" y="16" width="180" height="34" rx="8"/><text x="25" y="30"><tspan class="b">You</tspan> Can you help me tidy up</text><text x="25" y="43">before Dana visits?</text></g>
+<g class="say s2 bot-say"><rect x="16" y="56" width="180" height="34" rx="8"/><text x="25" y="70"><tspan class="b">Assistant</tspan> Sure. Move all the</text><text x="25" y="83">boxes onto the shelf?</text></g>
+<g class="say s3 user"><rect x="16" y="96" width="180" height="34" rx="8"/><text x="25" y="110"><tspan class="b">You</tspan> Yes, but keep the red</text><text x="25" y="123">one out. It’s her gift.</text></g>
+<g class="say s4 bot-say"><rect x="16" y="136" width="180" height="34" rx="8"/><text x="25" y="150"><tspan class="b">Assistant</tspan> Got it: shelve the</text><text x="25" y="163">boxes, red box by the door.</text></g>
+<g class="pref"><rect x="16" y="180" width="180" height="36" rx="8"/><text x="25" y="194" class="b">Saved preference</text><text x="25" y="208">red box = Dana’s gift, keep out</text></g>
+</g>
+<g class="badge"><rect x="374" y="10" width="76" height="20" rx="10"/><text id="day-badge" x="412" y="24" text-anchor="middle">DAY 1</text></g>
+</svg>
+          <div class="layer flash"></div>
+          <button type="button" class="stage-btn" id="story-toggle" aria-pressed="false">Pause</button>
         </div>
-        <figcaption class="stage-cap"><span class="stage-num" id="stage-num">01</span><span id="stage-text">The glasses map the room as the user walks: every object that enters view is pinned to memory.</span></figcaption>
+        <figcaption class="stage-cap"><span class="stage-num" id="stage-num">01</span><span id="stage-text"></span></figcaption>
       </figure>
     </div>
     </section>
@@ -248,7 +178,7 @@
 </footer>
 
 <script src="assets/js/site.js"></script>
-<script src="assets/js/plan.js"></script>
+<script src="assets/js/story.js"></script>
 <script src="assets/js/hero.js"></script>
 </body>
 </html>

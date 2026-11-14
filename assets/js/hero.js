@@ -4,9 +4,9 @@
 //   timeline -> a line with day markers             (remember multi-day interactions)
 //   converge -> two strokes that merge into one     (stay aligned)
 //   wave     -> a speech-like wave ending in a spark (present information)
-// - The cards then take turns in order (01 -> 04, repeating): the active card
-//   plays its mini scene and redraws its mark while the others fade back, and
-//   the stage beside them switches to that card's scene. Clicking a card jumps there.
+// - story.js plays one continuous animation beside the cards and reports which
+//   part it is in; that card becomes active (its mini scene plays, its mark
+//   redraws) while the others fade back. Clicking a card jumps the story there.
 (function () {
   var root = document.getElementById('asks');
   if (!root || !document.documentElement.classList.contains('js')) return;
@@ -186,72 +186,44 @@
     });
   }
 
-  // ---- Take turns: one card at a time, in order; the stage shows its scene ----
+  // ---- The story (story.js) decides which card is active; clicking a card seeks it ----
   var canAnimate = !reduce && typeof root.animate === 'function';
-  // How long each card stays active (ms), matched to its scene's animation.
-  var STEPS = [10000, 13000, 14000, 13000];
   var CAPTIONS = [
-    'The glasses map the room as the user walks: every object that enters view is pinned to memory.',
-    'Memories stay anchored to the rooms where they happened, so a question on day 3 can be answered from day 1.',
-    'The assistant checks its plan with the user and keeps the preference it learns: Dana’s gift stays out.',
-    'Through the glasses, labels follow the user’s gaze, and the reminder arrives right when Dana does.'
+    'Day 1, through the glasses: the assistant recognizes the parts of the room — sofa, table, mug, door, shelf and boxes.',
+    'Zooming out, what it saw is pinned to a map of the home, and each day adds memories in the room where they happened. On day 3, a question is answered from day 1.',
+    'Back in the living room on day 3: the assistant proposes a plan, the user corrects it, and the assistant keeps the preference.',
+    'Into the glasses: labels follow the user’s gaze, and the reminder arrives right when Dana does.'
   ];
-  var scenes = Array.prototype.slice.call(document.querySelectorAll('#stage .scene'));
   var capNum = document.getElementById('stage-num');
   var capText = document.getElementById('stage-text');
-  var current = -1, timerId = null, hovering = false;
+  var current = -1;
 
-  function showScene(i, animate) {
-    scenes.forEach(function (s, k) {
-      var on = k === i;
-      s.classList.toggle('on', on);
-      if (on && animate) {
-        s.classList.remove('play');
-        void s.getBoundingClientRect();
-        s.classList.add('play');
-      }
-    });
-    if (window.sceneWalk) {
-      if (i === 0 && animate) window.sceneWalk.play();
-      else if (i === 0) window.sceneWalk.final();
-      else window.sceneWalk.stop();
-    }
+  function setActive(i) {
+    if (i === current) return;
+    current = i;
+    root.classList.add('playing');
+    asks.forEach(function (a, k) { a.classList.toggle('active', k === i); });
+    if (started) draw(asks[i], 0, canAnimate);
     if (capNum) capNum.textContent = '0' + (i + 1);
     if (capText) {
       capText.classList.add('swap');
       setTimeout(function () {
         capText.textContent = CAPTIONS[i];
         capText.classList.remove('swap');
-      }, animate ? 250 : 0);
+      }, canAnimate ? 250 : 0);
     }
   }
 
-  function setActive(i) {
-    current = i;
-    root.classList.add('playing');
-    asks.forEach(function (a, k) { a.classList.toggle('active', k === i); });
-    draw(asks[i], 0, canAnimate);
-    showScene(i, canAnimate);
-    clearTimeout(timerId);
-    if (canAnimate) timerId = setTimeout(advance, STEPS[i]);
-  }
-  function advance() {
-    // Hold the current card while the pointer is over the cards or the tab is hidden.
-    if (hovering || document.hidden) { timerId = setTimeout(advance, 1000); return; }
-    setActive((current + 1) % asks.length);
-  }
-
-  // Clicking (or pressing Enter/Space on) a card jumps to its scene.
+  // Clicking (or pressing Enter/Space on) a card jumps the story to that part.
+  function jump(k) { if (window.story) window.story.seek(k); else setActive(k); }
   asks.forEach(function (a, k) {
     a.setAttribute('tabindex', '0');
     a.setAttribute('aria-controls', 'stage');
-    a.addEventListener('click', function () { setActive(k); });
+    a.addEventListener('click', function () { jump(k); });
     a.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setActive(k); }
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); jump(k); }
     });
   });
-  root.addEventListener('mouseenter', function () { hovering = true; });
-  root.addEventListener('mouseleave', function () { hovering = false; });
 
   var started = false, timer;
   function start() {
@@ -261,8 +233,12 @@
     // Begin at the card named in the URL (#see, #remember, ...) if any.
     var hashed = asks.indexOf(document.getElementById(location.hash.slice(1)));
     var first = hashed >= 0 ? hashed : 0;
-    if (canAnimate) setTimeout(function () { setActive(first); }, 150 + asks.length * 420 + 600);
-    else setActive(first);
+    if (window.story) {
+      window.story.onSegment = setActive;
+      window.story.start(first);
+    } else {
+      setActive(first);
+    }
     // Re-layout (resize, late font swap) redraws the marks in place without animating.
     if ('ResizeObserver' in window) {
       var w = root.offsetWidth;
